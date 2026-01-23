@@ -264,6 +264,35 @@
             transform: translateY(0);
             filter: brightness(0.98);
         }
+
+        /* ✅ Navbarを白固定にした時の文字色を安定させる */
+        nav {
+            color: #0f1419;
+        }
+
+        nav a {
+            color: rgba(15, 20, 25, 0.78);
+        }
+
+        nav a:hover {
+            color: #0f1419;
+        }
+
+        /* ロゴ文字（NEXT LABS）も白固定指定を上書き */
+        nav .fade-in-logo {
+            color: #0f1419 !important;
+        }
+
+        /* Contactボタン（右上）を白背景向けに調整 */
+        nav a[href="#contact"] {
+            border-color: rgba(15, 20, 25, 0.18) !important;
+            color: #0f1419 !important;
+        }
+
+        nav a[href="#contact"]:hover {
+            background: #0f1419 !important;
+            color: #ffffff !important;
+        }
     </style>
 </head>
 
@@ -288,7 +317,7 @@
         style="background-image: url('https://placehold.co/1920x1080/1a202c/FFF?text=Business+Strategy+Map');"></div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full top-0 z-50 border-b border-white/5 bg-slate-900/80 backdrop-blur-md content-layer">
+    <nav class="fixed w-full top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md content-layer">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#hero" class="flex items-center gap-3">
                 <div class="rolling-n" aria-hidden="true">
