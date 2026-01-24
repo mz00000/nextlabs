@@ -299,7 +299,7 @@
             content: "";
             position: absolute;
             top: 0;
-            width: 84px;
+            width: clamp(28px, 10vw, 84px); /* ✅ スマホでは薄く、PCでは従来通り */
             height: 100%;
             z-index: 2;
             pointer-events: none;
@@ -321,6 +321,9 @@
             gap: 18px;
             width: max-content;
             will-change: transform;
+
+            transform: translateZ(0);        /* ✅ iOS/Safariの描画ブレ軽減 */
+            backface-visibility: hidden;     /* ✅ 微妙なチラつき軽減 */
         }
 
         .marquee-row {
@@ -333,20 +336,25 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 14px 18px;
+
+            width: clamp(130px, 34vw, 220px); /* ✅ 先に横幅を確保（CLS対策） */
+            padding: 12px 14px;
             border-radius: 14px;
+
             background: rgba(255, 255, 255, 0.92);
             border: 1px solid rgba(255, 255, 255, 0.10);
             box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
             transition: transform .2s ease, filter .2s ease, background .2s ease;
+
             flex: 0 0 auto;
         }
 
         .logo-chip img {
-            height: 26px;
-            width: auto;
-            max-width: 180px;
+            display: block;             /* ✅ ベースラインのズレ防止 */
+            width: 100%;                /* ✅ チップ幅に追従（レイアウト安定） */
+            height: 28px;               /* ✅ 高さを固定して見た目も安定 */
             object-fit: contain;
+
             filter: grayscale(1) contrast(1.08) brightness(1.0);
             opacity: 0.92;
         }
@@ -564,65 +572,7 @@
 
         </div>
     </section>
-
-    <!-- News -->
-    <section id="news" class="py-24 border-t border-white/5 content-layer">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-12 fade-up-hidden js-scroll-trigger">
-                <h2 class="text-3xl md:text-4xl font-serif text-white mb-3">News</h2>
-                <p class="text-slate-300">最新のお知らせ</p>
-            </div>
-
-            <div class="glass glass-dark p-6 md:p-8 fade-up-hidden js-scroll-trigger">
-                <div class="space-y-1">
-                    <a href="#" class="group block py-6 border-b border-white/10 hover:border-white/30 transition-all">
-                        <div class="flex flex-col md:flex-row md:items-center gap-4">
-                            <time
-                                class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2026.01.15</time>
-                            <span
-                                class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">プレスリリース</span>
-                            <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
-                                Bakuage Suite、大手EC事業者への導入実績が100社を突破
-                            </p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="group block py-6 border-b border-white/10 hover:border-white/30 transition-all">
-                        <div class="flex flex-col md:flex-row md:items-center gap-4">
-                            <time
-                                class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2025.12.20</time>
-                            <span
-                                class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">メディア掲載</span>
-                            <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
-                                代表・亀井のインタビュー記事がWeb担当者Forumに掲載されました
-                            </p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="group block py-6 hover:border-white/30 transition-all">
-                        <div class="flex flex-col md:flex-row md:items-center gap-4">
-                            <time
-                                class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2025.11.01</time>
-                            <span
-                                class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">サービス</span>
-                            <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
-                                Readable、累計翻訳文字数50億文字を達成
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="mt-10">
-                    <a href="#"
-                        class="group inline-flex items-center gap-3 text-white border-b border-white pb-1 hover:text-slate-200 hover:border-slate-200 transition">
-                        <span class="tracking-widest text-sm">VIEW ALL NEWS</span>
-                        <span class="group-hover:translate-x-1 transition-transform">→</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Solutions (white zone) -->
     <section id="solutions"
         class="py-24 border-t border-slate-200/30 relative content-layer min-h-screen flex items-center">
@@ -738,6 +688,64 @@
                         </div>
                     </a>
 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News -->
+    <section id="news" class="py-24 border-t border-white/5 content-layer">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-12 fade-up-hidden js-scroll-trigger">
+                <h2 class="text-3xl md:text-4xl font-serif text-white mb-3">News</h2>
+                <p class="text-slate-300">最新のお知らせ</p>
+            </div>
+
+            <div class="glass glass-dark p-6 md:p-8 fade-up-hidden js-scroll-trigger">
+                <div class="space-y-1">
+                    <a href="#" class="group block py-6 border-b border-white/10 hover:border-white/30 transition-all">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <time
+                                class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2026.01.15</time>
+                            <span
+                                class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">プレスリリース</span>
+                            <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
+                                Bakuage Suite、大手EC事業者への導入実績が100社を突破
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="group block py-6 border-b border-white/10 hover:border-white/30 transition-all">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <time
+                                class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2025.12.20</time>
+                            <span
+                                class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">メディア掲載</span>
+                            <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
+                                代表・亀井のインタビュー記事がWeb担当者Forumに掲載されました
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="group block py-6 hover:border-white/30 transition-all">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <time
+                                class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2025.11.01</time>
+                            <span
+                                class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">サービス</span>
+                            <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
+                                Readable、累計翻訳文字数50億文字を達成
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mt-10">
+                    <a href="#"
+                        class="group inline-flex items-center gap-3 text-white border-b border-white pb-1 hover:text-slate-200 hover:border-slate-200 transition">
+                        <span class="tracking-widest text-sm">VIEW ALL NEWS</span>
+                        <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
                 </div>
             </div>
         </div>
