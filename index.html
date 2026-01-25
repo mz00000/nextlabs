@@ -299,7 +299,8 @@
             content: "";
             position: absolute;
             top: 0;
-            width: clamp(28px, 10vw, 84px); /* ✅ スマホでは薄く、PCでは従来通り */
+            width: clamp(28px, 10vw, 84px);
+            /* ✅ スマホでは薄く、PCでは従来通り */
             height: 100%;
             z-index: 2;
             pointer-events: none;
@@ -322,8 +323,10 @@
             width: max-content;
             will-change: transform;
 
-            transform: translateZ(0);        /* ✅ iOS/Safariの描画ブレ軽減 */
-            backface-visibility: hidden;     /* ✅ 微妙なチラつき軽減 */
+            transform: translateZ(0);
+            /* ✅ iOS/Safariの描画ブレ軽減 */
+            backface-visibility: hidden;
+            /* ✅ 微妙なチラつき軽減 */
         }
 
         .marquee-row {
@@ -337,7 +340,8 @@
             align-items: center;
             justify-content: center;
 
-            width: clamp(130px, 34vw, 220px); /* ✅ 先に横幅を確保（CLS対策） */
+            width: clamp(130px, 34vw, 220px);
+            /* ✅ 先に横幅を確保（CLS対策） */
             padding: 12px 14px;
             border-radius: 14px;
 
@@ -350,9 +354,12 @@
         }
 
         .logo-chip img {
-            display: block;             /* ✅ ベースラインのズレ防止 */
-            width: 100%;                /* ✅ チップ幅に追従（レイアウト安定） */
-            height: 28px;               /* ✅ 高さを固定して見た目も安定 */
+            display: block;
+            /* ✅ ベースラインのズレ防止 */
+            width: 100%;
+            /* ✅ チップ幅に追従（レイアウト安定） */
+            height: 28px;
+            /* ✅ 高さを固定して見た目も安定 */
             object-fit: contain;
 
             filter: grayscale(1) contrast(1.08) brightness(1.0);
@@ -495,7 +502,8 @@
     <!-- ✅ Trusted Logos (Hero直下) -->
     <section id="trusted" class="py-14 md:py-16 border-t border-white/5 content-layer">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8 fade-up-hidden js-scroll-trigger">
+            <div
+                class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8 fade-up-hidden js-scroll-trigger">
                 <div>
                     <h2 class="text-2xl md:text-3xl font-serif text-white">TRUSTED BY</h2>
                 </div>
@@ -506,32 +514,60 @@
                 <div class="marquee-track animate-left">
                     <div class="marquee-row">
                         <!-- companies -->
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/sbkk.png" alt="SoftBank Robotics" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/ltTLGE.png" alt="Mitsubishi Electric" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/murata.png" alt="Murata" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/toray.png" alt="TORAY" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/fujitsu.png" alt="Fujitsu" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/asiro.png" alt="ASIRO" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/sbkk.png"
+                                alt="SoftBank Robotics" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/ltTLGE.png"
+                                alt="Mitsubishi Electric" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/murata.png"
+                                alt="Murata" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/toray.png" alt="TORAY"
+                                loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/fujitsu.png"
+                                alt="Fujitsu" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/asiro.png" alt="ASIRO"
+                                loading="lazy" decoding="async"></span>
 
                         <!-- universities -->
-                        <span class="logo-chip"><img src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/353bf5b3e77bb26bcb870f4cf75ecc8946980d6a.png?h=83&rev=7ff9872846de4d15b1b037840a089bbb&w=230" alt="東京大学" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/1cc54274695a48c993d9f05c3a342b2d8c594029.png?h=191&rev=541e66d5f2824be5b96a26096c0069b4&w=650" alt="京都大学" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/50f49bee8e51dd4e3cc1661b29521c42055516c8.png?h=220&rev=3445986b9f1f4c9b950f79e5ce9858b0&w=540" alt="東北大学" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/22b890522304de94b328289ca88c5a6de49142d5.png?h=238&rev=3c5fe3e5c38749bb9f21d66f67451dda&w=792" alt="九州大学" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img
+                                src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/353bf5b3e77bb26bcb870f4cf75ecc8946980d6a.png?h=83&rev=7ff9872846de4d15b1b037840a089bbb&w=230"
+                                alt="東京大学" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img
+                                src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/1cc54274695a48c993d9f05c3a342b2d8c594029.png?h=191&rev=541e66d5f2824be5b96a26096c0069b4&w=650"
+                                alt="京都大学" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img
+                                src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/50f49bee8e51dd4e3cc1661b29521c42055516c8.png?h=220&rev=3445986b9f1f4c9b950f79e5ce9858b0&w=540"
+                                alt="東北大学" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img
+                                src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/22b890522304de94b328289ca88c5a6de49142d5.png?h=238&rev=3c5fe3e5c38749bb9f21d66f67451dda&w=792"
+                                alt="九州大学" loading="lazy" decoding="async"></span>
                     </div>
 
                     <!-- duplicate for seamless loop -->
                     <div class="marquee-row" aria-hidden="true">
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/sbkk.png" alt="" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/ltTLGE.png" alt="" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/murata.png" alt="" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/toray.png" alt="" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/fujitsu.png" alt="" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/asiro.png" alt="" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/353bf5b3e77bb26bcb870f4cf75ecc8946980d6a.png?h=83&rev=7ff9872846de4d15b1b037840a089bbb&w=230" alt="" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/1cc54274695a48c993d9f05c3a342b2d8c594029.png?h=191&rev=541e66d5f2824be5b96a26096c0069b4&w=650" alt="" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/50f49bee8e51dd4e3cc1661b29521c42055516c8.png?h=220&rev=3445986b9f1f4c9b950f79e5ce9858b0&w=540" alt="" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/22b890522304de94b328289ca88c5a6de49142d5.png?h=238&rev=3c5fe3e5c38749bb9f21d66f67451dda&w=792" alt="" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/sbkk.png" alt=""
+                                loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/ltTLGE.png" alt=""
+                                loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/murata.png" alt=""
+                                loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/toray.png" alt=""
+                                loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/fujitsu.png" alt=""
+                                loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/asiro.png" alt=""
+                                loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img
+                                src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/353bf5b3e77bb26bcb870f4cf75ecc8946980d6a.png?h=83&rev=7ff9872846de4d15b1b037840a089bbb&w=230"
+                                alt="" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img
+                                src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/1cc54274695a48c993d9f05c3a342b2d8c594029.png?h=191&rev=541e66d5f2824be5b96a26096c0069b4&w=650"
+                                alt="" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img
+                                src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/50f49bee8e51dd4e3cc1661b29521c42055516c8.png?h=220&rev=3445986b9f1f4c9b950f79e5ce9858b0&w=540"
+                                alt="" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img
+                                src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/22b890522304de94b328289ca88c5a6de49142d5.png?h=238&rev=3c5fe3e5c38749bb9f21d66f67451dda&w=792"
+                                alt="" loading="lazy" decoding="async"></span>
                     </div>
                 </div>
             </div>
@@ -540,39 +576,67 @@
             <div class="marquee rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md">
                 <div class="marquee-track animate-right">
                     <div class="marquee-row">
-                        <span class="logo-chip"><img src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/e4b1a107d9c24c5b8e31b67cac9e431a1dad6c28.png?h=514&rev=4ff0f2f776c44d45b9de3dfc3cd51116&w=1080" alt="慶應義塾大学" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/68c94898d52f9c7e23913511b8413cd0ac563e3c.png?h=309&rev=9bdbe8d198314b1884556a4c13a3a1f4&w=1024" alt="早稲田大学" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/2cdfffa590f25288f35054c314945a0d7cd243fc.png?h=102&rev=ebad4578f44a43e6b0fcd54dbe5c3352&w=300" alt="筑波大学" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/b698b13611838f606bf95bdc8d7eaa15cb9dfb32.png?h=128&rev=32f243adad6b48abadeab1e15f6fb1ab&w=384" alt="千葉大学" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img
+                                src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/e4b1a107d9c24c5b8e31b67cac9e431a1dad6c28.png?h=514&rev=4ff0f2f776c44d45b9de3dfc3cd51116&w=1080"
+                                alt="慶應義塾大学" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img
+                                src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/68c94898d52f9c7e23913511b8413cd0ac563e3c.png?h=309&rev=9bdbe8d198314b1884556a4c13a3a1f4&w=1024"
+                                alt="早稲田大学" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img
+                                src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/2cdfffa590f25288f35054c314945a0d7cd243fc.png?h=102&rev=ebad4578f44a43e6b0fcd54dbe5c3352&w=300"
+                                alt="筑波大学" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img
+                                src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/b698b13611838f606bf95bdc8d7eaa15cb9dfb32.png?h=128&rev=32f243adad6b48abadeab1e15f6fb1ab&w=384"
+                                alt="千葉大学" loading="lazy" decoding="async"></span>
 
                         <!-- companies (repeat for density) -->
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/fujitsu.png" alt="Fujitsu" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/toray.png" alt="TORAY" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/murata.png" alt="Murata" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/ltTLGE.png" alt="Mitsubishi Electric" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/sbkk.png" alt="SoftBank Robotics" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/asiro.png" alt="ASIRO" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/fujitsu.png"
+                                alt="Fujitsu" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/toray.png" alt="TORAY"
+                                loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/murata.png"
+                                alt="Murata" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/ltTLGE.png"
+                                alt="Mitsubishi Electric" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/sbkk.png"
+                                alt="SoftBank Robotics" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/asiro.png" alt="ASIRO"
+                                loading="lazy" decoding="async"></span>
                     </div>
 
                     <!-- duplicate for seamless loop -->
                     <div class="marquee-row" aria-hidden="true">
-                        <span class="logo-chip"><img src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/e4b1a107d9c24c5b8e31b67cac9e431a1dad6c28.png?h=514&rev=4ff0f2f776c44d45b9de3dfc3cd51116&w=1080" alt="" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/68c94898d52f9c7e23913511b8413cd0ac563e3c.png?h=309&rev=9bdbe8d198314b1884556a4c13a3a1f4&w=1024" alt="" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/2cdfffa590f25288f35054c314945a0d7cd243fc.png?h=102&rev=ebad4578f44a43e6b0fcd54dbe5c3352&w=300" alt="" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/b698b13611838f606bf95bdc8d7eaa15cb9dfb32.png?h=128&rev=32f243adad6b48abadeab1e15f6fb1ab&w=384" alt="" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/fujitsu.png" alt="" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/toray.png" alt="" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/murata.png" alt="" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/ltTLGE.png" alt="" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/sbkk.png" alt="" loading="lazy" decoding="async"></span>
-                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/asiro.png" alt="" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img
+                                src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/e4b1a107d9c24c5b8e31b67cac9e431a1dad6c28.png?h=514&rev=4ff0f2f776c44d45b9de3dfc3cd51116&w=1080"
+                                alt="" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img
+                                src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/68c94898d52f9c7e23913511b8413cd0ac563e3c.png?h=309&rev=9bdbe8d198314b1884556a4c13a3a1f4&w=1024"
+                                alt="" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img
+                                src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/2cdfffa590f25288f35054c314945a0d7cd243fc.png?h=102&rev=ebad4578f44a43e6b0fcd54dbe5c3352&w=300"
+                                alt="" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img
+                                src="https://www.sourcenext.com/-/media/img/miraiweb/Manuscripts/Migration/0000010683/b698b13611838f606bf95bdc8d7eaa15cb9dfb32.png?h=128&rev=32f243adad6b48abadeab1e15f6fb1ab&w=384"
+                                alt="" loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/fujitsu.png" alt=""
+                                loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/toray.png" alt=""
+                                loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/murata.png" alt=""
+                                loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/ltTLGE.png" alt=""
+                                loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/sbkk.png" alt=""
+                                loading="lazy" decoding="async"></span>
+                        <span class="logo-chip"><img src="https://about.readable.jp/write/images/asiro.png" alt=""
+                                loading="lazy" decoding="async"></span>
                     </div>
                 </div>
             </div>
 
         </div>
     </section>
-    
+
     <!-- Solutions (white zone) -->
     <section id="solutions"
         class="py-24 border-t border-slate-200/30 relative content-layer min-h-screen flex items-center">
@@ -738,6 +802,19 @@
                             </p>
                         </div>
                     </a>
+
+                    <a href="https://president.jp/articles/-/22146?page=1" target="_blank" rel="noopener noreferrer"
+                        class="group block py-6 border-t border-white/10 hover:border-white/30 transition-all">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <time
+                                class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2017.05.23</time>
+                            <span
+                                class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">メディア掲載</span>
+                            <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
+                                ジャーナリスト田原総一郎氏と対談しました
+                            </p>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="mt-10">
@@ -821,6 +898,57 @@
                 </div>
 
             </div>
+
+            <!-- Media Coverage -->
+            <div class="mt-16 fade-up-hidden js-scroll-trigger">
+                <h2 class="text-3xl font-serif text-white mb-10">メディア掲載実績</h2>
+
+                <div class="glass glass-dark p-6 md:p-8">
+                    <p class="text-slate-300/80 text-sm mb-6">
+                        掲載・紹介いただいたメディア一覧（抜粋）
+                    </p>
+
+                    <!-- ロゴ一覧（個別配置） -->
+                    <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+                        <li class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center">
+                            <img src="assets/media/nikkei.jpg" alt="日本経済新聞"
+                                class="h-8 md:h-9 w-auto object-contain opacity-95" loading="lazy" decoding="async">
+                        </li>
+
+                        <li class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center">
+                            <img src="assets/media/nikkei_mj.png" alt="日経MJ"
+                                class="h-8 md:h-9 w-auto object-contain opacity-95" loading="lazy" decoding="async">
+                        </li>
+
+                        <li class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center">
+                            <img src="assets/media/nikkei_xtrend.png" alt="日経クロストレンド"
+                                class="h-8 md:h-9 w-auto object-contain opacity-95" loading="lazy" decoding="async">
+                        </li>
+
+                        <li class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center">
+                            <img src="assets/media/nikkei_sangyo.png" alt="日経産業新聞"
+                                class="h-10 md:h-11 w-auto object-contain opacity-95" loading="lazy" decoding="async">
+                        </li>
+
+                        <li class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center">
+                            <img src="assets/media/net_keizai.png" alt="日本ネット経済新聞"
+                                class="h-8 md:h-9 w-auto object-contain opacity-95" loading="lazy" decoding="async">
+                        </li>
+
+                        <li class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center">
+                            <img src="assets/media/senken.png" alt="繊研新聞社"
+                                class="h-8 md:h-9 w-auto object-contain opacity-95" loading="lazy" decoding="async">
+                        </li>
+
+                        <li
+                            class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center sm:col-span-2 lg:col-span-1">
+                            <img src="assets/media/netshop_forum.png" alt="ネットショップ担当者フォーラム"
+                                class="h-9 md:h-10 w-auto object-contain opacity-95" loading="lazy" decoding="async">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </section>
 
