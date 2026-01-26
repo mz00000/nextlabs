@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ページごとに title だけ変えてOK -->
+    <title>情報セキュリティ方針 | NextLab Inc.</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind config（indexと同じ） -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cinzel"', 'serif'],
+                        sans: ['"Inter"', '"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        'slate-850': '#151b23',
+                        'slate-900': '#0f1419',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- あなたの分離済みCSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+
+<body class="policy-page text-slate-200 antialiased selection:bg-white selection:text-slate-900">
+
+    <!-- Background Layers（ポリシーページは暗背景固定） -->
+    <div class="bg-layer bg-dark active" id="bgDark"></div>
+
+    <!-- Grid Overlay -->
+    <div class="grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md content-layer">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html#hero" class="flex items-center gap-3">
+                <div class="rolling-n" aria-hidden="true">
+                    <svg width="32" height="32" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="25" width="25" height="60" fill="#b8a656" rx="3"
+                            transform="rotate(-30 22.5 55)" />
+                        <rect x="35" y="25" width="25" height="60" fill="#2d2d2d" rx="3"
+                            transform="rotate(-30 47.5 55)" />
+                        <rect x="60" y="25" width="25" height="60" fill="#2d2d2d" rx="3"
+                            transform="rotate(-30 72.5 55)" />
+                    </svg>
+                </div>
+                <span class="text-white font-serif tracking-widest text-lg font-semibold fade-in-logo">NEXT LABS</span>
+            </a>
+
+            <div
+                class="hidden md:flex items-center gap-10 text-xs tracking-widest text-slate-300 font-medium uppercase">
+                <a href="index.html#news" class="hover:text-white transition-colors">News</a>
+                <a href="index.html#solutions" class="hover:text-white transition-colors">Solutions</a>
+                <a href="index.html#company" class="hover:text-white transition-colors">Company</a>
+                <a href="index.html#contact"
+                    class="px-5 py-2 border border-white/20 text-white rounded-sm hover:bg-white hover:text-slate-900 transition-all duration-500">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-layer pt-32 pb-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="fade-up-hidden js-scroll-trigger mb-10">
+                <p class="text-xs tracking-[0.2em] text-slate-300 mb-4 border-l border-white/30 pl-4 uppercase">
+                    Legal / Security
+                </p>
+                <h1 class="text-3xl md:text-4xl font-serif text-white mb-3">情報セキュリティ方針</h1>
+            </div>
+
+            <article
+                class="glass glass-dark p-6 md:p-10 leading-loose text-slate-200/90 fade-up-hidden js-scroll-trigger">
+
+                <p class="text-sm">
+                    株式会社ネクストラボ（以下、当社）は、当社の情報資産、並びにお客様からお預かりした情報資産を事故・災害・犯罪などの脅威から守り、
+                    お客様ならびに社会の信頼に応えるべく、以下の方針に基づき全社で情報セキュリティに取り組みます。
+                </p>
+
+                <hr class="my-8 border-white/10">
+
+                <section class="space-y-3">
+                    <h2 class="text-xl font-serif text-white">1.経営者の責任</h2>
+                    <p class="text-sm">
+                        当社は、経営者主導で組織的かつ継続的に情報セキュリティの改善・向上に努めます。
+                    </p>
+                </section>
+
+                <hr class="my-8 border-white/10">
+
+                <section class="space-y-3">
+                    <h2 class="text-xl font-serif text-white">2.社内体制の整備</h2>
+                    <p class="text-sm">
+                        当社は、情報セキュリティの維持及び改善のために組織を設置し、情報セキュリティ対策を社内の正式な規則として定めます。
+                    </p>
+                </section>
+
+                <hr class="my-8 border-white/10">
+
+                <section class="space-y-3">
+                    <h2 class="text-xl font-serif text-white">3.従業員の取組み</h2>
+                    <p class="text-sm">
+                        当社の従業員は、情報セキュリティのために必要とされる知識、技術を習得し、情報セキュリティへの取り組みを確かなものにします。
+                    </p>
+                </section>
+
+                <hr class="my-8 border-white/10">
+
+                <section class="space-y-3">
+                    <h2 class="text-xl font-serif text-white">4.法令及び契約上の要求事項の遵守</h2>
+                    <p class="text-sm">
+                        当社は、情報セキュリティに関わる法令、規制、規範、契約上の義務を遵守するとともに、お客様の期待に応えます。
+                    </p>
+                </section>
+
+                <hr class="my-8 border-white/10">
+
+                <section class="space-y-3">
+                    <h2 class="text-xl font-serif text-white">5.違反及び事故への対応</h2>
+                    <p class="text-sm">
+                        当社は、情報セキュリティに関わる法令違反、契約違反及び事故が発生した場合には適切に対処し、再発防止に努めます。
+                    </p>
+                </section>
+
+                <hr class="my-8 border-white/10">
+
+                <p class="text-sm">制定日:2022年12月21日</p>
+                <p class="text-sm">株式会社ネクストラボ</p>
+
+            </article>
+        </div>
+    </main>
+
+    <footer id="footer" class="py-12 border-t border-white/5 content-layer">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <svg width="16" height="16" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="10" y="25" width="25" height="60" fill="#b8a656" rx="3" transform="rotate(-30 22.5 55)" />
+                    <rect x="35" y="25" width="25" height="60" fill="#ffffff" rx="3" transform="rotate(-30 47.5 55)" />
+                    <rect x="60" y="25" width="25" height="60" fill="#ffffff" rx="3" transform="rotate(-30 72.5 55)" />
+                </svg>
+                <span class="text-slate-300 font-serif tracking-widest text-sm">NEXT LABS</span>
+            </div>
+
+            <div class="flex items-center gap-6 text-xs text-slate-500 tracking-wider">
+                <a class="hover:text-slate-300 transition" href="privacy.html">Privacy Policy</a>
+                <a class="hover:text-slate-300 transition" href="securitypolicy.html">Security Policy</a>
+                <span class="hidden md:inline">|</span>
+                <span>&copy; NEXTLAB INC. ALL RIGHTS RESERVED.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

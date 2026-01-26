@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ページごとに title だけ変えてOK -->
+    <title>プライバシーポリシー | NextLab Inc.</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind config（indexと同じ） -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cinzel"', 'serif'],
+                        sans: ['"Inter"', '"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        'slate-850': '#151b23',
+                        'slate-900': '#0f1419',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- あなたの分離済みCSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+
+<body class="policy-page text-slate-200 antialiased selection:bg-white selection:text-slate-900">
+
+    <!-- Background Layers（ポリシーページは暗背景固定） -->
+    <div class="bg-layer bg-dark active" id="bgDark"></div>
+
+    <!-- Grid Overlay -->
+    <div class="grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md content-layer">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html#hero" class="flex items-center gap-3">
+                <div class="rolling-n" aria-hidden="true">
+                    <svg width="32" height="32" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="25" width="25" height="60" fill="#b8a656" rx="3"
+                            transform="rotate(-30 22.5 55)" />
+                        <rect x="35" y="25" width="25" height="60" fill="#2d2d2d" rx="3"
+                            transform="rotate(-30 47.5 55)" />
+                        <rect x="60" y="25" width="25" height="60" fill="#2d2d2d" rx="3"
+                            transform="rotate(-30 72.5 55)" />
+                    </svg>
+                </div>
+                <span class="text-white font-serif tracking-widest text-lg font-semibold fade-in-logo">NEXT LABS</span>
+            </a>
+
+            <div
+                class="hidden md:flex items-center gap-10 text-xs tracking-widest text-slate-300 font-medium uppercase">
+                <a href="index.html#news" class="hover:text-white transition-colors">News</a>
+                <a href="index.html#solutions" class="hover:text-white transition-colors">Solutions</a>
+                <a href="index.html#company" class="hover:text-white transition-colors">Company</a>
+                <a href="index.html#contact"
+                    class="px-5 py-2 border border-white/20 text-white rounded-sm hover:bg-white hover:text-slate-900 transition-all duration-500">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-layer pt-32 pb-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="fade-up-hidden js-scroll-trigger mb-10">
+                <p class="text-xs tracking-[0.2em] text-slate-300 mb-4 border-l border-white/30 pl-4 uppercase">
+                    Legal / Privacy
+                </p>
+                <h1 class="text-3xl md:text-4xl font-serif text-white mb-3">プライバシーポリシー</h1>
+            </div>
+
+            <article
+                class="glass glass-dark p-6 md:p-10 leading-loose text-slate-200/90 fade-up-hidden js-scroll-trigger">
+
+                <section class="space-y-4">
+                    <h2 class="text-xl font-serif text-white">１．個人情報の取得、管理</h2>
+                    <p class="text-sm">
+                        このプライバシーポリシー（以下「本プライバシーポリシー」といいます。）は、株式会社ネクストラボ（以下「当社」といいます。）が、
+                        当社の提供するサービス（以下「本サービス」といいます。）を利用される方（以下「利用者」といいます。）より提供を受ける個人情報の取り扱いにつき定めるものです。
+                        利用者は、本サービスの利用を開始した時点で、本プライバシーポリシーに同意したものと見做されます。
+                    </p>
+                </section>
+
+                <hr class="my-8 border-white/10">
+
+                <section class="space-y-4">
+                    <h2 class="text-xl font-serif text-white">２．利用目的</h2>
+                    <p class="text-sm">当社は、利用者の個人情報を、以下の目的で利用いたします。</p>
+                    <ul class="text-sm list-disc pl-6 space-y-2">
+                        <li>（１）本サービスまたは本サービスに関連するサービス（以下「関連サービス」といいます）の提供。</li>
+                        <li>（２）本サービスまたは関連サービス、当社キャンペーン等にかかる案内、アンケートの実施。</li>
+                        <li>（３）本サービスの改善、当社による新サービス、商品の開発、分析その他の調査、研究。</li>
+                        <li>（４）本サービスの不正利用防止。</li>
+                        <li>（５）有料サービス利用時等におけるご請求・決済処理。</li>
+                        <li>（６）当社以外の事業者が広告主となる広告情報等の告知。</li>
+                        <li>（７）個人を特定できないように処理を行った統計情報の作成、利用及び第三者提供。</li>
+                        <li>（８）本サービスのメンテナンス、その他重要なお知らせ等の連絡。</li>
+                        <li>（９）上記に付随、関連する業務、問い合わせ等への対応。</li>
+                    </ul>
+                </section>
+
+                <hr class="my-8 border-white/10">
+
+                <section class="space-y-4">
+                    <h2 class="text-xl font-serif text-white">３．第三者への開示、提供</h2>
+                    <p class="text-sm">
+                        当社は、次の各号に掲げる事項のいずれかに該当する場合以外は、利用者の個人情報を事前の許可なく第三者へ開示または提供いたしません。
+                    </p>
+                    <ul class="text-sm list-disc pl-6 space-y-2">
+                        <li>（１）本プライバシーポリシーに定めがある、または利用者本人の同意がある場合。</li>
+                        <li>（２）法令に基づく場合。</li>
+                        <li>（３）人の生命、身体または財産の保護のために必要な場合であって、利用者から同意を得ることが困難である場合。</li>
+                        <li>（４）公衆衛生の向上又は児童の健全な育成の推進のために特に必要がある場合であって、利用者から同意を得ることが困難であるとき。</li>
+                        <li>（５）国または地方公共団体等が公的な事務を実施するうえで、協力する必要がある場合であって、利用者から同意を得ることにより当該事務の遂行に支障が出るおそれがある場合。</li>
+                    </ul>
+                </section>
+
+                <hr class="my-8 border-white/10">
+
+                <section class="space-y-4">
+                    <h2 class="text-xl font-serif text-white">４．業務の委託</h2>
+                    <p class="text-sm">
+                        当社は、本サービスを利用者に提供するにあたり、その業務の一部を第三者（日本国外の委託先を含みます。）に委託し、
+                        利用目的の達成に必要な範囲で当該業務委託先に対して個人情報を提供することがあります。
+                        この場合、当社は、適切に当該業務委託先の管理、監督を行います。
+                    </p>
+                </section>
+
+                <hr class="my-8 border-white/10">
+
+                <section class="space-y-4">
+                    <h2 class="text-xl font-serif text-white">５．本プライバシーポリシーの変更</h2>
+                    <p class="text-sm">
+                        当社は、本プライバシーポリシーを変更することがあります。最新のプライバシーポリシーは本ページに掲載されます。
+                        掲載日をもって、新しいプライバシーポリシーが効力を生じるものとします。
+                    </p>
+                </section>
+
+                <hr class="my-8 border-white/10">
+
+                <section class="space-y-4">
+                    <h2 class="text-xl font-serif text-white">６．個人情報の取り扱いに関するお問い合わせ</h2>
+                    <p class="text-sm">
+                        当社は、法令に基づき、利用者本人の個人情報に関する開示、訂正、削除、追加、利用停止、消去等に対応いたします。
+                        これらのご要望、お問い合わせは、下記までお願いいたします。
+                    </p>
+
+                    <div class="text-sm bg-white/5 border border-white/10 rounded-xl p-4">
+                        <p class="text-white font-semibold">株式会社ネクストラボ　プライバシーポリシー窓口</p>
+                        <p>Email: info ＠ nextlabs.jp　＠を半角でお願いします。</p>
+                        <p>件名：プライバシーポリシーに関して</p>
+                    </div>
+
+                    <p class="text-sm mt-6">以上</p>
+                    <p class="text-xs text-slate-300/70 mt-8">2021年6月10日　施行</p>
+                </section>
+
+            </article>
+        </div>
+    </main>
+
+    <footer id="footer" class="py-12 border-t border-white/5 content-layer">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <svg width="16" height="16" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="10" y="25" width="25" height="60" fill="#b8a656" rx="3" transform="rotate(-30 22.5 55)" />
+                    <rect x="35" y="25" width="25" height="60" fill="#ffffff" rx="3" transform="rotate(-30 47.5 55)" />
+                    <rect x="60" y="25" width="25" height="60" fill="#ffffff" rx="3" transform="rotate(-30 72.5 55)" />
+                </svg>
+                <span class="text-slate-300 font-serif tracking-widest text-sm">NEXT LABS</span>
+            </div>
+
+            <div class="flex items-center gap-6 text-xs text-slate-500 tracking-wider">
+                <a class="hover:text-slate-300 transition" href="privacy.html">Privacy Policy</a>
+                <a class="hover:text-slate-300 transition" href="securitypolicy.html">Security Policy</a>
+                <span class="hidden md:inline">|</span>
+                <span>&copy; NEXTLAB INC. ALL RIGHTS RESERVED.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
