@@ -314,3 +314,147 @@ body.policy-page {
   position: relative;
   z-index: 10;
 }
+
+/* --------------------------------
+   Logo marquee (scrolling logos)
+---------------------------------- */
+.logo-marquee {
+  display: grid;
+  gap: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(15, 20, 25, 0.35);
+  border-radius: 18px;
+  padding: 14px 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* edge fade (nice blending) */
+.logo-marquee {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+
+
+
+.marquee-group {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.marquee-logo {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+  padding: 10px 14px;
+}
+
+@media (min-width: 768px) {
+  .marquee-logo {
+    height: 40px;
+    padding: 12px 18px;
+  }
+}
+
+/* ==============================
+   Seamless marquee motion (no jump)
+   - animate .marquee-inner, not .marquee-track
+   ============================== */
+
+/* 速度（小さいほど速い） */
+:root{
+  --marquee-duration-company: 16s; /* 上段（企業） */
+  --marquee-duration-uni: 18s;     /* 下段（大学） */
+}
+
+.marquee-track{
+  overflow: hidden;
+  position: relative;
+}
+
+/* ★追加：2列(=2グループ)を包んで動かす */
+.marquee-inner{
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  gap: 18px; /* 既存の gap と揃える */
+}
+
+.marquee-group{
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+/* 左へ */
+.marquee-left .marquee-inner{
+  animation: marquee-left var(--marquee-duration-company) linear infinite;
+}
+
+/* 右へ */
+.marquee-right .marquee-inner{
+  animation: marquee-right var(--marquee-duration-uni) linear infinite;
+}
+
+@keyframes marquee-left{
+  from { transform: translate3d(0,0,0); }
+  to   { transform: translate3d(-50%,0,0); }
+}
+
+@keyframes marquee-right{
+  from { transform: translate3d(-50%,0,0); }
+  to   { transform: translate3d(0,0,0); }
+}
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .marquee-left .marquee-inner,
+  .marquee-right .marquee-inner{
+    animation: none;
+    transform: none;
+  }
+  .logo-marquee{
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+
+/* --- Marquee rows (with labels) --- */
+.marquee-row{
+  display: grid;
+  gap: 10px;
+}
+
+.marquee-label{
+  font-size: 12px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(226,232,240,0.70);
+  padding-left: 6px;
+}
+
+/* ✅ ロゴを「もう少し大きく」 */
+.marquee-logo{
+  height: 70px;          /* ← 34px → 44px */
+  padding: 12px 18px;    /* ← 少し余白も増やす */
+  border-radius: 16px;
+}
+
+@media (min-width: 768px){
+  .marquee-logo{
+    height: 70px;        /* ← 40px → 54px */
+    padding: 14px 22px;
+  }
+}
+
+/* container spacing slightly larger to match bigger logos */
+.logo-marquee{
+  gap: 18px;
+  padding: 16px 14px;
+}

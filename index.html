@@ -2,465 +2,642 @@
 <html lang="ja" class="scroll-smooth">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NextLab Inc. | 株式会社ネクストラボ</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NextLab Inc. | 株式会社ネクストラボ</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
-    rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            serif: ['"Cinzel"', 'serif'],
-            sans: ['"Inter"', '"Noto Sans JP"', 'sans-serif'],
-          },
-          colors: {
-            'slate-850': '#151b23',
-            'slate-900': '#0f1419',
-          }
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cinzel"', 'serif'],
+                        sans: ['"Inter"', '"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        'slate-850': '#151b23',
+                        'slate-900': '#0f1419',
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
+    </script>
 
-  <!-- ✅ 分離したCSS -->
-  <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- ✅ 分離したCSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
 
-  <!-- ✅ 分離したJS -->
-  <script src="assets/js/main.js" defer></script>
+    <!-- ✅ 分離したJS -->
+    <script src="assets/js/main.js" defer></script>
 </head>
 
 <body class="text-slate-200 antialiased selection:bg-white selection:text-slate-900">
 
-  <!-- Background Layers -->
-  <div class="bg-layer bg-dark active" id="bgDark"></div>
-  <div class="bg-layer bg-white" id="bgWhite"></div>
-  <div class="bg-layer bg-dark-return" id="bgDarkReturn"></div>
+    <!-- Background Layers -->
+    <div class="bg-layer bg-dark active" id="bgDark"></div>
+    <div class="bg-layer bg-white" id="bgWhite"></div>
+    <div class="bg-layer bg-dark-return" id="bgDarkReturn"></div>
 
-  <!-- Grid Overlay -->
-  <div class="grid-overlay"></div>
+    <!-- Grid Overlay -->
+    <div class="grid-overlay"></div>
 
-  <!-- Hover Reveal Backgrounds -->
-  <div id="bg-bakuage" class="hover-reveal-bg"
-    style="background-image: url('https://placehold.co/1920x1080/1a202c/FFF?text=Bakuage+Dashboard+UI');"></div>
-  <div id="bg-readable" class="hover-reveal-bg"
-    style="background-image: url('https://placehold.co/1920x1080/1a202c/FFF?text=Readable+AI+Learning');"></div>
-  <div id="bg-ai" class="hover-reveal-bg"
-    style="background-image: url('https://placehold.co/1920x1080/1a202c/FFF?text=AI+Neural+Network');"></div>
-  <div id="bg-incubation" class="hover-reveal-bg"
-    style="background-image: url('https://placehold.co/1920x1080/1a202c/FFF?text=Business+Strategy+Map');"></div>
+    <!-- Hover Reveal Backgrounds -->
+    <div id="bg-bakuage" class="hover-reveal-bg"
+        style="background-image: url('https://placehold.co/1920x1080/1a202c/FFF?text=Bakuage+Dashboard+UI');"></div>
+    <div id="bg-readable" class="hover-reveal-bg"
+        style="background-image: url('https://placehold.co/1920x1080/1a202c/FFF?text=Readable+AI+Learning');"></div>
+    <div id="bg-ai" class="hover-reveal-bg"
+        style="background-image: url('https://placehold.co/1920x1080/1a202c/FFF?text=AI+Neural+Network');"></div>
+    <div id="bg-incubation" class="hover-reveal-bg"
+        style="background-image: url('https://placehold.co/1920x1080/1a202c/FFF?text=Business+Strategy+Map');"></div>
 
-  <!-- Navigation -->
-  <nav class="fixed w-full top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md content-layer">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#hero" class="flex items-center gap-3">
-        <div class="rolling-n" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="25" width="25" height="60" fill="#b8a656" rx="3" transform="rotate(-30 22.5 55)" />
-            <rect x="35" y="25" width="25" height="60" fill="#2d2d2d" rx="3" transform="rotate(-30 47.5 55)" />
-            <rect x="60" y="25" width="25" height="60" fill="#2d2d2d" rx="3" transform="rotate(-30 72.5 55)" />
-          </svg>
-        </div>
-        <span class="text-white font-serif tracking-widest text-lg font-semibold fade-in-logo">NEXT LABS</span>
-      </a>
-
-      <div class="hidden md:flex items-center gap-10 text-xs tracking-widest text-slate-300 font-medium uppercase">
-        <a href="#news" class="hover:text-white transition-colors">News</a>
-        <a href="#solutions" class="hover:text-white transition-colors">Solutions</a>
-        <a href="#company" class="hover:text-white transition-colors">Company</a>
-        <a href="#contact"
-          class="px-5 py-2 border border-white/20 text-white rounded-sm hover:bg-white hover:text-slate-900 transition-all duration-500">
-          Contact
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section id="hero" class="relative pt-40 pb-32 lg:pt-60 lg:pb-48 overflow-hidden content-layer">
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <div class="max-w-4xl fade-up-hidden js-scroll-trigger">
-        <p class="text-xs tracking-[0.2em] text-slate-300 mb-8 border-l border-white/30 pl-4 uppercase">
-          Advanced Intelligence for Business
-        </p>
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white leading-tight mb-8">
-          Defining the Future<br>
-          <span class="text-slate-300">of Corporate Logic.</span>
-        </h1>
-        <p class="text-lg text-slate-300 leading-relaxed max-w-2xl font-light mb-12">
-          ネクストラボは、AI技術と事業開発の知見を統合し、<br class="hidden md:block">
-          企業のオペレーションを再構築するテクノロジー・パートナーです。
-        </p>
-        <a href="#solutions"
-          class="group inline-flex items-center gap-3 text-white border-b border-white pb-1 hover:text-slate-200 hover:border-slate-200 transition">
-          <span class="tracking-widest text-sm">VIEW SOLUTIONS</span>
-          <span class="group-hover:translate-x-1 transition-transform">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- News -->
-  <section id="news" class="py-24 border-t border-white/5 content-layer">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="mb-12 fade-up-hidden js-scroll-trigger">
-        <h2 class="text-3xl md:text-4xl font-serif text-white mb-3">News</h2>
-        <p class="text-slate-300">最新のお知らせ</p>
-      </div>
-
-      <div class="glass glass-dark p-6 md:p-8 fade-up-hidden js-scroll-trigger">
-        <div class="space-y-1">
-          <a href="#" class="group block py-6 border-b border-white/10 hover:border-white/30 transition-all">
-            <div class="flex flex-col md:flex-row md:items-center gap-4">
-              <time class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2026.01.15</time>
-              <span class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">プレスリリース</span>
-              <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
-                Bakuage Suite、大手EC事業者への導入実績が100社を突破
-              </p>
-            </div>
-          </a>
-
-          <a href="#" class="group block py-6 border-b border-white/10 hover:border-white/30 transition-all">
-            <div class="flex flex-col md:flex-row md:items-center gap-4">
-              <time class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2025.12.20</time>
-              <span class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">メディア掲載</span>
-              <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
-                代表・亀井のインタビュー記事がWeb担当者Forumに掲載されました
-              </p>
-            </div>
-          </a>
-
-          <a href="#" class="group block py-6 hover:border-white/30 transition-all">
-            <div class="flex flex-col md:flex-row md:items-center gap-4">
-              <time class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2025.11.01</time>
-              <span class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">サービス</span>
-              <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
-                Readable、累計翻訳文字数50億文字を達成
-              </p>
-            </div>
-          </a>
-
-          <!-- ✅ 追加：PRESIDENT Online -->
-          <a href="https://president.jp/articles/-/22146?page=1" target="_blank" rel="noopener noreferrer"
-            class="group block py-6 border-t border-white/10 hover:border-white/30 transition-all">
-            <div class="flex flex-col md:flex-row md:items-center gap-4">
-              <time class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2017.05.23</time>
-              <span class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">メディア掲載</span>
-              <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
-                オタク文化輸出するTokyo Otaku Mode マンガ、コスプレ、寿司ソックス
-              </p>
-            </div>
-          </a>
-        </div>
-
-        <div class="mt-10">
-          <a href="#"
-            class="group inline-flex items-center gap-3 text-white border-b border-white pb-1 hover:text-slate-200 hover:border-slate-200 transition">
-            <span class="tracking-widest text-sm">VIEW ALL NEWS</span>
-            <span class="group-hover:translate-x-1 transition-transform">→</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Solutions (white zone) -->
-  <section id="solutions"
-    class="py-24 border-t border-slate-200/30 relative content-layer min-h-screen flex items-center">
-    <div class="max-w-7xl mx-auto px-6 w-full">
-      <div class="mb-16 fade-up-hidden js-scroll-trigger">
-        <h2 class="text-3xl md:text-4xl font-serif mb-4 solutions-heading">Core Solutions</h2>
-        <p class="solutions-subheading">知性と実装力で、ビジネスを加速させる。</p>
-      </div>
-
-      <div class="glass glass-light p-3 md:p-4 fade-up-hidden js-scroll-trigger">
-        <div class="space-y-2">
-          <!-- Bakuage -->
-          <a href="https://bakuage.co/" target="_blank" rel="noopener noreferrer"
-            class="group block py-8 border-b border-slate-900/10 hover:border-slate-900/50 transition-all duration-500 js-hover-reveal"
-            data-bg-target="bg-bakuage">
-            <div class="flex items-center justify-between gap-8">
-              <div class="flex-1">
-                <div class="flex items-center gap-6 mb-2">
-                  <svg class="h-10 w-10" viewBox="0 0 64 64" aria-hidden="true">
-                    <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9"></rect>
-                    <path d="M18 42V22h10c7 0 11 4 11 10s-4 10-11 10H18z" fill="#fff"></path>
-                    <path d="M29 27h-5v10h5c3 0 5-2 5-5s-2-5-5-5z" fill="#b8a656"></path>
-                  </svg>
-                  <h3
-                    class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
-                    Bakuage Suite
-                  </h3>
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md content-layer">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#hero" class="flex items-center gap-3">
+                <div class="rolling-n" aria-hidden="true">
+                    <svg width="32" height="32" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="25" width="25" height="60" fill="#b8a656" rx="3"
+                            transform="rotate(-30 22.5 55)" />
+                        <rect x="35" y="25" width="25" height="60" fill="#2d2d2d" rx="3"
+                            transform="rotate(-30 47.5 55)" />
+                        <rect x="60" y="25" width="25" height="60" fill="#2d2d2d" rx="3"
+                            transform="rotate(-30 72.5 55)" />
+                    </svg>
                 </div>
-                <span
-                  class="block text-sm font-sans text-slate-700 mt-3 ml-16 font-light group-hover:text-slate-900 leading-relaxed">
-                  メルカリなどの大手EC事業者が導入する業務自動化プラットフォーム。返品・送金・住所確認など煩雑なバックオフィス業務を完全自動化し、オペレーションコストを劇的に削減します。
-                </span>
-              </div>
-              <span
-                class="hidden lg:block text-xs tracking-widest text-slate-600 group-hover:text-slate-900 transition">
-                01 / OPERATIONS
-              </span>
-            </div>
-          </a>
+                <span class="text-white font-serif tracking-widest text-lg font-semibold fade-in-logo">NEXT LABS</span>
+            </a>
 
-          <!-- Readable -->
-          <a href="https://lp.readable.jp/" target="_blank" rel="noopener noreferrer"
-            class="group block py-8 border-b border-slate-900/10 hover:border-slate-900/50 transition-all duration-500 js-hover-reveal"
-            data-bg-target="bg-readable">
-            <div class="flex items-center justify-between gap-8">
-              <div class="flex-1">
-                <div class="flex items-center gap-6 mb-2">
-                  <svg class="h-10 w-10" viewBox="0 0 64 64" aria-hidden="true">
-                    <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9"></rect>
-                    <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
-                    <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
-                  </svg>
-                  <h3
-                    class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
-                    Readable
-                  </h3>
+            <div
+                class="hidden md:flex items-center gap-10 text-xs tracking-widest text-slate-300 font-medium uppercase">
+                <a href="#news" class="hover:text-white transition-colors">News</a>
+                <a href="#solutions" class="hover:text-white transition-colors">Solutions</a>
+                <a href="#company" class="hover:text-white transition-colors">Company</a>
+                <a href="#contact"
+                    class="px-5 py-2 border border-white/20 text-white rounded-sm hover:bg-white hover:text-slate-900 transition-all duration-500">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hero" class="relative pt-40 pb-32 lg:pt-60 lg:pb-48 overflow-hidden content-layer">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="max-w-4xl fade-up-hidden js-scroll-trigger">
+                <p class="text-xs tracking-[0.2em] text-slate-300 mb-8 border-l border-white/30 pl-4 uppercase">
+                    Advanced Intelligence for Business
+                </p>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white leading-tight mb-8">
+                    Defining the Future<br>
+                    <span class="text-slate-300">of Corporate Logic.</span>
+                </h1>
+                <p class="text-lg text-slate-300 leading-relaxed max-w-2xl font-light mb-12">
+                    ネクストラボは、AI技術と事業開発の知見を統合し、<br class="hidden md:block">
+                    企業のオペレーションを再構築するテクノロジー・パートナーです。
+                </p>
+                <a href="#solutions"
+                    class="group inline-flex items-center gap-3 text-white border-b border-white pb-1 hover:text-slate-200 hover:border-slate-200 transition">
+                    <span class="tracking-widest text-sm">VIEW SOLUTIONS</span>
+                    <span class="group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Marquee (scrolling logos) -->
+    <section id="logo-marquee" class="py-14 border-t border-white/5 content-layer">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-xs tracking-[0.2em] text-slate-300/80 uppercase mb-6">
+                Featured In
+            </p>
+
+            <div class="logo-marquee">
+
+                <!-- ===== Row 1: Company logos (left) ===== -->
+                <div class="marquee-row">
+
+                    <div class="marquee-track marquee-left" aria-label="Company logos scrolling left">
+                        <div class="marquee-inner">
+                            <div class="marquee-group">
+                                <!-- ▼▼▼ ここに企業ロゴを追加（srcはあなたが指定） ▼▼▼ -->
+                                <img src="assets/media/comp_asiro_trans.png" alt="asiro" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/comp_enechange_trans.png" alt="enechange" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/comp_fujitsu_trans.png" alt="fujitsu" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/comp_mitsubishidenki_trans.png" alt="mitsubishidenki"
+                                    class="marquee-logo" loading="lazy" decoding="async">
+                                <img src="assets/media/comp_murata_trans.png" alt="murata" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/comp_shimizukensetsu_trans.png" alt="shimizukensetsu"
+                                    class="marquee-logo" loading="lazy" decoding="async">
+                                <img src="assets/media/comp_shiseido_trans.png" alt="shiseido" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/comp_softbank_trans.png" alt="softbank" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/comp_toray_trans.webp" alt="toray" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <!-- ▲▲▲ ここまで ▲▲▲ -->
+                            </div>
+
+                            <!-- duplicate（途切れないループ用：上と同じ順で複製） -->
+                            <div class="marquee-group" aria-hidden="true">
+                                <img src="assets/media/comp_asiro_trans.png" alt="" class="marquee-logo" loading="lazy"
+                                    decoding="async">
+                                <img src="assets/media/comp_enechange_trans.png" alt="" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/comp_fujitsu_trans.png" alt="" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/comp_mitsubishidenki_trans.png" alt="" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/comp_murata_trans.png" alt="" class="marquee-logo" loading="lazy"
+                                    decoding="async">
+                                <img src="assets/media/comp_shimizukensetsu_trans.png" alt="" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/comp_shiseido_trans.png" alt="" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/comp_softbank_trans.png" alt="" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/comp_toray_trans.webp" alt="" class="marquee-logo" loading="lazy"
+                                    decoding="async">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <span
-                  class="block text-sm font-sans text-slate-700 mt-3 ml-16 font-light group-hover:text-slate-900 leading-relaxed">
-                  PDFレイアウト完全保持で約30秒の高精度AI翻訳。原文・訳文の見開き表示、図表・数式もそのまま。累計50億文字の翻訳実績を持つ、研究者・ビジネスパーソン必携ツール。
-                </span>
-              </div>
-              <span
-                class="hidden lg:block text-xs tracking-widest text-slate-600 group-hover:text-slate-900 transition">
-                02 / TRANSLATION
-              </span>
-            </div>
-          </a>
 
-          <!-- AI Implementation -->
-          <a href="#"
-            class="group block py-8 border-b border-slate-900/10 hover:border-slate-900/50 transition-all duration-500 js-hover-reveal"
-            data-bg-target="bg-ai">
-            <div class="flex items-baseline justify-between gap-8">
-              <div class="flex-1">
-                <h3 class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
-                  AI Implementation
-                </h3>
-                <span
-                  class="block text-sm font-sans text-slate-700 mt-3 font-light group-hover:text-slate-900 leading-relaxed">
-                  ReadableやBakuageで培った独自AI技術をあなたのビジネスへ。生成AI(LLM)のカスタム実装から業務統合まで、実装ノウハウで社会の生産性向上を実現します。
-                </span>
-              </div>
-              <span
-                class="hidden lg:block text-xs tracking-widest text-slate-600 group-hover:text-slate-900 transition">
-                03 / TECHNOLOGY
-              </span>
-            </div>
-          </a>
+                <!-- ===== Row 2: University logos (right) ===== -->
+                <div class="marquee-row">
 
-          <!-- Business Incubation -->
-          <a href="#"
-            class="group block py-8 hover:border-slate-900/50 transition-all duration-500 js-hover-reveal"
-            data-bg-target="bg-incubation">
-            <div class="flex items-baseline justify-between gap-8">
-              <div class="flex-1">
-                <h3 class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
-                  Business Incubation
-                </h3>
-                <span
-                  class="block text-sm font-sans text-slate-700 mt-3 font-light group-hover:text-slate-900 leading-relaxed">
-                  データと論理に基づく新規事業開発の伴走支援。市場調査からプロダクト設計、Go-to-Market戦略まで、連続起業家としての経験で事業の成功確率を高めます。
-                </span>
-              </div>
-              <span
-                class="hidden lg:block text-xs tracking-widest text-slate-600 group-hover:text-slate-900 transition">
-                04 / STRATEGY
-              </span>
+                    <div class="marquee-track marquee-right" aria-label="University logos scrolling right">
+                        <div class="marquee-inner">
+                            <div class="marquee-group">
+                                <!-- ▼▼▼ ここに大学ロゴを追加（srcはあなたが指定） ▼▼▼ -->
+                                <img src="assets/media/univ_kokugakuin_trans.png" alt="國學院大学" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/univ_kyoto_trans.png" alt="京都大学" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/univ_okayama_trans.png" alt="岡山大学" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/univ_osakaika_trans.png" alt="大阪医科薬科大学" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/univ_tokyo_trans.png" alt="東京大学" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/univ_tsukuba_trans.png" alt="筑波大学" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/univ_waseda_trans.png" alt="早稲田大学" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/univ_tohoku_trans.png" alt="東北大学" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <!-- ▲▲▲ ここまで ▲▲▲ -->
+                            </div>
+
+                            <!-- duplicate（途切れないループ用：上と同じ順で複製） -->
+                            <div class="marquee-group" aria-hidden="true">
+                                <img src="assets/media/univ_kokugakuin_trans.png" alt="" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/univ_kyoto_trans.png" alt="" class="marquee-logo" loading="lazy"
+                                    decoding="async">
+                                <img src="assets/media/univ_okayama_trans.png" alt="" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/univ_osakaika_trans.png" alt="" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/univ_tokyo_trans.png" alt="" class="marquee-logo" loading="lazy"
+                                    decoding="async">
+                                <img src="assets/media/univ_tsukuba_trans.png" alt="" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/univ_waseda_trans.png" alt="" class="marquee-logo" loading="lazy"
+                                    decoding="async">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-          </a>
+        </div>
+    </section>
+
+
+    <!-- News -->
+    <section id="news" class="py-24 border-t border-white/5 content-layer">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-12 fade-up-hidden js-scroll-trigger">
+                <h2 class="text-3xl md:text-4xl font-serif text-white mb-3">News</h2>
+                <p class="text-slate-300">最新のお知らせ</p>
+            </div>
+
+            <div class="glass glass-dark p-6 md:p-8 fade-up-hidden js-scroll-trigger">
+                <div class="space-y-1">
+                    <a href="https://prtimes.jp/main/html/rd/p/000000012.000110838.html" target="_blank"
+                        rel="noopener noreferrer"
+                        class="group block py-6 border-b border-white/10 hover:border-white/30 transition-all">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <time
+                                class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2026.01.22</time>
+                            <span
+                                class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">プレスリリース</span>
+                            <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
+                                ECバックオフィス業務を一元化し、利益と顧客体験を“爆上げ”する「バクアゲ」を発表
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="group block py-6 border-b border-white/10 hover:border-white/30 transition-all">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <time
+                                class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2026.01.15</time>
+                            <span
+                                class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">プレスリリース</span>
+                            <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
+                                Bakuage Suite、大手EC事業者への導入実績が100社を突破
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="group block py-6 border-b border-white/10 hover:border-white/30 transition-all">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <time
+                                class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2025.12.20</time>
+                            <span
+                                class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">メディア掲載</span>
+                            <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
+                                代表・亀井のインタビュー記事がWeb担当者Forumに掲載されました
+                            </p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="group block py-6 border-b border-white/10 hover:border-white/30 transition-all">
+                        <div class="flex flex-col md:flex-row md:items-center gap-4">
+                            <time
+                                class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2025.11.01</time>
+                            <span
+                                class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">サービス</span>
+                            <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
+                                Readable、累計翻訳文字数50億文字を達成
+                            </p>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="mt-10">
+                    <a href="#"
+                        class="group inline-flex items-center gap-3 text-white border-b border-white pb-1 hover:text-slate-200 hover:border-slate-200 transition">
+                        <span class="tracking-widest text-sm">VIEW ALL NEWS</span>
+                        <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions (white zone) -->
+    <section id="solutions"
+        class="py-24 border-t border-slate-200/30 relative content-layer min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-6 w-full">
+            <div class="mb-16 fade-up-hidden js-scroll-trigger">
+                <h2 class="text-3xl md:text-4xl font-serif mb-4 solutions-heading">Core Solutions</h2>
+                <p class="solutions-subheading">知性と実装力で、ビジネスを加速させる。</p>
+            </div>
+
+            <div class="glass glass-light p-3 md:p-4 fade-up-hidden js-scroll-trigger">
+                <div class="space-y-2">
+                    <!-- Bakuage -->
+                    <a href="https://bakuage.co/" target="_blank" rel="noopener noreferrer"
+                        class="group block py-8 border-b border-slate-900/10 hover:border-slate-900/50 transition-all duration-500 js-hover-reveal"
+                        data-bg-target="bg-bakuage">
+                        <div class="flex items-center justify-between gap-8">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-6 mb-2">
+                                    <svg class="h-10 w-10" viewBox="0 0 64 64" aria-hidden="true">
+                                        <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9">
+                                        </rect>
+                                        <path d="M18 42V22h10c7 0 11 4 11 10s-4 10-11 10H18z" fill="#fff"></path>
+                                        <path d="M29 27h-5v10h5c3 0 5-2 5-5s-2-5-5-5z" fill="#b8a656"></path>
+                                    </svg>
+                                    <h3
+                                        class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
+                                        Bakuage Suite
+                                    </h3>
+                                </div>
+                                <span
+                                    class="block text-sm font-sans text-slate-700 mt-3 ml-16 font-light group-hover:text-slate-900 leading-relaxed">
+                                    メルカリなどの大手EC事業者が導入する業務自動化プラットフォーム。返品・送金・住所確認など煩雑なバックオフィス業務を完全自動化し、オペレーションコストを劇的に削減します。
+                                </span>
+                            </div>
+                            <span
+                                class="hidden lg:block text-xs tracking-widest text-slate-600 group-hover:text-slate-900 transition">
+                                01 / OPERATIONS
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Readable -->
+                    <a href="https://lp.readable.jp/" target="_blank" rel="noopener noreferrer"
+                        class="group block py-8 border-b border-slate-900/10 hover:border-slate-900/50 transition-all duration-500 js-hover-reveal"
+                        data-bg-target="bg-readable">
+                        <div class="flex items-center justify-between gap-8">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-6 mb-2">
+                                    <svg class="h-10 w-10" viewBox="0 0 64 64" aria-hidden="true">
+                                        <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9">
+                                        </rect>
+                                        <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
+                                        <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
+                                    </svg>
+                                    <h3
+                                        class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
+                                        Readable
+                                    </h3>
+                                </div>
+                                <span
+                                    class="block text-sm font-sans text-slate-700 mt-3 ml-16 font-light group-hover:text-slate-900 leading-relaxed">
+                                    PDFレイアウト完全保持で約30秒の高精度AI翻訳。原文・訳文の見開き表示、図表・数式もそのまま。累計50億文字の翻訳実績を持つ、研究者・ビジネスパーソン必携ツール。
+                                </span>
+                            </div>
+                            <span
+                                class="hidden lg:block text-xs tracking-widest text-slate-600 group-hover:text-slate-900 transition">
+                                02 / TRANSLATION
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- AI Implementation -->
+                    <a href="#"
+                        class="group block py-8 border-b border-slate-900/10 hover:border-slate-900/50 transition-all duration-500 js-hover-reveal"
+                        data-bg-target="bg-ai">
+                        <div class="flex items-baseline justify-between gap-8">
+                            <div class="flex-1">
+                                <h3
+                                    class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
+                                    AI Implementation
+                                </h3>
+                                <span
+                                    class="block text-sm font-sans text-slate-700 mt-3 font-light group-hover:text-slate-900 leading-relaxed">
+                                    ReadableやBakuageで培った独自AI技術をあなたのビジネスへ。生成AI(LLM)のカスタム実装から業務統合まで、実装ノウハウで社会の生産性向上を実現します。
+                                </span>
+                            </div>
+                            <span
+                                class="hidden lg:block text-xs tracking-widest text-slate-600 group-hover:text-slate-900 transition">
+                                03 / TECHNOLOGY
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Business Incubation -->
+                    <a href="#"
+                        class="group block py-8 hover:border-slate-900/50 transition-all duration-500 js-hover-reveal"
+                        data-bg-target="bg-incubation">
+                        <div class="flex items-baseline justify-between gap-8">
+                            <div class="flex-1">
+                                <h3
+                                    class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
+                                    Business Incubation
+                                </h3>
+                                <span
+                                    class="block text-sm font-sans text-slate-700 mt-3 font-light group-hover:text-slate-900 leading-relaxed">
+                                    データと論理に基づく新規事業開発の伴走支援。市場調査からプロダクト設計、Go-to-Market戦略まで、連続起業家としての経験で事業の成功確率を高めます。
+                                </span>
+                            </div>
+                            <span
+                                class="hidden lg:block text-xs tracking-widest text-slate-600 group-hover:text-slate-900 transition">
+                                04 / STRATEGY
+                            </span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company (bottom dark) -->
+    <section id="company" class="py-32 border-t border-white/5 content-layer">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-24 items-start">
+
+                <div class="fade-up-hidden js-scroll-trigger">
+                    <h2 class="text-3xl font-serif text-white mb-10">Corporate Profile</h2>
+                    <div class="glass glass-dark p-6 md:p-8">
+                        <dl class="divide-y divide-white/10 text-sm">
+                            <div class="py-5 grid grid-cols-3 gap-4">
+                                <dt class="text-slate-300/70 font-medium">Company Name</dt>
+                                <dd class="col-span-2 text-white">株式会社ネクストラボ<br>(NextLab Inc.)</dd>
+                            </div>
+                            <div class="py-5 grid grid-cols-3 gap-4">
+                                <dt class="text-slate-300/70 font-medium">Headquarters</dt>
+                                <dd class="col-span-2 text-white leading-relaxed">
+                                    〒150-0002<br>
+                                    東京都渋谷区渋谷2-19-15<br>
+                                    宮益坂ビルディング
+                                </dd>
+                            </div>
+                            <div class="py-5 grid grid-cols-3 gap-4">
+                                <dt class="text-slate-300/70 font-medium">Established</dt>
+                                <dd class="col-span-2 text-white">2021年8月</dd>
+                            </div>
+                            <div class="py-5 grid grid-cols-3 gap-4">
+                                <dt class="text-slate-300/70 font-medium">Business</dt>
+                                <dd class="col-span-2 text-white">
+                                    BtoBソリューション開発(Bakuage, Readable)<br>
+                                    AI実装コンサルティング<br>
+                                    新規事業開発支援
+                                </dd>
+                            </div>
+                            <div class="py-5 grid grid-cols-3 gap-4">
+                                <dt class="text-slate-300/70 font-medium">Invoice Number</dt>
+                                <dd class="col-span-2 text-white font-mono">T7011001142377</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="fade-up-hidden js-scroll-trigger" style="transition-delay: 200ms;">
+                    <h2 class="text-3xl font-serif text-white mb-10">Leadership</h2>
+                    <div class="glass glass-dark p-6 md:p-8">
+                        <p class="text-xs tracking-[0.2em] text-slate-300/70 mb-2 uppercase">
+                            Founder / CEO / Customer Growth Officer
+                        </p>
+                        <h3 class="text-2xl font-serif text-white mb-6">
+                            Tomohide Kamei
+                            <span class="text-base text-slate-300 font-sans font-normal ml-2">亀井 智英</span>
+                        </h3>
+                        <p class="text-slate-200/80 text-sm leading-loose mb-8">
+                            連続起業家、投資家、プロデューサー。<br>
+                            電通、CARTA HOLDINGS、デジタルガレージといった上場企業でのキャリアを経て、Tokyo Otaku Modeを共同創業し小学館への売却を実現。<br>
+                            エンジニアリングとビジネスの境界線を溶かし、本質的な価値創造を追求する。
+                        </p>
+                        <div class="h-px w-20 bg-white/20 mb-8"></div>
+                        <div class="space-y-4">
+                            <p class="text-xs tracking-[0.2em] text-slate-300/70 uppercase">Career History</p>
+                            <div class="grid grid-cols-2 gap-6 opacity-90">
+                                <div class="text-white font-semibold text-base tracking-tight">dentsu</div>
+                                <div class="text-white font-semibold text-base">CARTA HOLDINGS</div>
+                                <div class="text-white font-semibold text-base">Digital Garage</div>
+                                <div class="text-white font-semibold text-base">500 Global</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Featured Article (centered under Corporate Profile + Leadership) -->
+            <div class="mt-14 md:mt-16 content-layer">
+                <a href="https://president.jp/articles/-/22146?page=1" target="_blank" rel="noopener noreferrer"
+                    class="group block mx-auto max-w-4xl lg:max-w-3xl glass glass-dark p-6 md:p-7 border border-white/10 hover:border-white/25 transition-all duration-300">
+                    <div class="flex flex-col md:flex-row gap-6 md:items-center">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span
+                                    class="inline-flex items-center gap-2 text-[11px] tracking-[0.22em] font-semibold uppercase text-[#b8a656]">
+                                    PICK UP!
+                                    <span aria-hidden="true">🔎</span>
+                                </span>
+                                <span class="text-[11px] tracking-widest text-slate-400 uppercase">PRESIDENT
+                                    Online</span>
+                            </div>
+
+                            <h3
+                                class="text-xl md:text-[22px] font-serif text-white leading-snug mb-2 group-hover:text-slate-200 transition-colors">
+                                オタク文化輸出するTokyo Otaku Mode
+                            </h3>
+
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                ジャーナリスト田原総一朗氏と対談しました。
+                            </p>
+
+                            <div
+                                class="mt-4 inline-flex items-center gap-2 text-xs tracking-widest text-slate-300 group-hover:text-white transition-colors">
+                                <span>READ ARTICLE</span>
+                                <span class="group-hover:translate-x-1 transition-transform">→</span>
+                            </div>
+                        </div>
+
+                        <div class="w-full md:w-64 lg:w-72">
+                            <div
+                                class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 aspect-[16/9]">
+                                <img src="https://president.ismcdn.jp/mwimgs/5/2/1050wm/img_5202426b0f1253966ac8e2b5fbf68c5262579.jpg"
+                                    alt="PRESIDENT Online 記事サムネイル" class="absolute inset-0 w-full h-full object-cover"
+                                    loading="lazy" />
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+            <!-- ✅ メディア掲載実績（個別ロゴ） -->
+            <div class="mt-16 fade-up-hidden js-scroll-trigger">
+                <h2 class="text-3xl font-serif text-white mb-10">メディア掲載実績</h2>
+
+                <div class="glass glass-dark p-6 md:p-8">
+                    <p class="text-slate-300/80 text-sm mb-6">
+                        掲載・紹介いただいたメディア一覧（抜粋）
+                    </p>
+
+                    <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+                        <li class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center">
+                            <img src="assets/media/media_nikkei_trans.png" alt="日本経済新聞"
+                                class="h-8 md:h-9 w-auto object-contain opacity-95" loading="lazy" decoding="async">
+                        </li>
+
+                        <li class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center">
+                            <img src="assets/media/media_mj.png" alt="日経MJ"
+                                class="h-8 md:h-9 w-auto object-contain opacity-95" loading="lazy" decoding="async">
+                        </li>
+
+                        <li class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center">
+                            <img src="assets/media/media_xtrend_trans.png" alt="日経クロストレンド"
+                                class="h-8 md:h-9 w-auto object-contain opacity-95" loading="lazy" decoding="async">
+                        </li>
+
+                        <li class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center">
+                            <img src="assets/media/media_businessdaily_trans.png" alt="日経産業新聞"
+                                class="h-10 md:h-11 w-auto object-contain opacity-95" loading="lazy" decoding="async">
+                        </li>
+
+                        <li class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center">
+                            <img src="assets/media/media_nettokeizai_trans.png" alt="日本ネット経済新聞"
+                                class="h-8 md:h-9 w-auto object-contain opacity-95" loading="lazy" decoding="async">
+                        </li>
+
+                        <li class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center">
+                            <img src="assets/media/media_senken_trans.png" alt="繊研新聞社"
+                                class="h-8 md:h-9 w-auto object-contain opacity-95" loading="lazy" decoding="async">
+                        </li>
+
+                        <li
+                            class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center sm:col-span-2 lg:col-span-1">
+                            <img src="assets/media/media_netshop.png" alt="ネットショップ担当者フォーラム"
+                                class="h-9 md:h-10 w-auto object-contain opacity-95" loading="lazy" decoding="async">
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Company (bottom dark) -->
-  <section id="company" class="py-32 border-t border-white/5 content-layer">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-24 items-start">
-
-        <div class="fade-up-hidden js-scroll-trigger">
-          <h2 class="text-3xl font-serif text-white mb-10">Corporate Profile</h2>
-          <div class="glass glass-dark p-6 md:p-8">
-            <dl class="divide-y divide-white/10 text-sm">
-              <div class="py-5 grid grid-cols-3 gap-4">
-                <dt class="text-slate-300/70 font-medium">Company Name</dt>
-                <dd class="col-span-2 text-white">株式会社ネクストラボ<br>(NextLab Inc.)</dd>
-              </div>
-              <div class="py-5 grid grid-cols-3 gap-4">
-                <dt class="text-slate-300/70 font-medium">Headquarters</dt>
-                <dd class="col-span-2 text-white leading-relaxed">
-                  〒150-0002<br>
-                  東京都渋谷区渋谷2-19-15<br>
-                  宮益坂ビルディング
-                </dd>
-              </div>
-              <div class="py-5 grid grid-cols-3 gap-4">
-                <dt class="text-slate-300/70 font-medium">Established</dt>
-                <dd class="col-span-2 text-white">2021年8月</dd>
-              </div>
-              <div class="py-5 grid grid-cols-3 gap-4">
-                <dt class="text-slate-300/70 font-medium">Business</dt>
-                <dd class="col-span-2 text-white">
-                  BtoBソリューション開発(Bakuage, Readable)<br>
-                  AI実装コンサルティング<br>
-                  新規事業開発支援
-                </dd>
-              </div>
-              <div class="py-5 grid grid-cols-3 gap-4">
-                <dt class="text-slate-300/70 font-medium">Invoice Number</dt>
-                <dd class="col-span-2 text-white font-mono">T7011001142377</dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-
-        <div class="fade-up-hidden js-scroll-trigger" style="transition-delay: 200ms;">
-          <h2 class="text-3xl font-serif text-white mb-10">Leadership</h2>
-          <div class="glass glass-dark p-6 md:p-8">
-            <p class="text-xs tracking-[0.2em] text-slate-300/70 mb-2 uppercase">
-              Founder / CEO / Customer Growth Officer
-            </p>
-            <h3 class="text-2xl font-serif text-white mb-6">
-              Tomohide Kamei
-              <span class="text-base text-slate-300 font-sans font-normal ml-2">亀井 智英</span>
-            </h3>
-            <p class="text-slate-200/80 text-sm leading-loose mb-8">
-              連続起業家、投資家、プロデューサー。<br>
-              電通、CARTA HOLDINGS、デジタルガレージといった上場企業でのキャリアを経て、Tokyo Otaku Modeを共同創業し小学館への売却を実現。<br>
-              エンジニアリングとビジネスの境界線を溶かし、本質的な価値創造を追求する。
-            </p>
-            <div class="h-px w-20 bg-white/20 mb-8"></div>
-            <div class="space-y-4">
-              <p class="text-xs tracking-[0.2em] text-slate-300/70 uppercase">Career History</p>
-              <div class="grid grid-cols-2 gap-6 opacity-90">
-                <div class="text-white font-semibold text-base tracking-tight">dentsu</div>
-                <div class="text-white font-semibold text-base">CARTA HOLDINGS</div>
-                <div class="text-white font-semibold text-base">Digital Garage</div>
-                <div class="text-white font-semibold text-base">500 Global</div>
-              </div>
+    <!-- Contact -->
+    <section id="contact" class="py-28 border-t border-white/5 content-layer">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="fade-up-hidden js-scroll-trigger">
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-4">Contact</h2>
+                <p class="text-slate-300 mb-10">
+                    ご相談・お問い合わせは、以下よりご連絡ください。<br>
+                    （プレビュー用のため、フォームはプレースホルダーです）
+                </p>
             </div>
-          </div>
+
+            <div class="glass glass-dark p-6 md:p-8 max-w-3xl fade-up-hidden js-scroll-trigger">
+                <form onsubmit="event.preventDefault();" class="space-y-5">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <input type="text" placeholder="お名前" class="form-input" />
+                        <input type="email" placeholder="メールアドレス" class="form-input" />
+                    </div>
+                    <input type="text" placeholder="件名" class="form-input" />
+                    <textarea rows="5" placeholder="お問い合わせ内容" class="form-input"></textarea>
+
+                    <div class="pt-2">
+                        <button type="submit" class="btn-primary">
+                            送信（ダミー）
+                        </button>
+                        <p class="mt-3 text-xs text-slate-300/70">
+                            ※ プレビュー用のため送信は行われません。
+                        </p>
+                    </div>
+                </form>
+            </div>
         </div>
+    </section>
 
-      </div>
-
-      <!-- ✅ メディア掲載実績（個別ロゴ） -->
-      <div class="mt-16 fade-up-hidden js-scroll-trigger">
-        <h2 class="text-3xl font-serif text-white mb-10">メディア掲載実績</h2>
-
-        <div class="glass glass-dark p-6 md:p-8">
-          <p class="text-slate-300/80 text-sm mb-6">
-            掲載・紹介いただいたメディア一覧（抜粋）
-          </p>
-
-          <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
-            <li class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center">
-              <img src="assets/media/nikkei.png" alt="日本経済新聞" class="h-8 md:h-9 w-auto object-contain opacity-95"
-                loading="lazy" decoding="async">
-            </li>
-
-            <li class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center">
-              <img src="assets/media/nikkei_mj.png" alt="日経MJ" class="h-8 md:h-9 w-auto object-contain opacity-95"
-                loading="lazy" decoding="async">
-            </li>
-
-            <li class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center">
-              <img src="assets/media/nikkei_xtrend.png" alt="日経クロストレンド"
-                class="h-8 md:h-9 w-auto object-contain opacity-95" loading="lazy" decoding="async">
-            </li>
-
-            <li class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center">
-              <img src="assets/media/nikkei_sangyo.png" alt="日経産業新聞"
-                class="h-10 md:h-11 w-auto object-contain opacity-95" loading="lazy" decoding="async">
-            </li>
-
-            <li class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center">
-              <img src="assets/media/net_keizai.png" alt="日本ネット経済新聞"
-                class="h-8 md:h-9 w-auto object-contain opacity-95" loading="lazy" decoding="async">
-            </li>
-
-            <li class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center">
-              <img src="assets/media/senken.png" alt="繊研新聞社" class="h-8 md:h-9 w-auto object-contain opacity-95"
-                loading="lazy" decoding="async">
-            </li>
-
-            <li class="bg-white/95 rounded-2xl p-4 md:p-5 flex items-center justify-center sm:col-span-2 lg:col-span-1">
-              <img src="assets/media/netshop_forum.png" alt="ネットショップ担当者フォーラム"
-                class="h-9 md:h-10 w-auto object-contain opacity-95" loading="lazy" decoding="async">
-            </li>
-          </ul>
+    <!-- Footer -->
+    <footer id="footer" class="py-12 border-t border-white/5 content-layer">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <svg width="16" height="16" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="10" y="25" width="25" height="60" fill="#b8a656" rx="3" transform="rotate(-30 22.5 55)" />
+                    <rect x="35" y="25" width="25" height="60" fill="#ffffff" rx="3" transform="rotate(-30 47.5 55)" />
+                    <rect x="60" y="25" width="25" height="60" fill="#ffffff" rx="3" transform="rotate(-30 72.5 55)" />
+                </svg>
+                <span class="text-slate-300 font-serif tracking-widest text-sm">NEXT LABS</span>
+            </div>
+            <div class="flex items-center gap-6 text-xs text-slate-500 tracking-wider">
+                <a class="hover:text-slate-300 transition" href="privacy.html">Privacy Policy</a>
+                <a class="hover:text-slate-300 transition" href="securitypolicy.html">Security Policy</a>
+                <span class="hidden md:inline">|</span>
+                <span>&copy; NEXTLAB INC. ALL RIGHTS RESERVED.</span>
+            </div>
         </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-28 border-t border-white/5 content-layer">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="fade-up-hidden js-scroll-trigger">
-        <h2 class="text-4xl md:text-5xl font-serif text-white mb-4">Contact</h2>
-        <p class="text-slate-300 mb-10">
-          ご相談・お問い合わせは、以下よりご連絡ください。<br>
-          （プレビュー用のため、フォームはプレースホルダーです）
-        </p>
-      </div>
-
-      <div class="glass glass-dark p-6 md:p-8 max-w-3xl fade-up-hidden js-scroll-trigger">
-        <form onsubmit="event.preventDefault();" class="space-y-5">
-          <div class="grid sm:grid-cols-2 gap-4">
-            <input type="text" placeholder="お名前" class="form-input" />
-            <input type="email" placeholder="メールアドレス" class="form-input" />
-          </div>
-          <input type="text" placeholder="件名" class="form-input" />
-          <textarea rows="5" placeholder="お問い合わせ内容" class="form-input"></textarea>
-
-          <div class="pt-2">
-            <button type="submit" class="btn-primary">
-              送信（ダミー）
-            </button>
-            <p class="mt-3 text-xs text-slate-300/70">
-              ※ プレビュー用のため送信は行われません。
-            </p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer id="footer" class="py-12 border-t border-white/5 content-layer">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="flex items-center gap-3">
-        <svg width="16" height="16" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="10" y="25" width="25" height="60" fill="#b8a656" rx="3" transform="rotate(-30 22.5 55)" />
-          <rect x="35" y="25" width="25" height="60" fill="#ffffff" rx="3" transform="rotate(-30 47.5 55)" />
-          <rect x="60" y="25" width="25" height="60" fill="#ffffff" rx="3" transform="rotate(-30 72.5 55)" />
-        </svg>
-        <span class="text-slate-300 font-serif tracking-widest text-sm">NEXT LABS</span>
-      </div>
-      <div class="flex items-center gap-6 text-xs text-slate-500 tracking-wider">
-  <a class="hover:text-slate-300 transition" href="privacy.html">Privacy Policy</a>
-  <a class="hover:text-slate-300 transition" href="securitypolicy.html">Security Policy</a>
-  <span class="hidden md:inline">|</span>
-  <span>&copy; NEXTLAB INC. ALL RIGHTS RESERVED.</span>
-</div>
-    </div>
-  </footer>
+    </footer>
 
 </body>
 
