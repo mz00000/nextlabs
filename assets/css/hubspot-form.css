@@ -222,3 +222,66 @@
   font-size: 12px !important;
   margin-top: 8px !important;
 }
+
+/* =========================================
+   FIX: radio/checkbox layout bug
+   (append to the very bottom)
+========================================= */
+
+/* 1) hs-input が radio/checkbox に当たって巨大化しているのを無効化 */
+#hubspot-contact-form input.hs-input[type="radio"],
+#hubspot-contact-form input.hs-input[type="checkbox"]{
+  width: 16px !important;
+  height: 16px !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 1px solid rgba(226,232,240,0.45) !important;
+}
+
+/* checkbox は角を少し立てる */
+#hubspot-contact-form input.hs-input[type="checkbox"]{
+  border-radius: 4px !important;
+}
+
+/* 2) inputs-list の親幅を100%に固定して、文字が1文字改行になるのを防ぐ */
+#hubspot-contact-form .inputs-list{
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  text-align: left !important;
+  margin: 8px 0 0 0 !important;
+  padding: 0 !important;
+}
+
+#hubspot-contact-form .inputs-list > li{
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  list-style: none !important;
+  margin: 4px 0 !important; /* 2択の間隔 */
+  padding: 0 !important;
+}
+
+/* 3) ラジオ/チェック + テキストを「左から横並び」で固定 */
+#hubspot-contact-form .inputs-list > li > label{
+  display: flex !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  gap: 10px !important;
+  text-align: left !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.55 !important;
+}
+
+/* テキスト側は余白を持って広がる（ここが“縦文字化”の決定打） */
+#hubspot-contact-form .inputs-list > li > label > span{
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
