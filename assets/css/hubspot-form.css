@@ -384,3 +384,19 @@ input[type="submit"]:hover {
   margin: 0 !important;
   flex: 0 0 auto !important;
 }
+
+/* =========================================
+   PATCH: Emailラベルだけ上に余白を足す
+   （直前の2カラム行との間を他と揃える）
+   ========================================= */
+
+/* 1) emailフィールドのブロック自体に上余白 */
+#hubspot-contact-form .hs_email{
+  margin-top: 14px !important; /* ← 好みで 10〜18px で調整OK */
+}
+
+/* 2) 念のため：ラベルの下も少し確保（説明文があると詰まりやすい） */
+#hubspot-contact-form .hs_email > label{
+  display: block !important;
+  margin-bottom: 8px !important;
+}
