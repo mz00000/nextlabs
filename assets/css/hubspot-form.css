@@ -1,314 +1,111 @@
-/* text */
-.hs-form, .hs-form * { color: rgba(226,232,240,0.92) !important; }
+/* =========================================
+   HubSpot Form Theme (NextLab dark vibe)
+   Scope: #hubspot-contact-form only
+========================================= */
 
-.hs-form label{
-  color: rgba(241,245,249,0.88) !important;
-  font-size: 12px !important;
-  letter-spacing: .08em !important;
+#hubspot-contact-form {
+  --fg: rgba(226, 232, 240, 0.88);
+  --fg-dim: rgba(226, 232, 240, 0.70);
+  --label: rgba(241, 245, 249, 0.86);
+  --border: rgba(226, 232, 240, 0.18);
+  --border-strong: rgba(226, 232, 240, 0.26);
+  --bg-input: rgba(226, 232, 240, 0.10);
+  --bg-input-focus: rgba(226, 232, 240, 0.12);
+  --gold: rgba(184, 166, 86, 0.70);
+  --gold-ring: rgba(184, 166, 86, 0.14);
+  --danger: rgba(248, 113, 113, 0.95);
 }
 
-.hs-form .hs-form-required{
-  color: rgba(248,113,113,0.95) !important;
+/* ---------- Base / text ---------- */
+#hubspot-contact-form .hs-form {
+  color: var(--fg);
+  line-height: 1.65;
 }
 
-.hs-form .hs-field-desc,
-.hs-form .hs-richtext,
-.hs-form .hs-richtext p,
-.hs-form p{
-  color: rgba(226,232,240,0.72) !important;
-  font-size: 12px !important;
-}
-
-/* inputs */
-.hs-input{
-  background: rgba(255,255,255,0.92) !important;
-  color: #0f1419 !important;
-  border: 1px solid rgba(255,255,255,0.14) !important;
-  border-radius: 14px !important;
-}
-
-.hs-input::placeholder{
-  color: rgba(226,232,240,0.45) !important;
-}
-
-.hs-input:focus{
-  border-color: rgba(184,166,86,0.65) !important;
-  box-shadow: 0 0 0 4px rgba(184,166,86,0.16) !important;
-  outline: none !important;
-}
-
-/* links */
-.hs-form a{
-  color: rgba(184,166,86,0.95) !important;
-  text-decoration: none !important;
-  border-bottom: 1px solid rgba(184,166,86,0.35) !important;
-}
-.hs-form a:hover{
-  border-bottom-color: rgba(184,166,86,0.7) !important;
-}
-
-/* submit button */
-.hs-button,
-input[type="submit"]{
-  appearance: none !important;
-  -webkit-appearance: none !important;
-  background: rgba(15,20,25,0.90) !important;
-  color: rgba(255,255,255,0.95) !important;
-  border: 1px solid rgba(184,166,86,0.45) !important;
-  padding: 12px 18px !important;
-  border-radius: 14px !important;
-  font-weight: 700 !important;
-  letter-spacing: .10em !important;
-  box-shadow: 0 14px 34px rgba(0,0,0,0.28) !important;
-  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease, border-color .15s ease !important;
-}
-.hs-button:hover,
-input[type="submit"]:hover{
-  filter: brightness(1.08) !important;
-  transform: translateY(-1px) !important;
-  border-color: rgba(184,166,86,0.70) !important;
-  box-shadow: 0 18px 44px rgba(0,0,0,0.32) !important;
-}
-
-/* ===========================
-   NextLab vibe: gray tone + spacing
-   (append to hubspot-form.css)
-=========================== */
-
-/* 全体の行間とベース色を少し柔らかく */
-.hs-form,
-.hs-form * {
-  color: rgba(226, 232, 240, 0.86) !important;
-  line-height: 1.65 !important;
-}
-
-/* ラベル：少し薄めのグレー + 余白 */
-.hs-form label {
-  color: rgba(226, 232, 240, 0.78) !important;
-  font-size: 12px !important;
-  letter-spacing: .08em !important;
+#hubspot-contact-form .hs-form label {
+  display: block;
+  color: var(--label) !important;
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+  letter-spacing: 0.04em !important;
   margin: 0 0 8px 0 !important;
 }
 
-/* 必須の * は目立ちすぎない赤へ */
-.hs-form .hs-form-required {
-  color: rgba(248, 113, 113, 0.9) !important;
+/* required asterisk */
+#hubspot-contact-form .hs-form label .hs-form-required,
+#hubspot-contact-form .hs-form .hs-form-required {
+  color: var(--danger) !important;
+  margin-left: 4px;
 }
 
-/* 説明文・注記：薄め */
-.hs-form .hs-field-desc,
-.hs-form .hs-richtext,
-.hs-form .hs-richtext p,
-.hs-form p {
-  color: rgba(226, 232, 240, 0.68) !important;
+/* description / helper text */
+#hubspot-contact-form .hs-field-desc,
+#hubspot-contact-form .hs-richtext,
+#hubspot-contact-form .hs-richtext p,
+#hubspot-contact-form .hs-form p {
+  color: var(--fg-dim) !important;
   font-size: 12px !important;
-  margin-top: 6px !important;
+  line-height: 1.65 !important;
+  margin: 6px 0 0 0 !important;
 }
 
-/* 各フィールドブロックの余白（窮屈さ解消の本丸） */
-.hs-form .hs-form-field {
-  margin-bottom: 18px !important;
+/* ---------- Field spacing ---------- */
+#hubspot-contact-form .hs-form .hs-form-field {
+  margin: 0 0 16px 0 !important;
 }
 
-/* 2カラム時の左右間隔（担当者姓/名など） */
-.hs-form .hs-form-field .hs-form-field,
-.hs-form .hs-form-field .input {
-  margin-top: 8px !important;
-}
-.hs-form .hs-form-field .hs-form-field {
-  margin-bottom: 0 !important;
-}
-.hs-form .hs-form-field .hs-form-field + .hs-form-field {
-  margin-left: 16px !important; /* 横並びの間隔 */
+/* 2カラム（姓名など）の直後は、次のフィールド（メール等）との距離を少し空ける */
+#hubspot-contact-form fieldset.form-columns-2 + .hs-form-field {
+  margin-top: 14px !important;
 }
 
-/* 入力欄：白ベタ→グレー寄り、サイトに馴染ませる */
-.hs-input,
-.hs-form textarea,
-.hs-form select {
-  background: rgba(226, 232, 240, 0.10) !important; /* ← 薄いグレー */
+/* ---------- Inputs (text / select / textarea) ---------- */
+#hubspot-contact-form .hs-input,
+#hubspot-contact-form textarea.hs-input,
+#hubspot-contact-form select.hs-input {
+  width: 100% !important;
+  box-sizing: border-box !important;
+
+  background: var(--bg-input) !important;
   color: rgba(226, 232, 240, 0.92) !important;
-  border: 1px solid rgba(226, 232, 240, 0.18) !important;
+
+  border: 1px solid var(--border) !important;
   border-radius: 14px !important;
 
-  padding: 12px 14px !important; /* ゆったり */
-  min-height: 44px !important;   /* 高さ確保 */
-  box-sizing: border-box !important;
+  font-size: 14px !important;
+  padding: 10px 14px !important;
+  min-height: 42px !important;
 }
 
-/* プレースホルダ：ちゃんと見える薄グレー */
-.hs-input::placeholder,
-.hs-form textarea::placeholder {
+#hubspot-contact-form textarea.hs-input {
+  min-height: 140px !important;
+  padding: 12px 14px !important;
+  resize: vertical;
+}
+
+#hubspot-contact-form .hs-input::placeholder,
+#hubspot-contact-form textarea.hs-input::placeholder {
   color: rgba(226, 232, 240, 0.42) !important;
 }
 
-/* フォーカス：ゴールド寄りの控えめなリング */
-.hs-input:focus,
-.hs-form textarea:focus,
-.hs-form select:focus {
-  border-color: rgba(184, 166, 86, 0.65) !important;
-  box-shadow: 0 0 0 4px rgba(184, 166, 86, 0.14) !important;
+#hubspot-contact-form .hs-input:focus,
+#hubspot-contact-form textarea.hs-input:focus,
+#hubspot-contact-form select.hs-input:focus {
+  background: var(--bg-input-focus) !important;
+  border-color: var(--gold) !important;
+  box-shadow: 0 0 0 4px var(--gold-ring) !important;
   outline: none !important;
-  background: rgba(226, 232, 240, 0.12) !important;
 }
 
-/* セレクトの見た目が合わない時用（OS依存を少し緩和） */
-.hs-form select {
+/* selectのOS差を少し抑える */
+#hubspot-contact-form select.hs-input {
   appearance: none !important;
   -webkit-appearance: none !important;
 }
 
-/* ラジオ/チェック：周囲の余白と文字色 */
-.hs-form .hs-form-checkbox,
-.hs-form .hs-form-radio {
-  margin: 10px 0 !important;
-}
-.hs-form .hs-form-checkbox label,
-.hs-form .hs-form-radio label {
-  color: rgba(226, 232, 240, 0.78) !important;
-  margin: 0 !important;
-}
-
-/* 規約確認（チェック）あたりが詰まるので追加余白 */
-.hs-form .legal-consent-container,
-.hs-form .hs-dependent-field {
-  margin-top: 14px !important;
-}
-
-/* 送信ボタン：暗背景に馴染むグレー×ゴールドの縁 */
-.hs-button,
-input[type="submit"] {
-  background: rgba(226, 232, 240, 0.10) !important;
-  color: rgba(255, 255, 255, 0.92) !important;
-  border: 1px solid rgba(184, 166, 86, 0.55) !important;
-
-  padding: 12px 18px !important;
-  border-radius: 14px !important;
-  font-weight: 700 !important;
-  letter-spacing: .10em !important;
-
-  margin-top: 10px !important;
-}
-
-.hs-button:hover,
-input[type="submit"]:hover {
-  background: rgba(226, 232, 240, 0.14) !important;
-  border-color: rgba(184, 166, 86, 0.78) !important;
-  transform: translateY(-1px) !important;
-}
-
-/* エラー表示が出た時に読めるように */
-.hs-error-msgs,
-.hs-error-msg {
-  color: rgba(248, 113, 113, 0.95) !important;
-  font-size: 12px !important;
-  margin-top: 8px !important;
-}
-
-/* フォーム全体の左右余白（詰まり感が残る場合） */
-.hs-form {
-  padding-top: 2px !important;
-}
-
-/* ================================
-   HubSpot form fine tuning
-   scope: #hubspot-contact-form
-================================ */
-#hubspot-contact-form .hs-form{
-  /* 既存のガラスカード内で見やすく */
-  color: rgba(226,232,240,0.86);
-}
-
-/* 1) ラベルを少し大きく */
-#hubspot-contact-form .hs-form-field > label,
-#hubspot-contact-form label{
-  font-size: 13px !important;
-  line-height: 1.55 !important;
-  letter-spacing: .02em;
-  color: rgba(226,232,240,0.82) !important;
-}
-
-/* 2) 入力欄を少し小さく（高さ/余白） */
-#hubspot-contact-form .hs-input{
-  font-size: 14px !important;
-  padding: 10px 14px !important;     /* ここで“若干小さく” */
-  min-height: 42px !important;       /* 44〜48が一般的。好みで微調整OK */
-  border-radius: 14px !important;
-}
-
-/* textarea も合わせる */
-#hubspot-contact-form textarea.hs-input{
-  min-height: 140px !important;
-  padding: 12px 14px !important;
-}
-
-/* フィールド間に余白をつけて詰まり感を軽減（必要なら） */
-#hubspot-contact-form .hs-form-field{
-  margin-bottom: 16px !important;
-}
-
-/* 3) 「担当者姓・名」を均等幅にする（2カラムのfieldsetをflex化） */
-@media (min-width: 640px){
-  #hubspot-contact-form fieldset.form-columns-2{
-    display: flex !important;
-    gap: 18px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-  }
-  #hubspot-contact-form fieldset.form-columns-2 .hs-form-field{
-    flex: 1 1 0 !important;
-    width: auto !important;   /* HubSpotの50%指定を無効化 */
-    float: none !important;
-    min-width: 0 !important;
-  }
-}
-
-/* 4) ラジオ/チェックの「右にテキスト」を強制（改行っぽい見え方を解消） */
-#hubspot-contact-form .inputs-list{
-  margin: 8px 0 0 0 !important;
-  padding: 0 !important;
-}
-#hubspot-contact-form .inputs-list li{
-  list-style: none !important;
-  margin: 10px 0 !important;
-}
-
-/* label自体をflexにして、左:ボタン / 右:テキスト に固定 */
-#hubspot-contact-form .inputs-list li label{
-  display: flex !important;
-  align-items: flex-start !important;
-  gap: 10px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  white-space: normal !important;
-}
-
-/* ボタン位置を少し下げてベースラインを揃える */
-#hubspot-contact-form .inputs-list li label input{
-  margin: 3px 0 0 0 !important;
-  flex: 0 0 auto !important;
-}
-
-/* テキスト側 */
-#hubspot-contact-form .inputs-list li label span,
-#hubspot-contact-form .inputs-list li label .hs-form-required{
-  line-height: 1.55 !important;
-  color: rgba(226,232,240,0.82) !important;
-}
-
-/* （任意）必須 * を少し見やすく */
-#hubspot-contact-form .hs-form-required{
-  color: rgba(255,120,120,0.9) !important;
-  margin-left: 4px;
-}
-
-/* =========================================
-   PATCH: Name fields (均等幅にする)
-   ========================================= */
-@media (min-width: 640px){
-  /* 2カラムのfieldsetを grid にして float を殺す */
-  #hubspot-contact-form fieldset.form-columns-2{
+/* ---------- 2 columns (姓・名を均等幅に) ---------- */
+@media (min-width: 640px) {
+  #hubspot-contact-form fieldset.form-columns-2 {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 18px !important;
@@ -317,8 +114,7 @@ input[type="submit"]:hover {
     border: 0 !important;
   }
 
-  /* HubSpotが付ける float/width を無効化 */
-  #hubspot-contact-form fieldset.form-columns-2 .hs-form-field{
+  #hubspot-contact-form fieldset.form-columns-2 .hs-form-field {
     float: none !important;
     width: auto !important;
     max-width: none !important;
@@ -326,106 +122,103 @@ input[type="submit"]:hover {
     margin: 0 !important;
   }
 
-  /* たまに .input に余計な width/margin が入るので潰す */
-  #hubspot-contact-form fieldset.form-columns-2 .hs-form-field .input{
+  #hubspot-contact-form fieldset.form-columns-2 .hs-form-field .input {
     margin: 0 !important;
     width: 100% !important;
     max-width: none !important;
   }
 
-  /* 入力自体も100%でフィット */
-  #hubspot-contact-form fieldset.form-columns-2 .hs-form-field .hs-input{
+  #hubspot-contact-form fieldset.form-columns-2 .hs-form-field .hs-input {
     width: 100% !important;
     max-width: none !important;
   }
 }
 
-/* もしHubSpotが firstname/lastname クラスを付けているなら保険（無害） */
-@media (min-width: 640px){
-  #hubspot-contact-form .hs_firstname,
-  #hubspot-contact-form .hs_lastname{
-    float: none !important;
-    width: auto !important;
-    max-width: none !important;
-  }
+/* ---------- Radio / Checkbox (テキストを右に・間隔を詰める) ---------- */
+#hubspot-contact-form .inputs-list {
+  margin: 8px 0 0 0 !important;
+  padding: 0 !important;
 }
 
-
-/* =========================================
-   PATCH: Radio / Checkbox (右にテキスト固定)
-   ========================================= */
-
-/* li自体を横並びの行にする */
-#hubspot-contact-form .inputs-list li{
-  display: flex !important;
-  align-items: center !important;
-  gap: 10px !important;
+#hubspot-contact-form .inputs-list > li {
+  list-style: none !important;
+  margin: 4px 0 !important;     /* ← 2択同士の間隔（ここが効く） */
+  padding: 0 !important;
 }
 
-/* labelも横並び固定（縦にならないように inline-flex） */
-#hubspot-contact-form .inputs-list li label{
+/* クリックしやすく、input + text を横並び固定 */
+#hubspot-contact-form .inputs-list > li > label {
   display: inline-flex !important;
   align-items: center !important;
   gap: 10px !important;
   margin: 0 !important;
   padding: 0 !important;
-  width: 100% !important; /* クリック領域も広く */
+  width: 100% !important;
+  color: var(--fg) !important;
+  line-height: 1.55 !important;
 }
 
-/* テキスト側が block 扱いで上に行くのを潰す */
-#hubspot-contact-form .inputs-list li label span{
-  display: inline !important;
-  line-height: 1.6 !important;
-  white-space: normal !important;
-}
-
-/* inputの余計なmarginを整える */
-#hubspot-contact-form .inputs-list li label input{
+/* input側の余計なmarginを殺す */
+#hubspot-contact-form .inputs-list > li > label > input {
   margin: 0 !important;
   flex: 0 0 auto !important;
 }
 
-/* =========================================
-   PATCH: Emailラベルだけ上に余白を足す
-   （直前の2カラム行との間を他と揃える）
-   ========================================= */
-
-/* 1) emailフィールドのブロック自体に上余白 */
-#hubspot-contact-form .hs_email{
-  margin-top: 14px !important; /* ← 好みで 10〜18px で調整OK */
+/* テキスト側が block 扱いで上に行くのを防ぐ */
+#hubspot-contact-form .inputs-list > li > label > span {
+  display: inline !important;
+  white-space: normal !important;
 }
 
-/* 2) 念のため：ラベルの下も少し確保（説明文があると詰まりやすい） */
-#hubspot-contact-form .hs_email > label{
-  display: block !important;
-  margin-bottom: 8px !important;
+/* ラジオ質問文（「返品くん導入に…」など）の下余白も調整したい場合 */
+#hubspot-contact-form .hs-fieldtype-radio > label {
+  margin-bottom: 6px !important;
 }
 
-/* =========================================
-   1) ラジオ2択の間隔を詰める
-   ========================================= */
-#hubspot-contact-form .hs-fieldtype-radio .inputs-list{
-  margin: 6px 0 0 !important;   /* ← 質問文(legend/label)との距離 */
-  padding: 0 !important;
+/* ---------- Links ---------- */
+#hubspot-contact-form .hs-form a {
+  color: rgba(184, 166, 86, 0.95) !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(184, 166, 86, 0.35) !important;
+}
+#hubspot-contact-form .hs-form a:hover {
+  border-bottom-color: rgba(184, 166, 86, 0.7) !important;
 }
 
-#hubspot-contact-form .hs-fieldtype-radio .inputs-list li{
-  margin: 4px 0 !important;     /* ← 2択同士の距離（ここが主原因） */
-  padding: 0 !important;
+/* ---------- Submit button ---------- */
+#hubspot-contact-form .hs-button,
+#hubspot-contact-form input[type="submit"] {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+
+  background: rgba(226, 232, 240, 0.10) !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+
+  border: 1px solid rgba(184, 166, 86, 0.55) !important;
+  border-radius: 14px !important;
+
+  padding: 12px 18px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.10em !important;
+
+  margin-top: 10px !important;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28) !important;
+  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease, border-color .15s ease !important;
 }
 
-/* すでに“横並び”を整えている前提で、崩れ防止（不要なら削除OK） */
-#hubspot-contact-form .hs-fieldtype-radio .inputs-list li label{
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 10px !important;
-  line-height: 1.35 !important;
+#hubspot-contact-form .hs-button:hover,
+#hubspot-contact-form input[type="submit"]:hover {
+  filter: brightness(1.08) !important;
+  transform: translateY(-1px) !important;
+  border-color: rgba(184, 166, 86, 0.78) !important;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.32) !important;
 }
 
-
-/* =========================================
-   2) 「プライバシーポリシー…」右の * を赤にする
-   ========================================= */
-#hubspot-contact-form .hs-form-required{
-  color: #ef4444 !important;    /* 赤（Tailwindのred-500相当） */
+/* ---------- Errors ---------- */
+#hubspot-contact-form .hs-error-msgs,
+#hubspot-contact-form .hs-error-msg,
+#hubspot-contact-form .hs-error-msgs li {
+  color: var(--danger) !important;
+  font-size: 12px !important;
+  margin-top: 8px !important;
 }
