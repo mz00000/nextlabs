@@ -145,6 +145,8 @@
                                     loading="lazy" decoding="async">
                                 <img src="assets/media/comp_toray_trans.webp" alt="toray" class="marquee-logo"
                                     loading="lazy" decoding="async">
+                                <img src="assets/media/comp_safari_trans.png" alt="safari" class="marquee-logo"
+                                    loading="lazy" decoding="async">
                                 <!-- ▲▲▲ ここまで ▲▲▲ -->
                             </div>
 
@@ -167,6 +169,8 @@
                                 <img src="assets/media/comp_softbank_trans.png" alt="" class="marquee-logo"
                                     loading="lazy" decoding="async">
                                 <img src="assets/media/comp_toray_trans.webp" alt="" class="marquee-logo" loading="lazy"
+                                    decoding="async">
+                                <img src="assets/media/comp_safari_trans.png" alt="" class="marquee-logo" loading="lazy"
                                     decoding="async">
                             </div>
                         </div>
@@ -225,7 +229,7 @@
     </section>
 
 
-    
+
 
     <!-- Solutions (white zone) -->
     <section id="solutions"
@@ -370,43 +374,6 @@
                             </p>
                         </div>
                     </a>
-
-                    <a href="#" class="group block py-6 border-b border-white/10 hover:border-white/30 transition-all">
-                        <div class="flex flex-col md:flex-row md:items-center gap-4">
-                            <time
-                                class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2026.01.15</time>
-                            <span
-                                class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">プレスリリース</span>
-                            <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
-                                Bakuage Suite、大手EC事業者への導入実績が100社を突破
-                            </p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="group block py-6 border-b border-white/10 hover:border-white/30 transition-all">
-                        <div class="flex flex-col md:flex-row md:items-center gap-4">
-                            <time
-                                class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2025.12.20</time>
-                            <span
-                                class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">メディア掲載</span>
-                            <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
-                                代表・亀井のインタビュー記事がWeb担当者Forumに掲載されました
-                            </p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="group block py-6 border-b border-white/10 hover:border-white/30 transition-all">
-                        <div class="flex flex-col md:flex-row md:items-center gap-4">
-                            <time
-                                class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2025.11.01</time>
-                            <span
-                                class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">サービス</span>
-                            <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
-                                Readable、累計翻訳文字数50億文字を達成
-                            </p>
-                        </div>
-                    </a>
-
                 </div>
 
                 <div class="mt-10">
@@ -595,28 +562,23 @@
                 <h2 class="text-4xl md:text-5xl font-serif text-white mb-4">Contact</h2>
                 <p class="text-slate-300 mb-10">
                     ご相談・お問い合わせは、以下よりご連絡ください。<br>
-                    （プレビュー用のため、フォームはプレースホルダーです）
                 </p>
             </div>
 
             <div class="glass glass-dark p-6 md:p-8 max-w-3xl fade-up-hidden js-scroll-trigger">
-                <form onsubmit="event.preventDefault();" class="space-y-5">
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <input type="text" placeholder="お名前" class="form-input" />
-                        <input type="email" placeholder="メールアドレス" class="form-input" />
-                    </div>
-                    <input type="text" placeholder="件名" class="form-input" />
-                    <textarea rows="5" placeholder="お問い合わせ内容" class="form-input"></textarea>
-
-                    <div class="pt-2">
-                        <button type="submit" class="btn-primary">
-                            送信（ダミー）
-                        </button>
-                        <p class="mt-3 text-xs text-slate-300/70">
-                            ※ プレビュー用のため送信は行われません。
-                        </p>
-                    </div>
-                </form>
+                <div id="hubspot-contact-form">
+                    <script charset="utf-8" type="text/javascript"
+                        src="https://js-na2.hsforms.net/forms/embed/v2.js"></script>
+                    <script>
+                        hbspt.forms.create({
+                            portalId: "23725067",
+                            formId: "31e947b3-d68a-44a0-bc1d-a6c726d13eb1",
+                            region: "na2",
+                            target: "#hubspot-contact-form",
+                            css: "https://nextlabs-nine.vercel.app/assets/css/hubspot-form.css"
+                        });
+                    </script>
+                </div>
             </div>
         </div>
     </section>
