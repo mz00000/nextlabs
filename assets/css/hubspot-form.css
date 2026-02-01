@@ -400,3 +400,32 @@ input[type="submit"]:hover {
   display: block !important;
   margin-bottom: 8px !important;
 }
+
+/* =========================================
+   1) ラジオ2択の間隔を詰める
+   ========================================= */
+#hubspot-contact-form .hs-fieldtype-radio .inputs-list{
+  margin: 6px 0 0 !important;   /* ← 質問文(legend/label)との距離 */
+  padding: 0 !important;
+}
+
+#hubspot-contact-form .hs-fieldtype-radio .inputs-list li{
+  margin: 4px 0 !important;     /* ← 2択同士の距離（ここが主原因） */
+  padding: 0 !important;
+}
+
+/* すでに“横並び”を整えている前提で、崩れ防止（不要なら削除OK） */
+#hubspot-contact-form .hs-fieldtype-radio .inputs-list li label{
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  line-height: 1.35 !important;
+}
+
+
+/* =========================================
+   2) 「プライバシーポリシー…」右の * を赤にする
+   ========================================= */
+#hubspot-contact-form .hs-form-required{
+  color: #ef4444 !important;    /* 赤（Tailwindのred-500相当） */
+}
