@@ -285,3 +285,27 @@
   white-space: normal !important;
   overflow-wrap: anywhere !important;
 }
+
+/* =========================================
+   FIX: Email label spacing (add top margin)
+   append to bottom
+========================================= */
+
+/* まずは HubSpot が付ける定番クラスに対応 */
+#hubspot-contact-form .hs_email{
+  margin-top: 16px !important;
+}
+
+/* 構造が違う場合でも効くように、email入力を含むフィールドを拾う */
+#hubspot-contact-form .hs-form-field:has(input[name="email"]),
+#hubspot-contact-form .hs-form-field:has(input[type="email"]){
+  margin-top: 16px !important;
+}
+
+/* 念のため：ラベルの下も他と揃える */
+#hubspot-contact-form .hs_email > label,
+#hubspot-contact-form .hs-form-field:has(input[name="email"]) > label,
+#hubspot-contact-form .hs-form-field:has(input[type="email"]) > label{
+  display: block !important;
+  margin-bottom: 8px !important;
+}
