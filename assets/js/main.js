@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', onScrollOrResize, { passive: true });
   window.addEventListener('resize', onScrollOrResize, { passive: true });
 
-  // 3) Hover image reveal（✅「パネル外に出たら即解除」に修正）
+  // 3) Hover image reveal（PC: hover / Mobile: touch）
   const hoverLinks = document.querySelectorAll('.js-hover-reveal');
   const hoverBgs = document.querySelectorAll('.hover-reveal-bg');
 
@@ -79,26 +79,45 @@ document.addEventListener('DOMContentLoaded', function () {
     solutionsSection && solutionsSection.classList.remove('is-dark');
   }
 
+  function activateHoverBg(targetId) {
+    const targetBg = document.getElementById(targetId);
+    hoverBgs.forEach(bg => bg.classList.remove('active'));
+    if (targetBg) {
+      targetBg.classList.add('active');
+      solutionsSection && solutionsSection.classList.add('is-dark');
+    }
+  }
+
+  // hover可能な端末だけ「hover挙動」を使う
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
   hoverLinks.forEach(link => {
-    link.addEventListener('pointerenter', function () {
-      const targetId = this.getAttribute('data-bg-target');
-      const targetBg = document.getElementById(targetId);
+    const targetId = link.getAttribute('data-bg-target');
 
-      hoverBgs.forEach(bg => bg.classList.remove('active'));
-      if (targetBg) {
-        targetBg.classList.add('active');
-        solutionsSection && solutionsSection.classList.add('is-dark');
-      }
-    });
-
-    link.addEventListener('pointerleave', function () {
-      clearHoverBg();
-    });
+    if (canHover) {
+      // PC（マウス）: hoverでON/OFF
+      link.addEventListener('pointerenter', () => activateHoverBg(targetId));
+      link.addEventListener('pointerleave', clearHoverBg);
+      link.addEventListener('focus', () => activateHoverBg(targetId));
+      link.addEventListener('blur', clearHoverBg);
+    } else {
+      // スマホ（タッチ）: 触れてる間だけON、離したらOFF、スクロールでもOFF
+      link.addEventListener('touchstart', () => activateHoverBg(targetId), { passive: true });
+      link.addEventListener('touchend', clearHoverBg, { passive: true });
+      link.addEventListener('touchcancel', clearHoverBg, { passive: true });
+    }
   });
 
-  if (solutionsPanel) {
-    solutionsPanel.addEventListener('pointerleave', clearHoverBg);
-  } else if (solutionsSection) {
-    solutionsSection.addEventListener('pointerleave', clearHoverBg);
+  // パネル外に出たら解除（PC向け）
+  if (canHover) {
+    if (solutionsPanel) {
+      solutionsPanel.addEventListener('pointerleave', clearHoverBg);
+    } else if (solutionsSection) {
+      solutionsSection.addEventListener('pointerleave', clearHoverBg);
+    }
+  } else {
+    // スマホ向け：スクロール開始で解除（張り付き防止）
+    window.addEventListener('scroll', clearHoverBg, { passive: true });
+    window.addEventListener('touchmove', clearHoverBg, { passive: true });
   }
 });

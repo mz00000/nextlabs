@@ -477,3 +477,26 @@ body.policy-page {
   -webkit-filter: none !important;
   mix-blend-mode: normal !important;
 }
+
+/* ==============================
+   Hover reveal BG: mobile safe rendering
+   ============================== */
+
+/* デフォルト（PC）は今まで通り cover でOK */
+.hover-reveal-bg{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* スマホ（タッチ端末）では "cover" だと文字が切れやすいので contain に切り替え */
+@media (hover: none), (pointer: coarse) {
+  .hover-reveal-bg{
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* 余白が出ても真っ黒に沈みすぎないように、うっすら下地 */
+    background-color: rgba(15, 20, 25, 0.85);
+  }
+}
