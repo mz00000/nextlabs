@@ -302,3 +302,85 @@ input[type="submit"]:hover {
   color: rgba(255,120,120,0.9) !important;
   margin-left: 4px;
 }
+
+/* =========================================
+   PATCH: Name fields (均等幅にする)
+   ========================================= */
+@media (min-width: 640px){
+  /* 2カラムのfieldsetを grid にして float を殺す */
+  #hubspot-contact-form fieldset.form-columns-2{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 18px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  /* HubSpotが付ける float/width を無効化 */
+  #hubspot-contact-form fieldset.form-columns-2 .hs-form-field{
+    float: none !important;
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* たまに .input に余計な width/margin が入るので潰す */
+  #hubspot-contact-form fieldset.form-columns-2 .hs-form-field .input{
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* 入力自体も100%でフィット */
+  #hubspot-contact-form fieldset.form-columns-2 .hs-form-field .hs-input{
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+/* もしHubSpotが firstname/lastname クラスを付けているなら保険（無害） */
+@media (min-width: 640px){
+  #hubspot-contact-form .hs_firstname,
+  #hubspot-contact-form .hs_lastname{
+    float: none !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+}
+
+
+/* =========================================
+   PATCH: Radio / Checkbox (右にテキスト固定)
+   ========================================= */
+
+/* li自体を横並びの行にする */
+#hubspot-contact-form .inputs-list li{
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+/* labelも横並び固定（縦にならないように inline-flex） */
+#hubspot-contact-form .inputs-list li label{
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important; /* クリック領域も広く */
+}
+
+/* テキスト側が block 扱いで上に行くのを潰す */
+#hubspot-contact-form .inputs-list li label span{
+  display: inline !important;
+  line-height: 1.6 !important;
+  white-space: normal !important;
+}
+
+/* inputの余計なmarginを整える */
+#hubspot-contact-form .inputs-list li label input{
+  margin: 0 !important;
+  flex: 0 0 auto !important;
+}
