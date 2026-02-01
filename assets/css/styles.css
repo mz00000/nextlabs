@@ -458,3 +458,22 @@ body.policy-page {
   gap: 18px;
   padding: 16px 14px;
 }
+
+/* --- FIX: Bakuage logo box should never get overlays --- */
+.ecosystem-main-logo{
+  background: #fff !important;
+  background-image: none !important; /* ← グラデーション/画像系を殺す */
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+.ecosystem-main-logo::before,
+.ecosystem-main-logo::after{
+  content: none !important; /* ← 疑似要素オーバーレイがある場合を殺す */
+}
+
+.ecosystem-main-logo img{
+  filter: none !important;
+  -webkit-filter: none !important;
+  mix-blend-mode: normal !important;
+}

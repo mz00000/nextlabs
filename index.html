@@ -62,17 +62,9 @@
     <nav class="fixed w-full top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md content-layer">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#hero" class="flex items-center gap-3">
-                <div class="rolling-n" aria-hidden="true">
-                    <svg width="32" height="32" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="10" y="25" width="25" height="60" fill="#b8a656" rx="3"
-                            transform="rotate(-30 22.5 55)" />
-                        <rect x="35" y="25" width="25" height="60" fill="#2d2d2d" rx="3"
-                            transform="rotate(-30 47.5 55)" />
-                        <rect x="60" y="25" width="25" height="60" fill="#2d2d2d" rx="3"
-                            transform="rotate(-30 72.5 55)" />
-                    </svg>
-                </div>
-                <span class="text-white font-serif tracking-widest text-lg font-semibold fade-in-logo">NEXT LABS</span>
+                <!-- ✅ PNGロゴに差し替え -->
+                <img src="assets/media/nextlab_logo.png" alt="NextLab Inc." class="h-20 w-auto object-contain"
+                    loading="eager" decoding="async" />
             </a>
 
             <div
@@ -146,7 +138,13 @@
                                     loading="lazy" decoding="async">
                                 <img src="assets/media/comp_toray_trans.webp" alt="toray" class="marquee-logo"
                                     loading="lazy" decoding="async">
-                                <img src="assets/media/comp_safari_trans.png" alt="safari" class="marquee-logo"
+                                <img src="assets/media/comp_albion_trans.png" alt="albion" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/comp_allbirds_trans.png" alt="allbirds" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/comp_shishikui_trans.png" alt="shishikui" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/comp_rohto_trans.png" alt="rohto" class="marquee-logo"
                                     loading="lazy" decoding="async">
                                 <!-- ▲▲▲ ここまで ▲▲▲ -->
                             </div>
@@ -172,6 +170,14 @@
                                 <img src="assets/media/comp_toray_trans.webp" alt="" class="marquee-logo" loading="lazy"
                                     decoding="async">
                                 <img src="assets/media/comp_safari_trans.png" alt="" class="marquee-logo" loading="lazy"
+                                    decoding="async">
+                                <img src="assets/media/comp_albion_trans.png" alt="" class="marquee-logo" loading="lazy"
+                                    decoding="async">
+                                <img src="assets/media/comp_allbirds_trans.png" alt="" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/comp_shishikui_trans.png" alt="" class="marquee-logo"
+                                    loading="lazy" decoding="async">
+                                <img src="assets/media/comp_rohto_trans.png" alt="" class="marquee-logo" loading="lazy"
                                     decoding="async">
                             </div>
                         </div>
@@ -253,8 +259,8 @@
                                     <svg class="h-10 w-10" viewBox="0 0 64 64" aria-hidden="true">
                                         <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9">
                                         </rect>
-                                        <path d="M18 42V22h10c7 0 11 4 11 10s-4 10-11 10H18z" fill="#fff"></path>
-                                        <path d="M29 27h-5v10h5c3 0 5-2 5-5s-2-5-5-5z" fill="#b8a656"></path>
+                                        <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
+                                        <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
                                     </svg>
                                     <h3
                                         class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
@@ -309,12 +315,20 @@
                         data-bg-target="bg-ai">
                         <div class="flex items-baseline justify-between gap-8">
                             <div class="flex-1">
-                                <h3
-                                    class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
-                                    AI Implementation
-                                </h3>
+                                <div class="flex items-center gap-6 mb-2">
+                                    <svg class="h-10 w-10" viewBox="0 0 64 64" aria-hidden="true">
+                                        <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9">
+                                        </rect>
+                                        <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
+                                        <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
+                                    </svg>
+                                    <h3
+                                        class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
+                                        AI Implementation
+                                    </h3>
+                                </div>
                                 <span
-                                    class="block text-sm font-sans text-slate-700 mt-3 font-light group-hover:text-slate-900 leading-relaxed">
+                                    class="block text-sm font-sans text-slate-700 mt-3 ml-16 font-light group-hover:text-slate-900 leading-relaxed">
                                     ReadableやBakuageで培った独自AI技術をあなたのビジネスへ。生成AI(LLM)のカスタム実装から業務統合まで、実装ノウハウで社会の生産性向上を実現します。
                                 </span>
                             </div>
@@ -331,12 +345,20 @@
                         data-bg-target="bg-incubation">
                         <div class="flex items-baseline justify-between gap-8">
                             <div class="flex-1">
-                                <h3
-                                    class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
-                                    Business Incubation
-                                </h3>
+                                <div class="flex items-center gap-6 mb-2">
+                                    <svg class="h-10 w-10" viewBox="0 0 64 64" aria-hidden="true">
+                                        <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9">
+                                        </rect>
+                                        <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
+                                        <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
+                                    </svg>
+                                    <h3
+                                        class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
+                                        Business Incubation
+                                    </h3>
+                                </div>
                                 <span
-                                    class="block text-sm font-sans text-slate-700 mt-3 font-light group-hover:text-slate-900 leading-relaxed">
+                                    class="block text-sm font-sans text-slate-700 mt-3 ml-16 font-light group-hover:text-slate-900 leading-relaxed">
                                     データと論理に基づく新規事業開発の伴走支援。市場調査からプロダクト設計、Go-to-Market戦略まで、連続起業家としての経験で事業の成功確率を高めます。
                                 </span>
                             </div>
@@ -349,6 +371,72 @@
 
                 </div>
             </div>
+
+            <!-- Products ecosystem (add under the solutions list) -->
+            <div class="mt-8 glass glass-light p-5 md:p-7 fade-up-hidden js-scroll-trigger">
+                <!-- Service 1 (main) -->
+                <div class="bg-white/70 px-5 py-7 md:px-7 md:py-9">
+                    <div class="flex flex-col items-center text-center">
+                        <div
+                            class="ecosystem-main-logo h-33 w-50 md:h-37 md:w-60 rounded-2xl bg-white border border-slate-900/10 shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="assets/media/logo_bakuage.png" alt="Bakuage"
+                                class="h-full w-full object-contain p-5 md:p-6" loading="lazy" decoding="async" />
+                        </div>
+
+                        <!-- Service 2/3/4 row -->
+                        <div class="mt-5 w-full">
+                            <div class="grid grid-cols-3 gap-3 md:gap-4">
+                                <!-- Service 2 -->
+                                <a href="#"
+                                    class="group rounded-2xl border border-slate-900/10 bg-white/70 p-3 md:p-4 hover:border-slate-900/30 transition">
+                                    <div class="flex items-center justify-center">
+                                        <img src="assets/media/logo_haiso.png" alt="Bakuage Haiso"
+                                            class="h-8 md:h-10 w-auto object-contain" loading="lazy" decoding="async" />
+                                    </div>
+                                </a>
+
+                                <!-- Service 3 -->
+                                <a href="#"
+                                    class="group rounded-2xl border border-slate-900/10 bg-white/70 p-3 md:p-4 hover:border-slate-900/30 transition">
+                                    <div class="flex items-center justify-center">
+                                        <img src="assets/media/logo_sokin.png" alt="Bakuage Sokin"
+                                            class="h-8 md:h-10 w-auto object-contain" loading="lazy" decoding="async" />
+                                    </div>
+                                </a>
+
+                                <!-- Service 4 -->
+                                <a href="#"
+                                    class="group rounded-2xl border border-slate-900/10 bg-white/70 p-3 md:p-4 hover:border-slate-900/30 transition">
+                                    <div class="flex items-center justify-center">
+                                        <img src="assets/media/logo_address-check.png" alt="Bakuage Address Check"
+                                            class="h-8 md:h-10 w-auto object-contain" loading="lazy" decoding="async" />
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- second separator -->
+                        <div class="mt-6 w-full">
+                            <div class="h-px w-full bg-slate-900/10"></div>
+                            <div class="flex justify-center -mt-[6px]">
+                                <span class="h-3 w-3 rounded-full bg-white border border-slate-900/20"></span>
+                            </div>
+                        </div>
+
+                        <!-- Service 5 (bottom) -->
+                        <div class="mt-5">
+                            <a href="#"
+                                class="inline-flex items-center gap-3 rounded-2xl border border-slate-900/10 bg-white/70 px-5 py-3 md:px-6 md:py-4 hover:border-slate-900/30 transition">
+                                <img src="assets/media/readable_logo.png" alt="Readable"
+                                    class="h-13 md:h-16 w-auto object-contain" loading="lazy" decoding="async" />
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </section>
 
