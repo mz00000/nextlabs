@@ -66,9 +66,19 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', onScrollOrResize, { passive: true });
   window.addEventListener('resize', onScrollOrResize, { passive: true });
 
-  // 3) Hover image reveal（PC: hover / Mobile: touch）
+  // 3) Hover image reveal（スマホでは完全OFF）
   const hoverLinks = document.querySelectorAll('.js-hover-reveal');
   const hoverBgs = document.querySelectorAll('.hover-reveal-bg');
+
+  // ✅ hover可能端末（＝PC）かどうか判定
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  // ✅ スマホ（タッチ端末）は hover 表示を完全に無効化
+  if (!canHover) {
+    hoverBgs.forEach(bg => bg.classList.remove('active'));
+    solutionsSection && solutionsSection.classList.remove('is-dark');
+    return; // ← 以降の hover 登録を行わない
+  }
 
   const solutionsPanel = solutionsSection
     ? solutionsSection.querySelector('.glass.glass-light')
@@ -79,45 +89,27 @@ document.addEventListener('DOMContentLoaded', function () {
     solutionsSection && solutionsSection.classList.remove('is-dark');
   }
 
-  function activateHoverBg(targetId) {
-    const targetBg = document.getElementById(targetId);
-    hoverBgs.forEach(bg => bg.classList.remove('active'));
-    if (targetBg) {
-      targetBg.classList.add('active');
-      solutionsSection && solutionsSection.classList.add('is-dark');
-    }
-  }
-
-  // hover可能な端末だけ「hover挙動」を使う
-  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-
   hoverLinks.forEach(link => {
-    const targetId = link.getAttribute('data-bg-target');
+    link.addEventListener('pointerenter', function () {
+      const targetId = this.getAttribute('data-bg-target');
+      const targetBg = document.getElementById(targetId);
 
-    if (canHover) {
-      // PC（マウス）: hoverでON/OFF
-      link.addEventListener('pointerenter', () => activateHoverBg(targetId));
-      link.addEventListener('pointerleave', clearHoverBg);
-      link.addEventListener('focus', () => activateHoverBg(targetId));
-      link.addEventListener('blur', clearHoverBg);
-    } else {
-      // スマホ（タッチ）: 触れてる間だけON、離したらOFF、スクロールでもOFF
-      link.addEventListener('touchstart', () => activateHoverBg(targetId), { passive: true });
-      link.addEventListener('touchend', clearHoverBg, { passive: true });
-      link.addEventListener('touchcancel', clearHoverBg, { passive: true });
-    }
+      hoverBgs.forEach(bg => bg.classList.remove('active'));
+      if (targetBg) {
+        targetBg.classList.add('active');
+        solutionsSection && solutionsSection.classList.add('is-dark');
+      }
+    });
+
+    link.addEventListener('pointerleave', function () {
+      clearHoverBg();
+    });
   });
 
-  // パネル外に出たら解除（PC向け）
-  if (canHover) {
-    if (solutionsPanel) {
-      solutionsPanel.addEventListener('pointerleave', clearHoverBg);
-    } else if (solutionsSection) {
-      solutionsSection.addEventListener('pointerleave', clearHoverBg);
-    }
-  } else {
-    // スマホ向け：スクロール開始で解除（張り付き防止）
-    window.addEventListener('scroll', clearHoverBg, { passive: true });
-    window.addEventListener('touchmove', clearHoverBg, { passive: true });
+  if (solutionsPanel) {
+    solutionsPanel.addEventListener('pointerleave', clearHoverBg);
+  } else if (solutionsSection) {
+    solutionsSection.addEventListener('pointerleave', clearHoverBg);
   }
+
 });

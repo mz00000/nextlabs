@@ -478,25 +478,34 @@ body.policy-page {
   mix-blend-mode: normal !important;
 }
 
-/* ==============================
-   Hover reveal BG: mobile safe rendering
-   ============================== */
-
-/* デフォルト（PC）は今まで通り cover でOK */
-.hover-reveal-bg{
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+@media (hover: none), (pointer: coarse) {
+  .hover-reveal-bg {
+    display: none !important; /* 背景レイヤー自体を無効化 */
+  }
 }
 
-/* スマホ（タッチ端末）では "cover" だと文字が切れやすいので contain に切り替え */
-@media (hover: none), (pointer: coarse) {
-  .hover-reveal-bg{
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+/* Hero gradient text (like flagship.cc) */
+.hero-gradient-text{
+  display: inline-block; /* clipが効きやすくなる保険 */
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #b8a656 35%,
+    #7dd3fc 70%,
+    #ffffff 100%
+  );
+  background-size: 200% 200%;
+  background-position: 0% 50%;
 
-    /* 余白が出ても真っ黒に沈みすぎないように、うっすら下地 */
-    background-color: rgba(15, 20, 25, 0.85);
-  }
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  animation: heroGradientMove 8s ease infinite;
+}
+
+@keyframes heroGradientMove{
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
