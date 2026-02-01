@@ -209,3 +209,96 @@ input[type="submit"]:hover {
 .hs-form {
   padding-top: 2px !important;
 }
+
+/* ================================
+   HubSpot form fine tuning
+   scope: #hubspot-contact-form
+================================ */
+#hubspot-contact-form .hs-form{
+  /* 既存のガラスカード内で見やすく */
+  color: rgba(226,232,240,0.86);
+}
+
+/* 1) ラベルを少し大きく */
+#hubspot-contact-form .hs-form-field > label,
+#hubspot-contact-form label{
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+  letter-spacing: .02em;
+  color: rgba(226,232,240,0.82) !important;
+}
+
+/* 2) 入力欄を少し小さく（高さ/余白） */
+#hubspot-contact-form .hs-input{
+  font-size: 14px !important;
+  padding: 10px 14px !important;     /* ここで“若干小さく” */
+  min-height: 42px !important;       /* 44〜48が一般的。好みで微調整OK */
+  border-radius: 14px !important;
+}
+
+/* textarea も合わせる */
+#hubspot-contact-form textarea.hs-input{
+  min-height: 140px !important;
+  padding: 12px 14px !important;
+}
+
+/* フィールド間に余白をつけて詰まり感を軽減（必要なら） */
+#hubspot-contact-form .hs-form-field{
+  margin-bottom: 16px !important;
+}
+
+/* 3) 「担当者姓・名」を均等幅にする（2カラムのfieldsetをflex化） */
+@media (min-width: 640px){
+  #hubspot-contact-form fieldset.form-columns-2{
+    display: flex !important;
+    gap: 18px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+  #hubspot-contact-form fieldset.form-columns-2 .hs-form-field{
+    flex: 1 1 0 !important;
+    width: auto !important;   /* HubSpotの50%指定を無効化 */
+    float: none !important;
+    min-width: 0 !important;
+  }
+}
+
+/* 4) ラジオ/チェックの「右にテキスト」を強制（改行っぽい見え方を解消） */
+#hubspot-contact-form .inputs-list{
+  margin: 8px 0 0 0 !important;
+  padding: 0 !important;
+}
+#hubspot-contact-form .inputs-list li{
+  list-style: none !important;
+  margin: 10px 0 !important;
+}
+
+/* label自体をflexにして、左:ボタン / 右:テキスト に固定 */
+#hubspot-contact-form .inputs-list li label{
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 10px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: normal !important;
+}
+
+/* ボタン位置を少し下げてベースラインを揃える */
+#hubspot-contact-form .inputs-list li label input{
+  margin: 3px 0 0 0 !important;
+  flex: 0 0 auto !important;
+}
+
+/* テキスト側 */
+#hubspot-contact-form .inputs-list li label span,
+#hubspot-contact-form .inputs-list li label .hs-form-required{
+  line-height: 1.55 !important;
+  color: rgba(226,232,240,0.82) !important;
+}
+
+/* （任意）必須 * を少し見やすく */
+#hubspot-contact-form .hs-form-required{
+  color: rgba(255,120,120,0.9) !important;
+  margin-left: 4px;
+}
