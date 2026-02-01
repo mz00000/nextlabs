@@ -69,3 +69,143 @@ input[type="submit"]:hover{
   border-color: rgba(184,166,86,0.70) !important;
   box-shadow: 0 18px 44px rgba(0,0,0,0.32) !important;
 }
+
+/* ===========================
+   NextLab vibe: gray tone + spacing
+   (append to hubspot-form.css)
+=========================== */
+
+/* 全体の行間とベース色を少し柔らかく */
+.hs-form,
+.hs-form * {
+  color: rgba(226, 232, 240, 0.86) !important;
+  line-height: 1.65 !important;
+}
+
+/* ラベル：少し薄めのグレー + 余白 */
+.hs-form label {
+  color: rgba(226, 232, 240, 0.78) !important;
+  font-size: 12px !important;
+  letter-spacing: .08em !important;
+  margin: 0 0 8px 0 !important;
+}
+
+/* 必須の * は目立ちすぎない赤へ */
+.hs-form .hs-form-required {
+  color: rgba(248, 113, 113, 0.9) !important;
+}
+
+/* 説明文・注記：薄め */
+.hs-form .hs-field-desc,
+.hs-form .hs-richtext,
+.hs-form .hs-richtext p,
+.hs-form p {
+  color: rgba(226, 232, 240, 0.68) !important;
+  font-size: 12px !important;
+  margin-top: 6px !important;
+}
+
+/* 各フィールドブロックの余白（窮屈さ解消の本丸） */
+.hs-form .hs-form-field {
+  margin-bottom: 18px !important;
+}
+
+/* 2カラム時の左右間隔（担当者姓/名など） */
+.hs-form .hs-form-field .hs-form-field,
+.hs-form .hs-form-field .input {
+  margin-top: 8px !important;
+}
+.hs-form .hs-form-field .hs-form-field {
+  margin-bottom: 0 !important;
+}
+.hs-form .hs-form-field .hs-form-field + .hs-form-field {
+  margin-left: 16px !important; /* 横並びの間隔 */
+}
+
+/* 入力欄：白ベタ→グレー寄り、サイトに馴染ませる */
+.hs-input,
+.hs-form textarea,
+.hs-form select {
+  background: rgba(226, 232, 240, 0.10) !important; /* ← 薄いグレー */
+  color: rgba(226, 232, 240, 0.92) !important;
+  border: 1px solid rgba(226, 232, 240, 0.18) !important;
+  border-radius: 14px !important;
+
+  padding: 12px 14px !important; /* ゆったり */
+  min-height: 44px !important;   /* 高さ確保 */
+  box-sizing: border-box !important;
+}
+
+/* プレースホルダ：ちゃんと見える薄グレー */
+.hs-input::placeholder,
+.hs-form textarea::placeholder {
+  color: rgba(226, 232, 240, 0.42) !important;
+}
+
+/* フォーカス：ゴールド寄りの控えめなリング */
+.hs-input:focus,
+.hs-form textarea:focus,
+.hs-form select:focus {
+  border-color: rgba(184, 166, 86, 0.65) !important;
+  box-shadow: 0 0 0 4px rgba(184, 166, 86, 0.14) !important;
+  outline: none !important;
+  background: rgba(226, 232, 240, 0.12) !important;
+}
+
+/* セレクトの見た目が合わない時用（OS依存を少し緩和） */
+.hs-form select {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+}
+
+/* ラジオ/チェック：周囲の余白と文字色 */
+.hs-form .hs-form-checkbox,
+.hs-form .hs-form-radio {
+  margin: 10px 0 !important;
+}
+.hs-form .hs-form-checkbox label,
+.hs-form .hs-form-radio label {
+  color: rgba(226, 232, 240, 0.78) !important;
+  margin: 0 !important;
+}
+
+/* 規約確認（チェック）あたりが詰まるので追加余白 */
+.hs-form .legal-consent-container,
+.hs-form .hs-dependent-field {
+  margin-top: 14px !important;
+}
+
+/* 送信ボタン：暗背景に馴染むグレー×ゴールドの縁 */
+.hs-button,
+input[type="submit"] {
+  background: rgba(226, 232, 240, 0.10) !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  border: 1px solid rgba(184, 166, 86, 0.55) !important;
+
+  padding: 12px 18px !important;
+  border-radius: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: .10em !important;
+
+  margin-top: 10px !important;
+}
+
+.hs-button:hover,
+input[type="submit"]:hover {
+  background: rgba(226, 232, 240, 0.14) !important;
+  border-color: rgba(184, 166, 86, 0.78) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* エラー表示が出た時に読めるように */
+.hs-error-msgs,
+.hs-error-msg {
+  color: rgba(248, 113, 113, 0.95) !important;
+  font-size: 12px !important;
+  margin-top: 8px !important;
+}
+
+/* フォーム全体の左右余白（詰まり感が残る場合） */
+.hs-form {
+  padding-top: 2px !important;
+}
