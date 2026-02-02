@@ -12,16 +12,19 @@ body {
 /* Rolling N Animation */
 @keyframes rollIn {
   0% {
-    transform: translateX(150vw) rotate(0deg);
+    transform: translateX(110vw) rotate(0deg) scale(1.02);
     opacity: 0;
   }
-
-  70% {
+  60% {
     opacity: 1;
   }
-
+  85% {
+    transform: translateX(-2px) rotate(740deg) scale(1.01);
+  }
+  96% { transform: translateX(0.6px) rotate(790deg) scale(0.985); }
   100% {
-    transform: translateX(0) rotate(720deg);
+    /* 最後にピタッと収束（変身感の核） */
+    transform: translateX(0) rotate(760deg) scale(0.98);
     opacity: 1;
   }
 }
@@ -29,23 +32,26 @@ body {
 @keyframes fadeInLogo {
   0% {
     opacity: 0;
-    transform: scale(0.95);
+    transform: translateX(6px) scale(0.995);
   }
-
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: translateX(0) scale(1);
   }
 }
 
-.rolling-n {
+.rolling-n{
   display: inline-block;
-  animation: rollIn 2.86s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation:
+    rollIn 2.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+    fadeOutN 0.26s ease 1.92s forwards;
+  will-change: transform, opacity;
 }
 
-.fade-in-logo {
+.fade-in-logo{
   opacity: 0;
-  animation: fadeInLogo 1s ease-out 3.06s forwards;
+  animation: fadeInLogo 0.65s ease-out 1.88s forwards;
+  will-change: transform, opacity;
 }
 
 /* Scroll reveal */
@@ -235,6 +241,7 @@ body {
 /* ✅ Navbarを白固定にした時の文字色を安定させる */
 nav {
   color: #0f1419;
+  overflow: visible;
 }
 
 nav a {
@@ -508,4 +515,49 @@ body.policy-page {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+/* --- Logo stage (PNG animation) --- */
+.logo-stage{
+  position: relative;
+  display: inline-block;
+  height: 80px;          /* navのh-20と揃える */
+  overflow: visible !important;     /* ← ここが重要：クリップしない */
+}
+
+.logo-full{
+  height: 80px;
+  width: auto;
+  display: block;        /* 幅の基準になる */
+}
+
+.logo-n{
+  position: absolute;
+  left: 0;
+  height: 56px;          /* ← Nは小さく（調整値） */
+  top: 8px;
+  width: auto;
+  --n-y: 1px;
+  z-index: 2;
+  transform-origin: 50% 50%;
+}
+
+/* スマホではさらに少し小さく */
+@media (max-width: 640px){
+  .logo-stage{ height: 72px; }
+  .logo-full{  height: 72px; }
+  .logo-n{     height: 48px; }
+}
+
+@keyframes fadeOutN {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.logo-n,
+.logo-full{
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform, opacity;
 }

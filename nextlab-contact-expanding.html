@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NextLab Inc. - Expanding Contact</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cinzel"', 'serif'],
+                        sans: ['"Inter"', '"Noto Sans JP"', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #0f1419 0%, #1a202c 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        /* Initial Contact Button */
+        .contact-trigger {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .contact-trigger.expanded {
+            opacity: 0;
+            transform: scale(0.8);
+            pointer-events: none;
+        }
+
+        .contact-main-button {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(184, 166, 86, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border: 2px solid rgba(184, 166, 86, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .contact-main-button::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 50%;
+            padding: 2px;
+            background: linear-gradient(135deg, rgba(184, 166, 86, 0.4), transparent, rgba(184, 166, 86, 0.4));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .contact-trigger:hover .contact-main-button::before {
+            opacity: 1;
+            animation: rotate 3s linear infinite;
+        }
+
+        .contact-trigger:hover .contact-main-button {
+            transform: scale(1.05);
+            box-shadow: 0 32px 96px rgba(184, 166, 86, 0.3);
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .pulse-ring {
+            position: absolute;
+            inset: -20px;
+            border-radius: 50%;
+            border: 2px solid rgba(184, 166, 86, 0.3);
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .pulse-ring:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0;
+            }
+        }
+
+        /* Expanded Grid */
+        .contact-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s ease;
+            z-index: 100;
+        }
+
+        .contact-grid.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Individual Contact Cards */
+        .contact-option {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem;
+            text-align: center;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: scale(0);
+            opacity: 0;
+        }
+
+        .contact-grid.active .contact-option {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .contact-grid.active .contact-option:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .contact-grid.active .contact-option:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .contact-grid.active .contact-option:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        .contact-grid.active .contact-option:nth-child(4) {
+            transition-delay: 0.4s;
+        }
+
+        /* Background overlays */
+        .contact-option::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--gradient-from), var(--gradient-to));
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            z-index: 0;
+        }
+
+        .contact-option:hover::before {
+            opacity: 1;
+        }
+
+        .contact-option-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Borders between cards */
+        .contact-option:nth-child(1),
+        .contact-option:nth-child(2) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-option:nth-child(odd) {
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Color schemes */
+        .contact-option-1 {
+            --gradient-from: rgba(139, 92, 246, 0.2);
+            --gradient-to: rgba(139, 92, 246, 0.05);
+            background: rgba(139, 92, 246, 0.03);
+        }
+
+        .contact-option-2 {
+            --gradient-from: rgba(255, 107, 53, 0.2);
+            --gradient-to: rgba(255, 107, 53, 0.05);
+            background: rgba(255, 107, 53, 0.03);
+        }
+
+        .contact-option-3 {
+            --gradient-from: rgba(30, 58, 138, 0.3);
+            --gradient-to: rgba(30, 58, 138, 0.1);
+            background: rgba(30, 58, 138, 0.05);
+        }
+
+        .contact-option-4 {
+            --gradient-from: rgba(16, 185, 129, 0.2);
+            --gradient-to: rgba(16, 185, 129, 0.05);
+            background: rgba(16, 185, 129, 0.03);
+        }
+
+        /* Icons */
+        .contact-option-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .contact-option:hover .contact-option-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(184, 166, 86, 0.4);
+        }
+
+        /* Number badges */
+        .contact-option-number {
+            position: absolute;
+            top: 3rem;
+            right: 3rem;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.4);
+            transition: all 0.6s ease;
+        }
+
+        .contact-option:hover .contact-option-number {
+            transform: scale(1.2) rotate(360deg);
+            background: rgba(184, 166, 86, 0.2);
+            border-color: rgba(184, 166, 86, 0.4);
+            color: #b8a656;
+        }
+
+        /* Typography */
+        .contact-option-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            transition: all 0.4s ease;
+        }
+
+        .contact-option:hover .contact-option-title {
+            color: #b8a656;
+            transform: translateY(-4px);
+        }
+
+        .contact-option-description {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 400px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.7;
+            transition: all 0.4s ease;
+        }
+
+        .contact-option:hover .contact-option-description {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Tags */
+        .contact-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .contact-tag {
+            padding: 0.375rem 1rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-option:hover .contact-tag {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Close button */
+        .close-button {
+            position: fixed;
+            top: 3rem;
+            right: 3rem;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 101;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.4s ease;
+        }
+
+        .close-button.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .close-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(184, 166, 86, 0.5);
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        /* Arrow animation */
+        .arrow-icon {
+            transition: transform 0.4s ease;
+        }
+
+        .contact-option:hover .arrow-icon {
+            transform: translateX(8px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-main-button {
+                width: 300px;
+                height: 300px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, 1fr);
+            }
+
+            .contact-option {
+                padding: 2rem;
+                border-right: none !important;
+            }
+
+            .contact-option:nth-child(1),
+            .contact-option:nth-child(2),
+            .contact-option:nth-child(3) {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .contact-option-title {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Initial Contact Trigger -->
+    <div class="contact-trigger" id="contactTrigger">
+        <div class="pulse-ring"></div>
+        <div class="pulse-ring"></div>
+        
+        <div class="contact-main-button">
+            <div style="text-align: center;">
+                <p style="font-size: 0.875rem; letter-spacing: 0.2em; color: rgba(255,255,255,0.5); margin-bottom: 1.5rem; text-transform: uppercase;">
+                    Get in Touch
+                </p>
+                <h2 style="font-family: 'Cinzel', serif; font-size: 4rem; font-weight: 600; color: white; margin-bottom: 1rem;">
+                    CONTACT
+                </h2>
+                <p style="color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 280px; margin: 0 auto;">
+                    お気軽にお問い合わせください
+                </p>
+            </div>
+            
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="opacity: 0.6; margin-top: 1rem;">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Expanded Contact Grid -->
+    <div class="contact-grid" id="contactGrid">
+        
+        <!-- Option 1: General -->
+        <a href="#general" class="contact-option contact-option-1">
+            <div class="contact-option-number">01</div>
+            <div class="contact-option-content">
+                <div class="contact-option-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </div>
+                <h3 class="contact-option-title">General Inquiry</h3>
+                <p class="contact-option-description">
+                    協業のご相談、取材依頼、その他<br>お気軽にお問い合わせください
+                </p>
+                <div class="flex items-center justify-center gap-2" style="color: rgba(255,255,255,0.7); font-size: 0.875rem;">
+                    <span>詳しく見る</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="arrow-icon">
+                        <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="contact-tags">
+                    <span class="contact-tag">協業・提携</span>
+                    <span class="contact-tag">取材依頼</span>
+                    <span class="contact-tag">その他</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Option 2: EC / Bakuage -->
+        <a href="#ec" class="contact-option contact-option-2">
+            <div class="contact-option-number">02</div>
+            <div class="contact-option-content">
+                <div class="contact-option-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                </div>
+                <h3 class="contact-option-title">Bakuage</h3>
+                <p class="contact-option-description">
+                    EC事業者様、Shopify構築会社様<br>バクアゲ導入に関するご相談
+                </p>
+                <div class="flex items-center justify-center gap-2" style="color: rgba(255,255,255,0.7); font-size: 0.875rem;">
+                    <span>詳しく見る</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="arrow-icon">
+                        <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="contact-tags">
+                    <span class="contact-tag">返品自動化</span>
+                    <span class="contact-tag">送金自動化</span>
+                    <span class="contact-tag">住所確認</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Option 3: Readable -->
+        <a href="#readable" class="contact-option contact-option-3">
+            <div class="contact-option-number">03</div>
+            <div class="contact-option-content">
+                <div class="contact-option-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                    </svg>
+                </div>
+                <h3 class="contact-option-title">Readable</h3>
+                <p class="contact-option-description">
+                    AI翻訳ツールReadableの<br>法人導入、カスタマイズのご相談
+                </p>
+                <div class="flex items-center justify-center gap-2" style="color: rgba(255,255,255,0.7); font-size: 0.875rem;">
+                    <span>詳しく見る</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="arrow-icon">
+                        <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="contact-tags">
+                    <span class="contact-tag">法人導入</span>
+                    <span class="contact-tag">API連携</span>
+                    <span class="contact-tag">大量翻訳</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Option 4: AI & Strategy -->
+        <a href="#ai" class="contact-option contact-option-4">
+            <div class="contact-option-number">04</div>
+            <div class="contact-option-content">
+                <div class="contact-option-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                </div>
+                <h3 class="contact-option-title">AI & Strategy</h3>
+                <p class="contact-option-description">
+                    AI実装コンサルティング<br>新規事業開発支援のご相談
+                </p>
+                <div class="flex items-center justify-center gap-2" style="color: rgba(255,255,255,0.7); font-size: 0.875rem;">
+                    <span>詳しく見る</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="arrow-icon">
+                        <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="contact-tags">
+                    <span class="contact-tag">AI実装支援</span>
+                    <span class="contact-tag">事業開発</span>
+                    <span class="contact-tag">戦略立案</span>
+                </div>
+            </div>
+        </a>
+
+    </div>
+
+    <!-- Close Button -->
+    <div class="close-button" id="closeButton">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+    </div>
+
+    <script>
+        const contactTrigger = document.getElementById('contactTrigger');
+        const contactGrid = document.getElementById('contactGrid');
+        const closeButton = document.getElementById('closeButton');
+
+        // Expand contact options
+        contactTrigger.addEventListener('click', () => {
+            contactTrigger.classList.add('expanded');
+            setTimeout(() => {
+                contactGrid.classList.add('active');
+                closeButton.classList.add('active');
+            }, 300);
+        });
+
+        // Close and return to trigger
+        closeButton.addEventListener('click', () => {
+            contactGrid.classList.remove('active');
+            closeButton.classList.remove('active');
+            setTimeout(() => {
+                contactTrigger.classList.remove('expanded');
+            }, 600);
+        });
+
+        // ESC key to close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && contactGrid.classList.contains('active')) {
+                closeButton.click();
+            }
+        });
+    </script>
+
+</body>
+
+</html>

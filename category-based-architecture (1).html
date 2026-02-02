@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NextLab Inc. - Category-Based Solution Architecture</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cinzel"', 'serif'],
+                        sans: ['"Inter"', '"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        'slate-850': '#151b23',
+                        'slate-900': '#0f1419',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #0f1419 0%, #1a202c 100%);
+        }
+
+        .solutions-heading {
+            color: #0f1419;
+        }
+
+        .solutions-subheading {
+            color: #475569;
+        }
+
+        .glass-light {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(15, 20, 25, 0.1);
+            border-radius: 24px;
+        }
+
+        /* Category header style */
+        .category-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 1.25rem;
+            background: rgba(15, 20, 25, 0.05);
+            border: 1px solid rgba(15, 20, 25, 0.1);
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+        }
+
+        .category-icon {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .category-operations {
+            background: #FF6B35;
+        }
+
+        .category-ai {
+            background: #1E3A8A;
+        }
+
+        /* Integrated header style */
+        .logo-integrated {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo-integrated .divider {
+            width: 1px;
+            height: 32px;
+            background: linear-gradient(to bottom, transparent, rgba(15, 20, 25, 0.2), transparent);
+        }
+
+        .option-container {
+            background: white;
+            padding: 3rem;
+            margin: 2rem 0;
+            border-radius: 24px;
+        }
+
+        .option-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: #0f1419;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid rgba(15, 20, 25, 0.1);
+        }
+
+        .description {
+            color: #475569;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Category section spacing */
+        .category-section {
+            padding: 2rem 0;
+        }
+
+        .category-section:first-child {
+            padding-top: 0;
+        }
+
+        .category-section:not(:last-child) {
+            border-bottom: 2px solid rgba(15, 20, 25, 0.08);
+        }
+
+        /* Products Ecosystem */
+        .ecosystem-card {
+            transition: all 0.3s ease;
+        }
+
+        .ecosystem-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(15, 20, 25, 0.08);
+        }
+
+        .ecosystem-group {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+    </style>
+</head>
+
+<body class="antialiased p-8">
+
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12 text-white">
+            <h1 class="text-4xl font-serif mb-4">Category-Based Solution Architecture</h1>
+            <p class="text-slate-300">カテゴリー軸でグループ化したソリューション構造</p>
+        </div>
+
+        <!-- ========== PATTERN 1: カテゴリー分離デザイン ========== -->
+        <div class="option-container">
+            <h2 class="option-title">Pattern 1: カテゴリー分離デザイン</h2>
+            <p class="description">
+                2つの明確なカテゴリーブロックに分離。<br>
+                カテゴリーヘッダーで視覚的に区別し、事業の論理的構造を明確化。
+            </p>
+
+            <div class="glass-light p-4">
+                
+                <!-- ========== OPERATIONS AUTOMATION CATEGORY ========== -->
+                <div class="category-section">
+                    <div class="category-header">
+                        <span class="category-icon category-operations"></span>
+                        <span class="text-xs tracking-[0.15em] text-slate-700 font-semibold uppercase">Operations Automation</span>
+                    </div>
+
+                    <div class="space-y-2">
+                        <!-- Bakuage Suite -->
+                        <a href="https://bakuage.co/" target="_blank" rel="noopener noreferrer"
+                            class="group block py-8 border-b border-slate-900/10 hover:border-slate-900/50 transition-all duration-500">
+                            <div class="flex items-center justify-between gap-8">
+                                <div class="flex-1">
+                                    <div class="logo-integrated">
+                                        <svg class="h-10 w-10" viewBox="0 0 64 64" aria-hidden="true">
+                                            <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9"></rect>
+                                            <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
+                                            <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
+                                        </svg>
+                                        <h3 class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
+                                            Bakuage Suite
+                                        </h3>
+                                        <div class="divider"></div>
+                                        <img src="https://placehold.co/140x40/FF6B35/FFFFFF?text=BAKUAGE" alt="Bakuage"
+                                            class="h-8 w-auto object-contain opacity-90 group-hover:opacity-100 transition" />
+                                    </div>
+                                    <span class="block text-sm font-sans text-slate-700 mt-3 ml-16 font-light group-hover:text-slate-900 leading-relaxed">
+                                        メルカリなどの大手事業者が導入する業務自動化プラットフォーム。<strong>返品・送金・住所確認</strong>など、EC・買取・経理・採用まで幅広いバックオフィス業務を完全自動化し、オペレーションコストを劇的に削減します。
+                                    </span>
+                                </div>
+                                <span class="hidden lg:block text-xs tracking-widest text-slate-600 group-hover:text-slate-900 transition">
+                                    01 / OPERATIONS
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ========== AI & STRATEGY CATEGORY ========== -->
+                <div class="category-section">
+                    <div class="category-header">
+                        <span class="category-icon category-ai"></span>
+                        <span class="text-xs tracking-[0.15em] text-slate-700 font-semibold uppercase">AI & Strategy</span>
+                    </div>
+
+                    <div class="space-y-2">
+                        <!-- Readable -->
+                        <a href="https://lp.readable.jp/" target="_blank" rel="noopener noreferrer"
+                            class="group block py-8 border-b border-slate-900/10 hover:border-slate-900/50 transition-all duration-500">
+                            <div class="flex items-center justify-between gap-8">
+                                <div class="flex-1">
+                                    <div class="logo-integrated">
+                                        <svg class="h-10 w-10" viewBox="0 0 64 64" aria-hidden="true">
+                                            <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9"></rect>
+                                            <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
+                                            <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
+                                        </svg>
+                                        <h3 class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
+                                            Readable
+                                        </h3>
+                                        <div class="divider"></div>
+                                        <img src="https://placehold.co/140x40/1E3A8A/FFFFFF?text=Readable" alt="Readable"
+                                            class="h-8 w-auto object-contain opacity-90 group-hover:opacity-100 transition" />
+                                    </div>
+                                    <span class="block text-sm font-sans text-slate-700 mt-3 ml-16 font-light group-hover:text-slate-900 leading-relaxed">
+                                        PDFレイアウト完全保持で約30秒の高精度AI翻訳。原文・訳文の見開き表示、図表・数式もそのまま。累計50億文字の翻訳実績を持つ、研究者・ビジネスパーソン必携ツール。
+                                    </span>
+                                </div>
+                                <span class="hidden lg:block text-xs tracking-widest text-slate-600 group-hover:text-slate-900 transition">
+                                    02 / TRANSLATION
+                                </span>
+                            </div>
+                        </a>
+
+                        <!-- AI Implementation -->
+                        <a href="#" class="group block py-8 border-b border-slate-900/10 hover:border-slate-900/50 transition-all duration-500">
+                            <div class="flex items-center justify-between gap-8">
+                                <div class="flex-1">
+                                    <div class="logo-integrated">
+                                        <svg class="h-10 w-10" viewBox="0 0 64 64" aria-hidden="true">
+                                            <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9"></rect>
+                                            <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
+                                            <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
+                                        </svg>
+                                        <h3 class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
+                                            AI Implementation
+                                        </h3>
+                                    </div>
+                                    <span class="block text-sm font-sans text-slate-700 mt-3 ml-16 font-light group-hover:text-slate-900 leading-relaxed">
+                                        ReadableやBakuageで培った独自AI技術をあなたのビジネスへ。生成AI(LLM)のカスタム実装から業務統合まで、実装ノウハウで社会の生産性向上を実現します。
+                                    </span>
+                                </div>
+                                <span class="hidden lg:block text-xs tracking-widest text-slate-600 group-hover:text-slate-900 transition">
+                                    03 / TECHNOLOGY
+                                </span>
+                            </div>
+                        </a>
+
+                        <!-- Business Incubation -->
+                        <a href="#" class="group block py-8 transition-all duration-500">
+                            <div class="flex items-center justify-between gap-8">
+                                <div class="flex-1">
+                                    <div class="logo-integrated">
+                                        <svg class="h-10 w-10" viewBox="0 0 64 64" aria-hidden="true">
+                                            <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9"></rect>
+                                            <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
+                                            <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
+                                        </svg>
+                                        <h3 class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
+                                            Business Incubation
+                                        </h3>
+                                    </div>
+                                    <span class="block text-sm font-sans text-slate-700 mt-3 ml-16 font-light group-hover:text-slate-900 leading-relaxed">
+                                        データと論理に基づく新規事業開発の伴走支援。市場調査からプロダクト設計、Go-to-Market戦略まで、連続起業家としての経験で事業の成功確率を高めます。
+                                    </span>
+                                </div>
+                                <span class="hidden lg:block text-xs tracking-widest text-slate-600 group-hover:text-slate-900 transition">
+                                    04 / STRATEGY
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========== PATTERN 2: サブタイトル統合デザイン ========== -->
+        <div class="option-container">
+            <h2 class="option-title">Pattern 2: サブタイトル統合デザイン</h2>
+            <p class="description">
+                カテゴリーを各サービスのサブタイトルとして配置。<br>
+                よりシームレスで一体感のあるデザイン。
+            </p>
+
+            <div class="glass-light p-4">
+                <div class="space-y-2">
+                    
+                    <!-- Bakuage Suite -->
+                    <a href="https://bakuage.co/" target="_blank" rel="noopener noreferrer"
+                        class="group block py-8 border-b border-slate-900/10 hover:border-slate-900/50 transition-all duration-500">
+                        <div class="flex items-center justify-between gap-8">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="category-icon category-operations"></span>
+                                    <span class="text-xs tracking-[0.15em] text-slate-500 font-medium uppercase">Operations Automation</span>
+                                </div>
+                                <div class="logo-integrated">
+                                    <svg class="h-10 w-10" viewBox="0 0 64 64" aria-hidden="true">
+                                        <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9"></rect>
+                                        <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
+                                        <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
+                                    </svg>
+                                    <h3 class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
+                                        Bakuage Suite
+                                    </h3>
+                                    <div class="divider"></div>
+                                    <img src="https://placehold.co/140x40/FF6B35/FFFFFF?text=BAKUAGE" alt="Bakuage"
+                                        class="h-8 w-auto object-contain opacity-90 group-hover:opacity-100 transition" />
+                                </div>
+                                <span class="block text-sm font-sans text-slate-700 mt-3 ml-16 font-light group-hover:text-slate-900 leading-relaxed">
+                                    メルカリなどの大手事業者が導入する業務自動化プラットフォーム。<strong>返品・送金・住所確認</strong>など、EC・買取・経理・採用まで幅広いバックオフィス業務を完全自動化し、オペレーションコストを劇的に削減します。
+                                </span>
+                            </div>
+                            <span class="hidden lg:block text-xs tracking-widest text-slate-600 group-hover:text-slate-900 transition">
+                                01
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Readable -->
+                    <a href="https://lp.readable.jp/" target="_blank" rel="noopener noreferrer"
+                        class="group block py-8 border-b border-slate-900/10 hover:border-slate-900/50 transition-all duration-500">
+                        <div class="flex items-center justify-between gap-8">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="category-icon category-ai"></span>
+                                    <span class="text-xs tracking-[0.15em] text-slate-500 font-medium uppercase">AI & Strategy</span>
+                                </div>
+                                <div class="logo-integrated">
+                                    <svg class="h-10 w-10" viewBox="0 0 64 64" aria-hidden="true">
+                                        <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9"></rect>
+                                        <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
+                                        <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
+                                    </svg>
+                                    <h3 class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
+                                        Readable
+                                    </h3>
+                                    <div class="divider"></div>
+                                    <img src="https://placehold.co/140x40/1E3A8A/FFFFFF?text=Readable" alt="Readable"
+                                        class="h-8 w-auto object-contain opacity-90 group-hover:opacity-100 transition" />
+                                </div>
+                                <span class="block text-sm font-sans text-slate-700 mt-3 ml-16 font-light group-hover:text-slate-900 leading-relaxed">
+                                    PDFレイアウト完全保持で約30秒の高精度AI翻訳。原文・訳文の見開き表示、図表・数式もそのまま。累計50億文字の翻訳実績を持つ、研究者・ビジネスパーソン必携ツール。
+                                </span>
+                            </div>
+                            <span class="hidden lg:block text-xs tracking-widest text-slate-600 group-hover:text-slate-900 transition">
+                                02
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- AI Implementation -->
+                    <a href="#" class="group block py-8 border-b border-slate-900/10 hover:border-slate-900/50 transition-all duration-500">
+                        <div class="flex items-center justify-between gap-8">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="category-icon category-ai"></span>
+                                    <span class="text-xs tracking-[0.15em] text-slate-500 font-medium uppercase">AI & Strategy</span>
+                                </div>
+                                <div class="logo-integrated">
+                                    <svg class="h-10 w-10" viewBox="0 0 64 64" aria-hidden="true">
+                                        <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9"></rect>
+                                        <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
+                                        <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
+                                    </svg>
+                                    <h3 class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
+                                        AI Implementation
+                                    </h3>
+                                </div>
+                                <span class="block text-sm font-sans text-slate-700 mt-3 ml-16 font-light group-hover:text-slate-900 leading-relaxed">
+                                    ReadableやBakuageで培った独自AI技術をあなたのビジネスへ。生成AI(LLM)のカスタム実装から業務統合まで、実装ノウハウで社会の生産性向上を実現します。
+                                </span>
+                            </div>
+                            <span class="hidden lg:block text-xs tracking-widest text-slate-600 group-hover:text-slate-900 transition">
+                                03
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Business Incubation -->
+                    <a href="#" class="group block py-8 transition-all duration-500">
+                        <div class="flex items-center justify-between gap-8">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="category-icon category-ai"></span>
+                                    <span class="text-xs tracking-[0.15em] text-slate-500 font-medium uppercase">AI & Strategy</span>
+                                </div>
+                                <div class="logo-integrated">
+                                    <svg class="h-10 w-10" viewBox="0 0 64 64" aria-hidden="true">
+                                        <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9"></rect>
+                                        <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
+                                        <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
+                                    </svg>
+                                    <h3 class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
+                                        Business Incubation
+                                    </h3>
+                                </div>
+                                <span class="block text-sm font-sans text-slate-700 mt-3 ml-16 font-light group-hover:text-slate-900 leading-relaxed">
+                                    データと論理に基づく新規事業開発の伴走支援。市場調査からプロダクト設計、Go-to-Market戦略まで、連続起業家としての経験で事業の成功確率を高めます。
+                                </span>
+                            </div>
+                            <span class="hidden lg:block text-xs tracking-widest text-slate-600 group-hover:text-slate-900 transition">
+                                04
+                            </span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== Products Ecosystem: カテゴリー別グループ化 ========== -->
+        <div class="option-container">
+            <h2 class="option-title">Products Ecosystem: カテゴリー別グループ化</h2>
+            <p class="description">
+                Products Ecosystemセクションでも同じカテゴリー構造を維持。<br>
+                視覚的な一貫性を保ちながら、詳細を展開します。
+            </p>
+
+            <div class="glass-light p-5 md:p-7">
+                <div class="grid md:grid-cols-2 gap-5">
+                    
+                    <!-- Operations Automation Group -->
+                    <div class="ecosystem-group">
+                        <div class="category-header mb-4">
+                            <span class="category-icon category-operations"></span>
+                            <span class="text-xs tracking-[0.15em] text-slate-700 font-semibold uppercase">Operations Automation</span>
+                        </div>
+
+                        <div class="space-y-4">
+                            <!-- Bakuage親 -->
+                            <div class="ecosystem-card rounded-2xl border border-slate-900/10 bg-white p-5">
+                                <img src="https://placehold.co/240x70/FF6B35/FFFFFF?text=BAKUAGE+SUITE" alt="Bakuage Suite"
+                                    class="h-14 w-auto mx-auto object-contain" />
+                            </div>
+
+                            <!-- コネクター -->
+                            <div class="flex justify-center">
+                                <div class="h-8 w-px bg-slate-900/20"></div>
+                            </div>
+
+                            <!-- サブサービス -->
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="ecosystem-card rounded-xl border border-slate-900/10 bg-white p-3">
+                                    <img src="https://placehold.co/80x30/FF6B35/FFFFFF?text=配送" alt="配送"
+                                        class="h-8 w-auto mx-auto object-contain" />
+                                </div>
+                                <div class="ecosystem-card rounded-xl border border-slate-900/10 bg-white p-3">
+                                    <img src="https://placehold.co/80x30/FF6B35/FFFFFF?text=送金" alt="送金"
+                                        class="h-8 w-auto mx-auto object-contain" />
+                                </div>
+                                <div class="ecosystem-card rounded-xl border border-slate-900/10 bg-white p-3">
+                                    <img src="https://placehold.co/80x30/FF6B35/FFFFFF?text=住所" alt="住所"
+                                        class="h-8 w-auto mx-auto object-contain" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI & Strategy Group -->
+                    <div class="ecosystem-group">
+                        <div class="category-header mb-4">
+                            <span class="category-icon category-ai"></span>
+                            <span class="text-xs tracking-[0.15em] text-slate-700 font-semibold uppercase">AI & Strategy</span>
+                        </div>
+
+                        <div class="space-y-3">
+                            <!-- Readable -->
+                            <div class="ecosystem-card rounded-2xl border border-slate-900/10 bg-white p-5">
+                                <img src="https://placehold.co/200x60/1E3A8A/FFFFFF?text=Readable" alt="Readable"
+                                    class="h-12 w-auto mx-auto object-contain" />
+                            </div>
+
+                            <!-- AI Implementation -->
+                            <div class="ecosystem-card rounded-2xl border border-slate-900/10 bg-white/70 p-4">
+                                <div class="text-center">
+                                    <p class="text-sm font-semibold text-slate-900 mb-1">AI Implementation</p>
+                                    <p class="text-xs text-slate-600">カスタムAI実装支援</p>
+                                </div>
+                            </div>
+
+                            <!-- Business Incubation -->
+                            <div class="ecosystem-card rounded-2xl border border-slate-900/10 bg-white/70 p-4">
+                                <div class="text-center">
+                                    <p class="text-sm font-semibold text-slate-900 mb-1">Business Incubation</p>
+                                    <p class="text-xs text-slate-600">新規事業開発支援</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- 推奨事項 -->
+        <div class="text-center text-white mt-16 mb-8">
+            <h3 class="text-2xl font-serif mb-4">💡 カテゴリー軸のメリット</h3>
+            <div class="max-w-3xl mx-auto space-y-4 text-slate-300 text-left">
+                <p>
+                    <strong class="text-white">Pattern 1 (カテゴリー分離デザイン)</strong> を推奨します。
+                </p>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>事業の論理的一貫性:</strong> 業務自動化 vs AI/戦略支援という明確な軸</li>
+                    <li><strong>顧客セグメント:</strong> バックオフィス業務を持つ全企業 vs AI導入企業/新規事業企業に最適化</li>
+                    <li><strong>利用想起の広さ:</strong> EC、買取、経理、採用、カスタマーサポート全てをカバー</li>
+                    <li><strong>NextLabの強み:</strong> プロダクト開発力 + コンサルティング力の両輪を表現</li>
+                    <li><strong>Readableの位置づけ:</strong> AI技術の具体的な成果物として認識されやすい</li>
+                    <li><strong>拡張性:</strong> 今後AI & Strategyカテゴリーにサービスが増えても対応可能</li>
+                </ul>
+                
+                <div class="mt-6 p-4 bg-white/10 rounded-lg border border-white/20">
+                    <p class="text-white font-semibold mb-2">実装推奨:</p>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        <li>Core Solutions: カテゴリーヘッダーで明確に分離</li>
+                        <li>Products Ecosystem: 2カラムでグループ化し、視覚的バランスを保つ</li>
+                        <li>カラーコード: Operations = オレンジ系、AI = ブルー系で統一</li>
+                        <li>ホバー時は各カードが独立して反応し、カテゴリーを超えた探索を促進</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

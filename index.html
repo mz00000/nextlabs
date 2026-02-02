@@ -62,10 +62,20 @@
     <nav class="fixed w-full top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md content-layer">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#hero" class="flex items-center gap-3">
-                <!-- ✅ PNGロゴに差し替え -->
-                <img src="assets/media/nextlab_logo.png" alt="NextLab Inc." class="h-20 w-auto object-contain"
-                    loading="eager" decoding="async" />
-            </a>
+  <!-- Logo Stage -->
+  <span class="logo-stage">
+    <!-- Full logo: 幅の基準にする（最初は透明） -->
+    <img src="assets/media/nextlab_logo.png" alt="NextLab Inc."
+      class="logo-full fade-in-logo py-3"
+      loading="eager" decoding="async" />
+
+    <!-- Rolling N: 上に重ねて動かす -->
+    <img src="assets/media/nextlab_n.png" alt="NextLab N"
+      class="logo-n rolling-n"
+      loading="eager" decoding="async" />
+  </span>
+</a>
+
 
             <div
                 class="hidden md:flex items-center gap-10 text-xs tracking-widest text-slate-300 font-medium uppercase">
@@ -89,11 +99,11 @@
                 </p>
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white leading-tight mb-8">
                     <span class="hero-gradient-text">Defining the Future<br>
-                    of Corporate Logic.</span>
+                        of Corporate Logic.</span>
                 </h1>
                 <p class="text-lg text-slate-300 leading-relaxed max-w-2xl font-light mb-12">
                     <span class="hero-gradient-text">ネクストラボは、AI技術と事業開発の知見を統合し、<br class="hidden md:block">
-                    企業のオペレーションを再構築するテクノロジー・パートナーです。</span>
+                        企業のオペレーションを再構築するテクノロジー・パートナーです。</span>
                 </p>
                 <a href="#solutions"
                     class="group inline-flex items-center gap-3 text-white border-b border-white pb-1 hover:text-slate-200 hover:border-slate-200 transition">
@@ -253,22 +263,44 @@
                     <a href="https://bakuage.co/" target="_blank" rel="noopener noreferrer"
                         class="group block py-8 border-b border-slate-900/10 hover:border-slate-900/50 transition-all duration-500 js-hover-reveal"
                         data-bg-target="bg-bakuage">
-                        <div class="flex items-center justify-between gap-8">
+                        <div class="flex items-center justify-between gap-4 sm:gap-8">
                             <div class="flex-1">
-                                <div class="flex items-center gap-6 mb-2">
-                                    <svg class="h-10 w-10" viewBox="0 0 64 64" aria-hidden="true">
-                                        <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9">
-                                        </rect>
-                                        <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
-                                        <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
-                                    </svg>
-                                    <h3
-                                        class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
-                                        Bakuage Suite
-                                    </h3>
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="inline-block w-2 h-2 rounded-full bg-orange-500"></span>
+                                    <span class="text-xs tracking-widest text-slate-600/80 font-sans uppercase">
+                                        OPERATIONS AUTOMATION
+                                    </span>
                                 </div>
+                                <div class="flex items-center gap-3 sm:gap-6 mb-2">
+  <!-- 黒ポチ（スマホで小さく） -->
+  <svg class="h-7 w-7 sm:h-9 sm:w-9 md:h-10 md:w-10 shrink-0"
+       viewBox="0 0 64 64" aria-hidden="true">
+    <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9"></rect>
+    <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
+    <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
+  </svg>
+
+  <!-- タイトル＋ロゴ -->
+  <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+    <h3 class="text-2xl sm:text-3xl md:text-5xl font-serif text-slate-900
+               group-hover:text-slate-700 transition whitespace-nowrap">
+      Bakuage Suite
+    </h3>
+
+    <!-- divider -->
+    <span class="hidden sm:block w-px h-6 bg-slate-300/70"></span>
+
+    <!-- logo -->
+    <img src="assets/media/logo_bakuage.png" alt="Bakuage"
+         class="h-6 sm:h-7 md:h-8 w-auto object-contain opacity-90
+                group-hover:opacity-100 transition"
+         loading="lazy" />
+  </div>
+</div>
+
+
                                 <span
-                                    class="block text-sm font-sans text-slate-700 mt-3 ml-16 font-light group-hover:text-slate-900 leading-relaxed">
+                                    class="block text-sm font-sans text-slate-700 mt-3 ml-0 md:ml-16 font-light group-hover:text-slate-900 leading-relaxed">
                                     メルカリなどの大手EC事業者が導入する業務自動化プラットフォーム。返品・送金・住所確認など煩雑なバックオフィス業務を完全自動化し、オペレーションコストを劇的に削減します。
                                 </span>
                             </div>
@@ -283,22 +315,44 @@
                     <a href="https://lp.readable.jp/" target="_blank" rel="noopener noreferrer"
                         class="group block py-8 border-b border-slate-900/10 hover:border-slate-900/50 transition-all duration-500 js-hover-reveal"
                         data-bg-target="bg-readable">
-                        <div class="flex items-center justify-between gap-8">
+                        <div class="flex items-center justify-between gap-4 sm:gap-8">
                             <div class="flex-1">
-                                <div class="flex items-center gap-6 mb-2">
-                                    <svg class="h-10 w-10" viewBox="0 0 64 64" aria-hidden="true">
-                                        <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9">
-                                        </rect>
-                                        <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
-                                        <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
-                                    </svg>
-                                    <h3
-                                        class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
-                                        Readable
-                                    </h3>
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+                                    <span class="text-xs tracking-widest text-slate-600/80 font-sans uppercase">
+                                        AI & STRATEGY
+                                    </span>
                                 </div>
+                                <div class="flex items-center gap-3 sm:gap-6 mb-2">
+  <!-- 黒ポチ（スマホで小さく） -->
+  <svg class="h-7 w-7 sm:h-9 sm:w-9 md:h-10 md:w-10 shrink-0"
+       viewBox="0 0 64 64" aria-hidden="true">
+    <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9"></rect>
+    <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
+    <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
+  </svg>
+
+  <!-- タイトル＋ロゴ -->
+  <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+    <h3 class="text-2xl sm:text-3xl md:text-5xl font-serif text-slate-900
+               group-hover:text-slate-700 transition whitespace-nowrap">
+      Readable
+    </h3>
+
+    <!-- divider -->
+    <span class="hidden sm:block w-px h-6 bg-slate-300/70"></span>
+
+    <!-- logo -->
+    <img src="assets/media/readable_logo.png" alt="Readable"
+         class="h-6 sm:h-7 md:h-8 w-auto object-contain opacity-90
+                group-hover:opacity-100 transition"
+         loading="lazy" />
+  </div>
+</div>
+
+
                                 <span
-                                    class="block text-sm font-sans text-slate-700 mt-3 ml-16 font-light group-hover:text-slate-900 leading-relaxed">
+                                    class="block text-sm font-sans text-slate-700 mt-3 ml-0 md:ml-16 font-light group-hover:text-slate-900 leading-relaxed">
                                     PDFレイアウト完全保持で約30秒の高精度AI翻訳。原文・訳文の見開き表示、図表・数式もそのまま。累計50億文字の翻訳実績を持つ、研究者・ビジネスパーソン必携ツール。
                                 </span>
                             </div>
@@ -315,20 +369,33 @@
                         data-bg-target="bg-ai">
                         <div class="flex items-baseline justify-between gap-8">
                             <div class="flex-1">
-                                <div class="flex items-center gap-6 mb-2">
-                                    <svg class="h-10 w-10" viewBox="0 0 64 64" aria-hidden="true">
-                                        <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9">
-                                        </rect>
-                                        <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
-                                        <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
-                                    </svg>
-                                    <h3
-                                        class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
-                                        AI Implementation
-                                    </h3>
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+                                    <span class="text-xs tracking-widest text-slate-600/80 font-sans uppercase">
+                                        AI & STRATEGY
+                                    </span>
                                 </div>
+                                <div class="flex items-center gap-3 sm:gap-6 mb-2">
+  <!-- 黒ポチ（スマホで小さく） -->
+  <svg class="h-7 w-7 sm:h-9 sm:w-9 md:h-10 md:w-10 shrink-0"
+       viewBox="0 0 64 64" aria-hidden="true">
+    <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9"></rect>
+    <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
+    <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
+  </svg>
+
+  <!-- タイトル＋ロゴ -->
+  <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+    <h3 class="text-2xl sm:text-3xl md:text-5xl font-serif text-slate-900
+               group-hover:text-slate-700 transition whitespace-nowrap">
+      AI Implementation
+    </h3>
+
+  </div>
+</div>
+
                                 <span
-                                    class="block text-sm font-sans text-slate-700 mt-3 ml-16 font-light group-hover:text-slate-900 leading-relaxed">
+                                    class="block text-sm font-sans text-slate-700 mt-3 ml-0 md:ml-16 font-light group-hover:text-slate-900 leading-relaxed">
                                     ReadableやBakuageで培った独自AI技術をあなたのビジネスへ。生成AI(LLM)のカスタム実装から業務統合まで、実装ノウハウで社会の生産性向上を実現します。
                                 </span>
                             </div>
@@ -345,20 +412,33 @@
                         data-bg-target="bg-incubation">
                         <div class="flex items-baseline justify-between gap-8">
                             <div class="flex-1">
-                                <div class="flex items-center gap-6 mb-2">
-                                    <svg class="h-10 w-10" viewBox="0 0 64 64" aria-hidden="true">
-                                        <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9">
-                                        </rect>
-                                        <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
-                                        <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
-                                    </svg>
-                                    <h3
-                                        class="text-3xl md:text-5xl font-serif text-slate-900 group-hover:text-slate-700 transition">
-                                        Business Incubation
-                                    </h3>
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+                                    <span class="text-xs tracking-widest text-slate-600/80 font-sans uppercase">
+                                        AI & STRATEGY
+                                    </span>
                                 </div>
+                                <div class="flex items-center gap-3 sm:gap-6 mb-2">
+  <!-- 黒ポチ（スマホで小さく） -->
+  <svg class="h-7 w-7 sm:h-9 sm:w-9 md:h-10 md:w-10 shrink-0"
+       viewBox="0 0 64 64" aria-hidden="true">
+    <rect x="6" y="6" width="52" height="52" rx="12" fill="#0f1419" opacity="0.9"></rect>
+    <path d="M20 44V20h9c9 0 15 5 15 12s-6 12-15 12h-9z" fill="#fff"></path>
+    <path d="M27 26h-3v12h3c6 0 10-3 10-6s-4-6-10-6z" fill="#b8a656"></path>
+  </svg>
+
+  <!-- タイトル＋ロゴ -->
+  <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+    <h3 class="text-2xl sm:text-3xl md:text-5xl font-serif text-slate-900
+               group-hover:text-slate-700 transition whitespace-nowrap">
+        Business Incubation
+    </h3>
+
+  </div>
+</div>
+
                                 <span
-                                    class="block text-sm font-sans text-slate-700 mt-3 ml-16 font-light group-hover:text-slate-900 leading-relaxed">
+                                    class="block text-sm font-sans text-slate-700 mt-3 ml-0 md:ml-16 font-light group-hover:text-slate-900 leading-relaxed">
                                     データと論理に基づく新規事業開発の伴走支援。市場調査からプロダクト設計、Go-to-Market戦略まで、連続起業家としての経験で事業の成功確率を高めます。
                                 </span>
                             </div>
@@ -371,74 +451,112 @@
 
                 </div>
             </div>
+<!-- Solutions Logos Panel (add under the 4 solution items) -->
+<div class="mt-10 fade-up-hidden js-scroll-trigger">
+  <div class="rounded-3xl border border-slate-900/10 bg-white/60 backdrop-blur-md p-6 md:p-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start">
 
-            <!-- Products ecosystem (add under the solutions list) -->
-            <div class="mt-8 glass glass-light p-5 md:p-7 fade-up-hidden js-scroll-trigger">
-    <!-- Service 1 (main) -->
-    <div class="bg-white/70 px-5 py-7 md:px-7 md:py-9">
-        <div class="flex flex-col items-center text-center">
-            <div
-                class="ecosystem-main-logo h-33 w-50 md:h-37 md:w-60 rounded-2xl bg-white border border-slate-900/10 shadow-sm flex items-center justify-center overflow-hidden">
-                <img src="assets/media/logo_bakuage.png" alt="Bakuage"
-                    class="h-full w-full object-contain p-5 md:p-6" loading="lazy" decoding="async" />
-            </div>
-
-            <!-- Service 2/3/4 row -->
-            <div class="mt-5 w-full">
-                <div class="grid grid-cols-3 gap-3 md:gap-4">
-                    <!-- Service 2 -->
-                    <div
-                        class="group rounded-2xl border border-slate-900/10 bg-white/70 p-3 md:p-4 transition">
-                        <div class="flex items-center justify-center">
-                            <img src="assets/media/logo_haiso.png" alt="Bakuage Haiso"
-                                class="h-8 md:h-10 w-auto object-contain" loading="lazy" decoding="async" />
-                        </div>
-                    </div>
-
-                    <!-- Service 3 -->
-                    <div
-                        class="group rounded-2xl border border-slate-900/10 bg-white/70 p-3 md:p-4 transition">
-                        <div class="flex items-center justify-center">
-                            <img src="assets/media/logo_sokin.png" alt="Bakuage Sokin"
-                                class="h-8 md:h-10 w-auto object-contain" loading="lazy" decoding="async" />
-                        </div>
-                    </div>
-
-                    <!-- Service 4 -->
-                    <div
-                        class="group rounded-2xl border border-slate-900/10 bg-white/70 p-3 md:p-4 transition">
-                        <div class="flex items-center justify-center">
-                            <img src="assets/media/logo_address-check.png" alt="Bakuage Address Check"
-                                class="h-8 md:h-10 w-auto object-contain" loading="lazy" decoding="async" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- second separator -->
-            <div class="mt-6 w-full">
-                <div class="h-px w-full bg-slate-900/10"></div>
-                <div class="flex justify-center -mt-[6px]">
-                    <span class="h-3 w-3 rounded-full bg-white border border-slate-900/20"></span>
-                </div>
-            </div>
-
-            <!-- Service 5 (bottom) -->
-            <div class="mt-5">
-                <div
-                    class="inline-flex items-center gap-3 rounded-2xl border border-slate-900/10 bg-white/70 px-5 py-3 md:px-6 md:py-4 transition">
-                    <img src="assets/media/readable_logo.png" alt="Readable"
-                        class="h-13 md:h-16 w-auto object-contain" loading="lazy" decoding="async" />
-                </div>
-            </div>
-
+      <!-- Left: OPERATIONS AUTOMATION -->
+      <div>
+        <!-- Category pill -->
+        <div class="flex justify-center md:justify-start mb-5">
+          <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/70 border border-slate-900/10">
+            <span class="inline-block w-2 h-2 rounded-full bg-orange-500"></span>
+            <span class="text-xs tracking-widest text-slate-700/80 font-sans uppercase">
+              OPERATIONS AUTOMATION
+            </span>
+          </div>
         </div>
+
+        <!-- Main logo card -->
+        <div
+          class="rounded-2xl border border-slate-900/10 bg-white/70 p-6 md:p-7 flex items-center justify-center
+                 transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-lg">
+          <img src="assets/media/logo_bakuage.png" alt="Bakuage Suite"
+            class="h-10 md:h-12 w-auto object-contain" loading="lazy" />
+        </div>
+        <div class="hidden md:block w-px h-10 bg-slate-300/70 mx-auto my-5"></div>
+
+        <!-- Small logos -->
+        <div class="mt-6 grid grid-cols-3 gap-4">
+          <div
+            class="rounded-xl border border-slate-900/10 bg-white/70 px-4 py-4 flex items-center justify-center
+                   transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
+            <img src="assets/media/logo_haiso.png" alt="Bakuage Sub 1"
+              class="h-5 md:h-6 w-auto object-contain opacity-90" loading="lazy" />
+          </div>
+          <div
+            class="rounded-xl border border-slate-900/10 bg-white/70 px-4 py-4 flex items-center justify-center
+                   transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
+            <img src="assets/media/logo_sokin.png" alt="Bakuage Sub 2"
+              class="h-5 md:h-6 w-auto object-contain opacity-90" loading="lazy" />
+          </div>
+          <div
+            class="rounded-xl border border-slate-900/10 bg-white/70 px-4 py-4 flex items-center justify-center
+                   transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
+            <img src="assets/media/logo_address-check.png" alt="Bakuage Sub 3"
+              class="h-5 md:h-6 w-auto object-contain opacity-90" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: AI & STRATEGY -->
+      <div>
+        <!-- Category pill -->
+        <div class="flex justify-center md:justify-start mb-5">
+          <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/70 border border-slate-900/10">
+            <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
+            <span class="text-xs tracking-widest text-slate-700/80 font-sans uppercase">
+              AI &amp; STRATEGY
+            </span>
+          </div>
+        </div>
+
+        <!-- Readable big logo -->
+        <div
+          class="rounded-2xl border border-slate-900/10 bg-white/70 p-6 md:p-7 flex items-center justify-center
+                 transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-lg">
+          <img src="assets/media/readable_logo.png" alt="Readable"
+            class="h-10 md:h-12 w-auto object-contain" loading="lazy" />
+        </div>
+
+        <!-- Two service cards -->
+        <div class="mt-6 grid grid-cols-1 gap-4">
+          <div
+            class="rounded-xl border border-slate-900/10 bg-white/70 px-6 py-5
+                   transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
+            <div class="text-center">
+              <div class="text-sm md:text-base font-semibold text-slate-900">
+                AI Implementation
+              </div>
+              <div class="text-xs md:text-sm text-slate-600 mt-1">
+                カスタムAI実装支援
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="rounded-xl border border-slate-900/10 bg-white/70 px-6 py-5
+                   transition-transform duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
+            <div class="text-center">
+              <div class="text-sm md:text-base font-semibold text-slate-900">
+                Business Incubation
+              </div>
+              <div class="text-xs md:text-sm text-slate-600 mt-1">
+                新規事業開発支援
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </div>
 </div>
 
-
-
         </div>
+
+
     </section>
 
     <!-- News -->
