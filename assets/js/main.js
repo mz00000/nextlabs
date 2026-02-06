@@ -113,3 +113,115 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+
+// 4) Contact Expanding UI
+document.addEventListener('DOMContentLoaded', function () {
+  const contactTrigger = document.getElementById('contactTrigger');
+  const contactGrid = document.getElementById('contactGrid');
+  const contactGridClose = document.getElementById('contactGridClose');
+  const contactOptions = document.querySelectorAll('.contact-option');
+  const contactFormOverlay = document.getElementById('contactFormOverlay');
+  const contactFormBack = document.getElementById('contactFormBack');
+  const contactFormClose = document.getElementById('contactFormClose');
+  const contactFormTitle = document.getElementById('contactFormTitle');
+  const contactFormContent = document.getElementById('contactFormContent');
+
+  if (!contactTrigger || !contactGrid) return;
+
+  // HubSpot form IDs (placeholder - replace with actual IDs)
+  const formIds = {
+    'general': 'PLACEHOLDER_GENERAL_FORM_ID',
+    'bakuage': 'PLACEHOLDER_BAKUAGE_FORM_ID',
+    'readable': 'PLACEHOLDER_READABLE_FORM_ID',
+    'ai-strategy': 'PLACEHOLDER_AI_STRATEGY_FORM_ID'
+  };
+
+  const formTitles = {
+    'general': 'General Inquiry',
+    'bakuage': 'Bakuage',
+    'readable': 'Readable',
+    'ai-strategy': 'AI & Strategy'
+  };
+
+  // Open contact grid
+  contactTrigger.addEventListener('click', function () {
+    contactTrigger.classList.add('expanded');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function () {
+      contactGrid.classList.add('active');
+    }, 300);
+  });
+
+  // Close contact grid
+  function closeContactGrid() {
+    contactGrid.classList.remove('active');
+    setTimeout(function () {
+      contactTrigger.classList.remove('expanded');
+      document.body.style.overflow = '';
+    }, 600);
+  }
+
+  contactGridClose.addEventListener('click', closeContactGrid);
+
+  // Open form overlay
+  contactOptions.forEach(function (option) {
+    option.addEventListener('click', function () {
+      const formType = this.getAttribute('data-form-type');
+      const formId = formIds[formType];
+      const title = formTitles[formType];
+
+      contactFormTitle.textContent = title;
+      contactFormContent.innerHTML = '';
+
+      // Hide grid, show form
+      contactGrid.classList.remove('active');
+      setTimeout(function () {
+        contactFormOverlay.classList.add('active');
+
+        // Load HubSpot form
+        if (typeof hbspt !== 'undefined' && formId && !formId.startsWith('PLACEHOLDER')) {
+          hbspt.forms.create({
+            portalId: '23725067',
+            formId: formId,
+            region: 'na2',
+            target: '#contactFormContent',
+            css: 'https://nextlabs-nine.vercel.app/assets/css/hubspot-form.css'
+          });
+        } else {
+          // Placeholder message
+          contactFormContent.innerHTML = '<div style="text-align:center;padding:3rem;color:rgba(255,255,255,0.6);"><p style="margin-bottom:1rem;">フォームID未設定</p><p style="font-size:0.875rem;">HubSpotフォームIDを設定してください。<br>formIds[\'' + formType + '\']</p></div>';
+        }
+      }, 400);
+    });
+  });
+
+  // Back to grid from form
+  contactFormBack.addEventListener('click', function () {
+    contactFormOverlay.classList.remove('active');
+    setTimeout(function () {
+      contactGrid.classList.add('active');
+      contactFormContent.innerHTML = '';
+    }, 400);
+  });
+
+  // Close form completely
+  contactFormClose.addEventListener('click', function () {
+    contactFormOverlay.classList.remove('active');
+    contactFormContent.innerHTML = '';
+    setTimeout(function () {
+      contactTrigger.classList.remove('expanded');
+      document.body.style.overflow = '';
+    }, 500);
+  });
+
+  // ESC key to close
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      if (contactFormOverlay.classList.contains('active')) {
+        contactFormClose.click();
+      } else if (contactGrid.classList.contains('active')) {
+        closeContactGrid();
+      }
+    }
+  });
+});

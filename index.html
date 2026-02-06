@@ -828,30 +828,185 @@
     <!-- Contact -->
     <section id="contact" class="py-28 border-t border-white/5 content-layer">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="fade-up-hidden js-scroll-trigger">
+            <div class="fade-up-hidden js-scroll-trigger text-center">
                 <h2 class="text-4xl md:text-5xl font-serif text-white mb-4">Contact</h2>
-                <p class="text-slate-300 mb-10">
-                    ご相談・お問い合わせは、以下よりご連絡ください。<br>
+                <p class="text-slate-300 mb-16">
+                    ご相談・お問い合わせは、以下よりご連絡ください。
                 </p>
             </div>
 
-            <div class="glass glass-dark p-6 md:p-8 max-w-3xl fade-up-hidden js-scroll-trigger">
-                <div id="hubspot-contact-form">
-                    <script charset="utf-8" type="text/javascript"
-                        src="https://js-na2.hsforms.net/forms/embed/v2.js"></script>
-                    <script>
-                        hbspt.forms.create({
-                            portalId: "23725067",
-                            formId: "31e947b3-d68a-44a0-bc1d-a6c726d13eb1",
-                            region: "na2",
-                            target: "#hubspot-contact-form",
-                            css: "https://nextlabs-nine.vercel.app/assets/css/hubspot-form.css"
-                        });
-                    </script>
+            <!-- Contact Trigger Button -->
+            <div class="flex justify-center fade-up-hidden js-scroll-trigger">
+                <div class="contact-trigger" id="contactTrigger">
+                    <div class="pulse-ring"></div>
+                    <div class="pulse-ring"></div>
+                    <div class="contact-main-button">
+                        <div style="text-align: center;">
+                            <p class="text-xs tracking-[0.2em] text-white/50 mb-6 uppercase">Get in Touch</p>
+                            <h3 class="font-serif text-4xl md:text-5xl font-semibold text-white mb-4">CONTACT</h3>
+                            <p class="text-white/60 text-sm md:text-base max-w-[280px] mx-auto">お気軽にお問い合わせください</p>
+                        </div>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" class="opacity-60 mt-4">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Contact Grid (Fullscreen overlay) -->
+    <div class="contact-grid" id="contactGrid">
+        <!-- Option 1: General -->
+        <div class="contact-option contact-option-1" data-form-type="general">
+            <div class="contact-option-number">01</div>
+            <div class="contact-option-content">
+                <div class="contact-option-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </div>
+                <h3 class="contact-option-title">General Inquiry</h3>
+                <p class="contact-option-description">
+                    協業のご相談、取材依頼、その他<br>お気軽にお問い合わせください
+                </p>
+                <div class="flex items-center justify-center gap-2 text-white/70 text-sm">
+                    <span>詳しく見る</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="arrow-icon">
+                        <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="contact-tags">
+                    <span class="contact-tag">協業・提携</span>
+                    <span class="contact-tag">取材依頼</span>
+                    <span class="contact-tag">その他</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Option 2: Bakuage -->
+        <div class="contact-option contact-option-2" data-form-type="bakuage">
+            <div class="contact-option-number">02</div>
+            <div class="contact-option-content">
+                <div class="contact-option-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                </div>
+                <h3 class="contact-option-title">Bakuage</h3>
+                <p class="contact-option-description">
+                    EC事業者様、Shopify構築会社様<br>バクアゲ導入に関するご相談
+                </p>
+                <div class="flex items-center justify-center gap-2 text-white/70 text-sm">
+                    <span>詳しく見る</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="arrow-icon">
+                        <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="contact-tags">
+                    <span class="contact-tag">返品自動化</span>
+                    <span class="contact-tag">送金自動化</span>
+                    <span class="contact-tag">住所確認</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Option 3: Readable -->
+        <div class="contact-option contact-option-3" data-form-type="readable">
+            <div class="contact-option-number">03</div>
+            <div class="contact-option-content">
+                <div class="contact-option-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                    </svg>
+                </div>
+                <h3 class="contact-option-title">Readable</h3>
+                <p class="contact-option-description">
+                    AI翻訳ツールReadableの<br>法人導入、カスタマイズのご相談
+                </p>
+                <div class="flex items-center justify-center gap-2 text-white/70 text-sm">
+                    <span>詳しく見る</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="arrow-icon">
+                        <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="contact-tags">
+                    <span class="contact-tag">法人導入</span>
+                    <span class="contact-tag">API連携</span>
+                    <span class="contact-tag">大量翻訳</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Option 4: AI & Strategy -->
+        <div class="contact-option contact-option-4" data-form-type="ai-strategy">
+            <div class="contact-option-number">04</div>
+            <div class="contact-option-content">
+                <div class="contact-option-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                </div>
+                <h3 class="contact-option-title">AI & Strategy</h3>
+                <p class="contact-option-description">
+                    AI実装コンサルティング<br>新規事業開発支援のご相談
+                </p>
+                <div class="flex items-center justify-center gap-2 text-white/70 text-sm">
+                    <span>詳しく見る</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="arrow-icon">
+                        <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="contact-tags">
+                    <span class="contact-tag">AI実装支援</span>
+                    <span class="contact-tag">事業開発</span>
+                    <span class="contact-tag">戦略立案</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Close button for grid -->
+        <button class="contact-close-btn" id="contactGridClose" aria-label="閉じる">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Contact Form (Fullscreen overlay) -->
+    <div class="contact-form-overlay" id="contactFormOverlay">
+        <div class="contact-form-container">
+            <div class="contact-form-header">
+                <button class="contact-back-btn" id="contactFormBack" aria-label="戻る">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    <span>戻る</span>
+                </button>
+                <h3 class="contact-form-title" id="contactFormTitle">お問い合わせ</h3>
+                <button class="contact-close-btn contact-close-btn-form" id="contactFormClose" aria-label="閉じる">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="contact-form-content" id="contactFormContent">
+                <!-- HubSpot form will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- HubSpot Forms Script -->
+    <script charset="utf-8" type="text/javascript" src="https://js-na2.hsforms.net/forms/embed/v2.js"></script>
 
     <!-- Footer -->
     <footer id="footer" class="py-12 border-t border-white/5 content-layer">
