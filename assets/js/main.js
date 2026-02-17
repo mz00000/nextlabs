@@ -180,25 +180,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Load HubSpot form
         if (typeof hbspt !== 'undefined' && formId && !formId.startsWith('PLACEHOLDER')) {
-          fetch('/assets/css/hubspot-form.css')
-            .then(function (res) { return res.text(); })
-            .then(function (cssText) {
-              hbspt.forms.create({
-                portalId: '23725067',
-                formId: formId,
-                region: 'na2',
-                target: '#contactFormContent',
-                css: cssText
-              });
-            })
-            .catch(function () {
-              hbspt.forms.create({
-                portalId: '23725067',
-                formId: formId,
-                region: 'na2',
-                target: '#contactFormContent'
-              });
-            });
+          hbspt.forms.create({
+            portalId: '23725067',
+            formId: formId,
+            region: 'na2',
+            target: '#contactFormContent',
+            css: 'https://nextlabs-nine.vercel.app/assets/css/hubspot-form.css'
+          });
         } else {
           // Placeholder message
           contactFormContent.innerHTML = '<div style="text-align:center;padding:3rem;color:rgba(255,255,255,0.6);"><p style="margin-bottom:1rem;">フォームID未設定</p><p style="font-size:0.875rem;">HubSpotフォームIDを設定してください。<br>formIds[\'' + formType + '\']</p></div>';
