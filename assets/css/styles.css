@@ -1308,6 +1308,11 @@ body.policy-page {
   padding: 1rem 0;
 }
 
+/* Dark-mode filter for HubSpot cross-origin iframe */
+.contact-form-content iframe {
+  filter: invert(1) hue-rotate(180deg);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .contact-main-button {
