@@ -130,10 +130,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // HubSpot form IDs (placeholder - replace with actual IDs)
   const formIds = {
-    'general': 'PLACEHOLDER_GENERAL_FORM_ID',
-    'bakuage': 'PLACEHOLDER_BAKUAGE_FORM_ID',
-    'readable': 'PLACEHOLDER_READABLE_FORM_ID',
-    'ai-strategy': 'PLACEHOLDER_AI_STRATEGY_FORM_ID'
+    'general': '3945bd74-66e8-4b59-bd25-6ec53e74677e',
+    'bakuage': 'd961bcd9-d551-442e-b54c-f939844ae1fc',
+    'readable': '62195f2d-62e0-4a65-9876-35cf913b7c5c',
+    'ai-strategy': '320022e6-07cb-4518-a089-aaf1db145124'
   };
 
   const formTitles = {
@@ -180,13 +180,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Load HubSpot form
         if (typeof hbspt !== 'undefined' && formId && !formId.startsWith('PLACEHOLDER')) {
-          hbspt.forms.create({
-            portalId: '23725067',
-            formId: formId,
-            region: 'na2',
-            target: '#contactFormContent',
-            css: 'https://nextlabs-nine.vercel.app/assets/css/hubspot-form.css'
-          });
+          fetch('/assets/css/hubspot-form.css')
+            .then(function (res) { return res.text(); })
+            .then(function (cssText) {
+              hbspt.forms.create({
+                portalId: '23725067',
+                formId: formId,
+                region: 'na2',
+                target: '#contactFormContent',
+                css: cssText
+              });
+            })
+            .catch(function () {
+              hbspt.forms.create({
+                portalId: '23725067',
+                formId: formId,
+                region: 'na2',
+                target: '#contactFormContent'
+              });
+            });
         } else {
           // Placeholder message
           contactFormContent.innerHTML = '<div style="text-align:center;padding:3rem;color:rgba(255,255,255,0.6);"><p style="margin-bottom:1rem;">フォームID未設定</p><p style="font-size:0.875rem;">HubSpotフォームIDを設定してください。<br>formIds[\'' + formType + '\']</p></div>';
