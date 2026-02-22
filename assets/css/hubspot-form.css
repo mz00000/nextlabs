@@ -263,3 +263,9 @@ input[type="submit"]:hover {
   display: block !important;
   margin-bottom: 8px !important;
 }
+
+/* ---------- Logo (white) ---------- */
+.hs-form img,
+.hs-richtext img {
+  filter: brightness(0) invert(1) !important;
+}
