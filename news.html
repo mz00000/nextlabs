@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News | NextLab Inc.</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cinzel"', 'serif'],
+                        sans: ['"Inter"', '"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        'slate-850': '#151b23',
+                        'slate-900': '#0f1419',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body class="policy-page text-slate-200 antialiased selection:bg-white selection:text-slate-900">
+
+    <!-- Background Layers -->
+    <div class="bg-layer bg-dark active" id="bgDark"></div>
+
+    <!-- Grid Overlay -->
+    <div class="grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md content-layer">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html#hero" class="flex items-center gap-3">
+                <div class="rolling-n" aria-hidden="true">
+                    <svg width="32" height="32" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="25" width="25" height="60" fill="#b8a656" rx="3"
+                            transform="rotate(-30 22.5 55)" />
+                        <rect x="35" y="25" width="25" height="60" fill="#2d2d2d" rx="3"
+                            transform="rotate(-30 47.5 55)" />
+                        <rect x="60" y="25" width="25" height="60" fill="#2d2d2d" rx="3"
+                            transform="rotate(-30 72.5 55)" />
+                    </svg>
+                </div>
+                <span class="text-white font-serif tracking-widest text-lg font-semibold fade-in-logo">NEXT LABS</span>
+            </a>
+
+            <div
+                class="hidden md:flex items-center gap-10 text-xs tracking-widest text-slate-300 font-medium uppercase">
+                <a href="index.html#news" class="hover:text-white transition-colors">News</a>
+                <a href="index.html#solutions" class="hover:text-white transition-colors">Solutions</a>
+                <a href="index.html#company" class="hover:text-white transition-colors">Company</a>
+                <a href="index.html#contact"
+                    class="px-5 py-2 border border-white/20 text-white rounded-sm hover:bg-white hover:text-slate-900 transition-all duration-500">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-36 pb-16 lg:pt-44 lg:pb-20 content-layer">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="fade-up-hidden js-scroll-trigger">
+                <p class="text-xs tracking-[0.2em] text-slate-300 mb-6 border-l border-white/30 pl-4 uppercase">
+                    All Updates
+                </p>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-4">News</h1>
+                <p class="text-slate-300 text-lg font-light">最新のお知らせ・プレスリリース</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- News List -->
+    <section class="pb-32 content-layer">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Year Section: 2026 -->
+            <div class="mb-16 fade-up-hidden js-scroll-trigger">
+                <div class="flex items-center gap-6 mb-8">
+                    <h2 class="text-2xl font-serif text-white">2026</h2>
+                    <div class="flex-1 h-px bg-white/10"></div>
+                </div>
+
+                <div class="glass glass-dark p-6 md:p-8">
+                    <div class="space-y-1">
+
+                        <!-- News Item -->
+                        <a href="https://prtimes.jp/main/html/rd/p/000000014.000110838.html" target="_blank"
+                            rel="noopener noreferrer"
+                            class="group block py-6 border-b border-white/10 hover:border-white/30 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center gap-4">
+                                <time
+                                    class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2026.02.17</time>
+                                <span
+                                    class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">プレスリリース</span>
+                                <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
+                                    EC返品・キャンセル・配送業務を最大90%自動化する「バクアゲ配送」を提供開始
+                                </p>
+                                <span
+                                    class="hidden lg:inline-flex items-center gap-1 text-xs text-slate-400 group-hover:text-white transition-colors flex-shrink-0">
+                                    <span class="tracking-widest">READ</span>
+                                    <span class="group-hover:translate-x-1 transition-transform">→</span>
+                                </span>
+                            </div>
+                        </a>
+
+                        <!-- News Item -->
+                        <a href="https://online.logi-biz.com/140000/" target="_blank"
+                            rel="noopener noreferrer"
+                            class="group block py-6 border-b border-white/10 hover:border-white/30 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center gap-4">
+                                <time
+                                    class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2026.02.17</time>
+                                <span
+                                    class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">プレスリリース</span>
+                                <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
+                                    「バクアゲ配送」提供開始 ― EC事業者のバックオフィス業務を効率化するBtoB向け新サービス
+                                </p>
+                                <span
+                                    class="hidden lg:inline-flex items-center gap-1 text-xs text-slate-400 group-hover:text-white transition-colors flex-shrink-0">
+                                    <span class="tracking-widest">READ</span>
+                                    <span class="group-hover:translate-x-1 transition-transform">→</span>
+                                </span>
+                            </div>
+                        </a>
+
+                        <!-- News Item -->
+                        <a href="https://www.logi-today.com/913261" target="_blank"
+                            rel="noopener noreferrer"
+                            class="group block py-6 border-b border-white/10 hover:border-white/30 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center gap-4">
+                                <time
+                                    class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2026.02.17</time>
+                                <span
+                                    class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">プレスリリース</span>
+                                <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
+                                    ネクストラボ、EC返品・キャンセル業務を自動化する「バクアゲ配送」を開始
+                                </p>
+                                <span
+                                    class="hidden lg:inline-flex items-center gap-1 text-xs text-slate-400 group-hover:text-white transition-colors flex-shrink-0">
+                                    <span class="tracking-widest">READ</span>
+                                    <span class="group-hover:translate-x-1 transition-transform">→</span>
+                                </span>
+                            </div>
+                        </a>
+
+                        <!-- News Item -->
+                        <a href="https://www.commercepick.com/archives/84943" target="_blank"
+                            rel="noopener noreferrer"
+                            class="group block py-6 border-b border-white/10 hover:border-white/30 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center gap-4">
+                                <time
+                                    class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2026.02.13</time>
+                                <span
+                                    class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">メディア掲載</span>
+                                <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
+                                    2026年のEC生存戦略―「返品・配送・返金」をコストから利益に変える『バックヤードDX』の鉄則
+                                </p>
+                                <span
+                                    class="hidden lg:inline-flex items-center gap-1 text-xs text-slate-400 group-hover:text-white transition-colors flex-shrink-0">
+                                    <span class="tracking-widest">READ</span>
+                                    <span class="group-hover:translate-x-1 transition-transform">→</span>
+                                </span>
+                            </div>
+                        </a>
+
+                        <!-- News Item -->
+                        <a href="https://prtimes.jp/main/html/rd/p/000000012.000110838.html" target="_blank"
+                            rel="noopener noreferrer"
+                            class="group block py-6 hover:border-white/30 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center gap-4">
+                                <time
+                                    class="text-xs text-slate-400 font-mono tracking-wider md:w-32 flex-shrink-0">2026.01.22</time>
+                                <span
+                                    class="text-xs px-3 py-1 border border-white/20 text-white rounded-sm w-fit">プレスリリース</span>
+                                <p class="text-white group-hover:text-slate-200 transition-colors flex-1">
+                                    ECバックオフィス業務を一元化し、利益と顧客体験を"爆上げ"する「バクアゲ」を発表
+                                </p>
+                                <span
+                                    class="hidden lg:inline-flex items-center gap-1 text-xs text-slate-400 group-hover:text-white transition-colors flex-shrink-0">
+                                    <span class="tracking-widest">READ</span>
+                                    <span class="group-hover:translate-x-1 transition-transform">→</span>
+                                </span>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back to Top -->
+            <div class="mt-12 text-center fade-up-hidden js-scroll-trigger">
+                <a href="index.html"
+                    class="group inline-flex items-center gap-3 text-white border-b border-white pb-1 hover:text-slate-200 hover:border-slate-200 transition">
+                    <span class="group-hover:-translate-x-1 transition-transform">←</span>
+                    <span class="tracking-widest text-sm">BACK TO TOP</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="py-12 border-t border-white/5 content-layer">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <svg width="16" height="16" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="10" y="25" width="25" height="60" fill="#b8a656" rx="3" transform="rotate(-30 22.5 55)" />
+                    <rect x="35" y="25" width="25" height="60" fill="#ffffff" rx="3" transform="rotate(-30 47.5 55)" />
+                    <rect x="60" y="25" width="25" height="60" fill="#ffffff" rx="3" transform="rotate(-30 72.5 55)" />
+                </svg>
+                <span class="text-slate-300 font-serif tracking-widest text-sm">NEXT LABS</span>
+            </div>
+            <div class="flex items-center gap-6 text-xs text-slate-500 tracking-wider">
+                <a class="hover:text-slate-300 transition" href="privacy.html">Privacy Policy</a>
+                <a class="hover:text-slate-300 transition" href="securitypolicy.html">Security Policy</a>
+                <span class="hidden md:inline">|</span>
+                <span>&copy; NEXTLAB INC. ALL RIGHTS RESERVED.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll reveal JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const scrollTriggers = document.querySelectorAll('.js-scroll-trigger');
+            const scrollObserver = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-up-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            scrollTriggers.forEach(function (el) { scrollObserver.observe(el); });
+        });
+    </script>
+
+</body>
+
+</html>
